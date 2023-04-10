@@ -73,5 +73,33 @@ middle = base.encode(
 ).mark_text().properties(width=35)
 
 st.write("## Testing...")
-ch = alt.concat(left, middle, right, spacing=5)
+ch = alt.hconcat(left, middle, right, spacing=5)
 st.altair_chart(ch, theme="streamlit", use_container_width=True)
+# ch
+
+
+st.write("## Testing2...")
+pink_blue = alt.Scale(domain=('Male', 'Female'),
+                      range=["#1f77b4", "#e377c2"])
+
+slider = alt.binding_range(min=1995, max=2020, step=1)
+select_year = alt.selection_single(name='Year', fields=['year'],
+                                   bind=slider)
+
+bar2 = alt.Chart(data_filtered).mark_bar().encode(
+    x=alt.X('group:N', title=None),
+    y=alt.Y('value:Q', title='Wages', scale=alt.Scale(domain=(0, 1200))),
+    color=alt.Color('group:N', scale=pink_blue),
+    column='year:N'
+).properties(
+    width=20
+).add_selection(
+    select_year
+).transform_calculate(
+    "group", alt.expr.if_(alt.datum.group == "total men", "Male", "Female")
+).transform_filter(
+    select_year
+).configure_facet(
+    spacing=8
+)
+st.altair_chart(bar2, theme="streamlit", use_container_width=False)
