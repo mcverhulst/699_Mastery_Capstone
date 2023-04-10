@@ -3,7 +3,7 @@ import altair as alt
 
 import pandas as pd
 import os
-# from utils.util_funcs import load_data
+from utils.util_funcs import load_data
 
 
 st.set_page_config(page_title="Gender Wage Gap", page_icon="⚖️")
@@ -21,8 +21,8 @@ st.write(
 
 
 # READ IN AND MELT DATASET
-# data = load_data("edu_wages.csv")
-data = pd.read_csv("../data/edu_wages.csv")
+data = load_data("edu_wages.csv")
+# data = pd.read_csv("../data/edu_wages.csv")
 data.set_index("report_name")
 data = data.rename(columns={"report_name": "group"})
 
