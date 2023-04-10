@@ -82,14 +82,10 @@ st.write("## Testing2...")
 pink_blue = alt.Scale(domain=('Male', 'Female'),
                       range=["#1f77b4", "#e377c2"])
 
-slider = alt.binding_range(min=1995, max=2020, step=1)
 values = st.slider(
     'Select a range of years',
     1995, 2020, (1995, 2020))
 
-select_year = alt.selection_single(name='Year', fields=['year'],
-                                   bind=slider)
-values
 bar2 = alt.Chart(data_filtered).mark_bar().encode(
     x=alt.X('group:N', title=None),
     y=alt.Y('value:Q', title='Wages', scale=alt.Scale(domain=(0, 1200))),
