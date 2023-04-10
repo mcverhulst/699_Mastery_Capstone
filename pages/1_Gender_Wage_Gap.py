@@ -83,9 +83,13 @@ pink_blue = alt.Scale(domain=('Male', 'Female'),
                       range=["#1f77b4", "#e377c2"])
 
 slider = alt.binding_range(min=1995, max=2020, step=1)
+values = st.slider(
+    'Select a range of years',
+    1995, 2020, (1995, 2020))
+
 select_year = alt.selection_single(name='Year', fields=['year'],
                                    bind=slider)
-
+values
 bar2 = alt.Chart(data_filtered).mark_bar().encode(
     x=alt.X('group:N', title=None),
     y=alt.Y('value:Q', title='Wages', scale=alt.Scale(domain=(0, 1200))),
@@ -93,12 +97,12 @@ bar2 = alt.Chart(data_filtered).mark_bar().encode(
     column='year:N'
 ).properties(
     width=20
-).add_selection(
-    select_year
+).transform_filter(
+    values[0] <= alt.datum.year
+).transform_filter(
+    alt.datum.year <= values[1]
 ).transform_calculate(
     "group", alt.expr.if_(alt.datum.group == "total men", "Male", "Female")
-).transform_filter(
-    select_year
 ).configure_facet(
     spacing=8
 )
