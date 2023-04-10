@@ -22,6 +22,7 @@ st.write(
 
 # READ IN AND MELT DATASET
 data = load_data("edu_wages.csv")
+# data = pd.read_csv("../data/edu_wages.csv")
 data.set_index("report_name")
 data = data.rename(columns={"report_name": "group"})
 
@@ -43,41 +44,66 @@ c = (
 )
 
 st.write("## Not a good chart, just a test chart")
-st.altair_chart(c, theme="streamlit", use_container_width=True)
+st.altair_chart(c, use_container_width=True)
+
 
 # TEST PYRAMID PLOT
-slider = alt.binding_range(name="year:", min=1995, max=2020)
-selector = alt.selection_single(name="Year", fields=["year"], bind=slider, init={"year": 2020})
-
-base = alt.Chart(data_filtered).add_selection(selector).transform_filter(selector).properties(width=250)
-
-
 color_scale = alt.Scale(domain=["total men", "total women"], range=["#1f77b4", "#e377c2"])
+base = alt.Chart(data_filtered).mark_bar().encode().properties(width=250)
 
-left = (
-    base.transform_filter(alt.datum.group == "total women")
-    .encode(
-        alt.Y("year:N"),
-        alt.X("sum(value):Q").title("wages").sort("descending"),
-        alt.Color("group:N").scale(color_scale).legend(None),
-    )
-    .mark_bar()
-    .properties(title="Total Women")
+left = base.transform_filter(
+    alt.datum.group == 'total men'
+).encode(
+    alt.X('sum(value):Q', title="wages", sort="descending", scale=alt.Scale(domain=[0, 1200])),
+    alt.Y('year:N', axis=None, sort='descending'),
+    alt.Color('group:O', scale=color_scale)
 )
 
-
-right = (
-    base.transform_filter(alt.datum.group == "total men")
-    .encode(
-        alt.Y("year:N"),
-        alt.X("sum(value):Q").title("wages"),
-        alt.Color("group:N").scale(color_scale).legend(None),
-    )
-    .mark_bar()
-    .properties(title="Total Men")
+right = base.transform_filter(
+    alt.datum.group == 'total women'
+).encode(
+    alt.X('sum(value):Q', title="wages", sort="ascending", scale=alt.Scale(domain=[0, 1200])),
+    alt.Y('year:N', axis=None, sort='descending'),
+    alt.Color('group:O', scale=color_scale)
 )
 
-# alt.concat(left, right, spacing=5)
+middle = base.encode(
+    alt.Y('year:N', axis=None, sort='descending'),
+    alt.Text('year'),
+).mark_text().properties(width=35)
+
 st.write("## Testing...")
-ch = left + right
+ch = alt.hconcat(left, middle, right, spacing=5)
 st.altair_chart(ch, theme="streamlit", use_container_width=True)
+# ch
+
+
+st.write("## Testing2...")
+pink_blue = alt.Scale(domain=('Male', 'Female'),
+                      range=["#1f77b4", "#e377c2"])
+
+slider = alt.binding_range(min=1995, max=2020, step=1)
+values = st.slider(
+    'Select a range of years',
+    1995, 2020, (1995, 2020))
+
+select_year = alt.selection_single(name='Year', fields=['year'],
+                                   bind=slider)
+values
+bar2 = alt.Chart(data_filtered).mark_bar().encode(
+    x=alt.X('group:N', title=None),
+    y=alt.Y('value:Q', title='Wages', scale=alt.Scale(domain=(0, 1200))),
+    color=alt.Color('group:N', scale=pink_blue),
+    column='year:N'
+).properties(
+    width=20
+).transform_filter(
+    values[0] <= alt.datum.year
+).transform_filter(
+    alt.datum.year <= values[1]
+).transform_calculate(
+    "group", alt.expr.if_(alt.datum.group == "total men", "Male", "Female")
+).configure_facet(
+    spacing=8
+)
+st.altair_chart(bar2, theme="streamlit", use_container_width=False)
