@@ -68,14 +68,14 @@ base = alt.Chart(ratio_df).mark_bar().encode(tooltip = ['ratio']).properties(wid
 left = base.encode(
     alt.X('total men:Q', title="wages", sort="descending", scale=alt.Scale(domain=[0, 1200])),
     alt.Y('year:N', axis=None, sort='descending'),
-    color = alt.value("#1f77b4")
+    color = alt.value('#31b0a5')
 )
 
 # right chart
 right = base.encode(
     alt.X('total women:Q', title="wages", sort="ascending", scale=alt.Scale(domain=[0, 1200])),
     alt.Y('year:N', axis=None, sort='descending'),
-    color = alt.value("#e377c2")
+    color = alt.value('#de8b33')
     # alt.Color('group:O', scale=color_scale)
 )
 
@@ -106,7 +106,7 @@ st.altair_chart(combo, theme="streamlit", use_container_width=True)
 
 st.write("## Testing2...")
 pink_blue = alt.Scale(domain=('Male', 'Female'),
-                      range=["#1f77b4", "#e377c2"])
+                      range=['#31b0a5', '#de8b33'])# ['#31b0a5', '#de8b33']
 
 values = st.slider(
     'Select a range of years',
