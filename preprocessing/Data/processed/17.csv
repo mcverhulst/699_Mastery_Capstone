@@ -1,0 +1,91 @@
+,17
+total,865.0
+total men,962.0
+total women,769.0
+Less than HS,520.0
+High School,680.0
+Some College,769.0
+Bachelors Degree,1153.0
+Advanced Degree,1442.0
+Male + Less than HS,577.0
+Male + High School,769.0
+Male + Some College,880.0
+Male + Bachelors Degree,1346.0
+Male + Advanced Degree,1730.0
+Female + Less than HS,440.0
+Female + High School,590.0
+Female + Some College,673.0
+Female + Bachelors Degree,1000.0
+Female + Advanced Degree,1269.0
+White,900.0
+White + Less than HS,520.0
+White + High School,715.0
+White + Some College,800.0
+White + Bachelors Degree,1154.0
+White + Advanced Degree,1442.0
+Hispanic or Latino,865.0
+Hispanic or Latino + Less than HS,520.0
+Hispanic or Latino + High School,680.0
+Hispanic or Latino + Some College,769.0
+Hispanic or Latino + Bachelors Degree,1153.0
+Hispanic or Latino + Advanced Degree,1442.0
+White + Male,996.0
+Hispanic or Latino + Male,962.0
+White + Male + Less than HS,600.0
+Hispanic or Latino + Male + Less than HS,577.0
+White + Male + High School,800.0
+Hispanic or Latino + Male + High School,769.0
+White + Male + Some College,920.0
+Hispanic or Latino + Male + Some College,880.0
+White + Male + Bachelors Degree,1346.0
+Hispanic or Latino + Male + Bachelors Degree,1346.0
+White + Male + Advanced Degree,1731.0
+Hispanic or Latino + Male + Advanced Degree,1730.0
+White + Female,800.0
+Hispanic or Latino + Female,769.0
+White + Female + Less than HS,440.0
+Hispanic or Latino + Female + Less than HS,440.0
+White + Female + High School,600.0
+Hispanic or Latino + Female + High School,590.0
+White + Female + Some College,684.0
+Hispanic or Latino + Female + Some College,673.0
+White + Female + Bachelors Degree,1000.0
+Hispanic or Latino + Female + Bachelors Degree,1000.0
+White + Female + Advanced Degree,1275.0
+Hispanic or Latino + Female + Advanced Degree,1269.0
+Black,680.0
+Black + Less than HS,478.0
+Black + High School,576.0
+Black + Some College,665.0
+Black + Bachelors Degree,923.0
+Black + Advanced Degree,1192.0
+Black + Male,720.0
+Black + Male + Less than HS,481.0
+Black + Male + High School,625.0
+Black + Male + Some College,720.0
+Black + Male + Bachelors Degree,962.0
+Black + Male + Advanced Degree,1300.0
+Black + Female,661.0
+Black + Female + Less than HS,440.0
+Black + Female + High School,520.0
+Black + Female + Some College,609.0
+Black + Female + Bachelors Degree,900.0
+Black + Female + Advanced Degree,1115.0
+Asian,1000.0
+Asian + Less than HS,500.0
+Asian + High School,625.0
+Asian + Some College,750.0
+Asian + Bachelors Degree,1250.0
+Asian + Advanced Degree,1635.0
+Asian + Male,1154.0
+Asian + Male + Less than HS,566.0
+Asian + Male + High School,685.0
+Asian + Male + Some College,800.0
+Asian + Male + Bachelors Degree,1397.0
+Asian + Male + Advanced Degree,1796.0
+Asian + Female,890.0
+Asian + Female + Less than HS,450.0
+Asian + Female + High School,600.0
+Asian + Female + Some College,673.0
+Asian + Female + Bachelors Degree,1049.0
+Asian + Female + Advanced Degree,1442.0
