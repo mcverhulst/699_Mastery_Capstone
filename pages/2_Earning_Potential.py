@@ -4,10 +4,12 @@ import bokeh as b
 import pandas as pd
 from utils.util_funcs import load_data
 
+from streamlit_elements import elements, mui
+
 st.set_page_config(page_title="Earning Potential", page_icon="💰")
 
 st.markdown("# Higher Education Degrees and Earning Potential")
-st.sidebar.header("Earning Potential")
+# st.sidebar.header("Earning Potential")
 st.write(
     """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -29,6 +31,18 @@ data_only = data[:2340]
 
 
 # FILTER DATASET BY GENDER/RACE/DEGREE
+all_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Less than HS",
+            "High School",
+            "Some College",
+            "Bachelors Degree",
+            "Advanced Degree",
+        ]
+    )
+]
+
 all_gender_degrees = data_only[
     data_only["group"].isin(
         [
@@ -68,6 +82,28 @@ female_degrees = data_only[
     )
 ]
 all_races = data_only[data_only["group"].isin(["Asian", "Black", "Hispanic or Latino", "White"])]
+all_race_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Asian + Bachelors Degree",
+            "Asian + Advanced Degree",
+            "Asian + Some College",
+            "Asian + High School",
+            "Black + Bachelors Degree",
+            "Black + Advanced Degree",
+            "Black + Some College",
+            "Black + High School",
+            "White + Bachelors Degree",
+            "White + Advanced Degree",
+            "White + Some College",
+            "White + High School",
+            "Hispanic or Latino + Bachelors Degree",
+            "Hispanic or Latino + Advanced Degree",
+            "Hispanic or Latino + Some College",
+            "Hispanic or Latino + High School",
+        ]
+    )
+]
 all_races_advan = data_only[
     data_only["group"].isin(
         [
@@ -128,38 +164,52 @@ filters = [
     "Hispanic or Latino By Education Level",
 ]
 
-# SET UP SELECT BOX
-chart_options_select = st.selectbox("Select a category:", filters)
+# # SET UP SELECT BOX
+# chart_options_select = st.sidebar.selectbox("Select a category:", filters)
 
-if chart_options_select == "By Gender and Education Level":
+# if chart_options_select == "By Education Level":
+#     data = all_degrees
+
+# if chart_options_select == "By Gender and Education Level":
+#     data = all_gender_degrees
+
+# elif chart_options_select == "Male By Education Level":
+#     data = male_degrees
+
+# elif chart_options_select == "Female By Education Level":
+#     data = female_degrees
+
+# elif chart_options_select == "By Race":
+#     data = all_races
+
+# elif chart_options_select == "Bachelors Degrees By Race":
+#     data = all_races_bach
+
+# elif chart_options_select == "Advanced Degrees By Race":
+#     data = all_races_advan
+
+# elif chart_options_select == "Asian By Education Level":
+#     data = asian_degrees
+
+# elif chart_options_select == "Black By Education Level":
+#     data = black_degrees
+
+# elif chart_options_select == "White By Education Level":
+#     data = white_degrees
+
+# elif chart_options_select == "Hispanic or Latino By Education Level":
+#     data = latino_degrees
+
+# SET UP RADIO BUTTONS
+
+filters = st.sidebar.radio("Select a filter: ", ("By Degree", "By Gender & Degree", "By Race & Degree"))
+
+if filters == "By Degree":
+    data = all_degrees
+elif filters == "By Gender & Degree":
     data = all_gender_degrees
-
-elif chart_options_select == "Male By Education Level":
-    data = male_degrees
-
-elif chart_options_select == "Female By Education Level":
-    data = female_degrees
-
-elif chart_options_select == "By Race":
-    data = all_races
-
-elif chart_options_select == "Bachelors Degrees By Race":
-    data = all_races_bach
-
-elif chart_options_select == "Advanced Degrees By Race":
-    data = all_races_advan
-
-elif chart_options_select == "Asian By Education Level":
-    data = asian_degrees
-
-elif chart_options_select == "Black By Education Level":
-    data = black_degrees
-
-elif chart_options_select == "White By Education Level":
-    data = white_degrees
-
-elif chart_options_select == "Hispanic or Latino By Education Level":
-    data = latino_degrees
+elif filters == "By Race & Degree":
+    data = all_race_degrees
 
 
 # CHART WITH MULTILINE TOOL TIP
@@ -210,8 +260,19 @@ rules = (
 )
 
 # Put the five layers into a chart and bind the data
-raceChart = alt.layer(
-    line, selectors, points, rules, text, data=data, width=600, height=300, title="Weekly Wages by Race"
-)
+multilineChart = alt.layer(line, selectors, points, rules, text, data=data, title="")
 
-st.altair_chart(raceChart)
+# st.altair_chart(multilineChart)
+
+# SET UP COLUMN GRID LAYOUT
+col1, col2 = st.columns([5, 2], gap="large")
+
+col1.markdown("**MultiLine Chart**")
+col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
+
+col2.markdown("**Placeholder**")
+col2.altair_chart(multilineChart, use_container_width=True)
+
+
+col2.markdown("**Placeholder**")
+col2.altair_chart(multilineChart, use_container_width=True)

@@ -3,10 +3,10 @@ import altair as alt
 import bokeh as b
 import pandas as pd
 
-st.set_page_config(page_title="Union Coverage", page_icon="✊")
+st.set_page_config(page_title="Underemployment", page_icon="💼")
 
-st.markdown("# Education and Union Coverage")
-st.sidebar.header("Union Coverage")
+st.markdown("# Education and Underemployment")
+# st.sidebar.header("Underemployment")
 st.write(
     """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
