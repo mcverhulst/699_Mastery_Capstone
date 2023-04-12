@@ -28,21 +28,144 @@ data = data.rename(columns={"variable": "year"})
 data_only = data[:2340]
 
 
-# FILTER DATA BY RACE + BACHELOR'S DEGREE
-race_bach = data_only[
+# FILTER DATASET BY GENDER/RACE/DEGREE
+all_gender_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Male + Less than HS",
+            "Male + High School",
+            "Male + Some College",
+            "Male + Bachelors Degree",
+            "Male + Advanced Degree",
+            "Female + Less than HS",
+            "Female + High School",
+            "Female + Some College",
+            "Female + Bachelors Degree",
+            "Female + Advanced Degree",
+        ]
+    )
+]
+male_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Male + Less than HS",
+            "Male + High School",
+            "Male + Some College",
+            "Male + Bachelors Degree",
+            "Male + Advanced Degree",
+        ]
+    )
+]
+female_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Female + Less than HS",
+            "Female + High School",
+            "Female + Some College",
+            "Female + Bachelors Degree",
+            "Female + Advanced Degree",
+        ]
+    )
+]
+all_races = data_only[data_only["group"].isin(["Asian", "Black", "Hispanic or Latino", "White"])]
+all_races_advan = data_only[
+    data_only["group"].isin(
+        [
+            "Asian + Advanced Degree",
+            "Black + Advanced Degree",
+            "Hispanic or Latino + Advanced Degree",
+            "White + Advanced Degree",
+        ]
+    )
+]
+all_races_bach = data_only[
     data_only["group"].isin(
         [
             "Asian + Bachelors Degree",
             "Black + Bachelors Degree",
-            "Hispanic or Latino + Bachelors Degree",
-            "White + Bachelors Degree",
+            "Hispanic or Latino + Advanced Degree",
+            "White + Advanced Degree",
         ]
     )
 ]
-# race_bach
+asian_degrees = data_only[
+    data_only["group"].isin(
+        ["Asian + Bachelors Degree", "Asian + Advanced Degree", "Asian + Some College", "Asian + High School"]
+    )
+]
+black_degrees = data_only[
+    data_only["group"].isin(
+        ["Black + Bachelors Degree", "Black + Advanced Degree", "Black + Some College", "Black + High School"]
+    )
+]
+white_degrees = data_only[
+    data_only["group"].isin(
+        ["White + Bachelors Degree", "White + Advanced Degree", "White + Some College", "White + High School"]
+    )
+]
+latino_degrees = data_only[
+    data_only["group"].isin(
+        [
+            "Hispanic or Latino + Bachelors Degree",
+            "Hispanic or Latino + Advanced Degree",
+            "Hispanic or Latino + Some College",
+            "Hispanic or Latino + High School",
+        ]
+    )
+]
 
-# LINE CHART WITH HOVER EFFECT
-# # Create a selection that chooses the nearest point & selects based on x-value
+# LIST OF FILTERED SELECTIONS
+filters = [
+    "By Gender and Education Level",
+    "Male By Education Level",
+    "Female By Education Level",
+    "By Race",
+    "Bachelors Degrees By Race",
+    "Advanced Degrees By Race",
+    "Asian By Education Level",
+    "Black By Education Level",
+    "White By Education Level",
+    "Hispanic or Latino By Education Level",
+]
+
+# SET UP SELECT BOX
+chart_options_select = st.selectbox("Select a category:", filters)
+
+if chart_options_select == "By Gender and Education Level":
+    data = all_gender_degrees
+
+elif chart_options_select == "Male By Education Level":
+    data = male_degrees
+
+elif chart_options_select == "Female By Education Level":
+    data = female_degrees
+
+elif chart_options_select == "By Race":
+    data = all_races
+
+elif chart_options_select == "Bachelors Degrees By Race":
+    data = all_races_bach
+
+elif chart_options_select == "Advanced Degrees By Race":
+    data = all_races_advan
+
+elif chart_options_select == "Asian By Education Level":
+    data = asian_degrees
+
+elif chart_options_select == "Black By Education Level":
+    data = black_degrees
+
+elif chart_options_select == "White By Education Level":
+    data = white_degrees
+
+elif chart_options_select == "Hispanic or Latino By Education Level":
+    data = latino_degrees
+
+
+# CHART WITH MULTILINE TOOL TIP
+# Source: https://matthewkudija.com/blog/2018/06/22/altair-interactive/#building-interactive-altair-charts:~:text=in%20Vega%20Editor-,Stocks,-Example
+
+# Create a selection that chooses the nearest point & selects based on x-value
 nearest = alt.selection(type="single", nearest=True, on="mouseover", fields=["year"], empty="none")
 
 # The basic line
@@ -87,16 +210,8 @@ rules = (
 )
 
 # Put the five layers into a chart and bind the data
-raceBachChart = alt.layer(
-    line,
-    selectors,
-    points,
-    rules,
-    text,
-    data=race_bach,
-    width=600,
-    height=300,
-    title="Weekly Wages by Race with a Bachelor's Degree",
+raceChart = alt.layer(
+    line, selectors, points, rules, text, data=data, width=600, height=300, title="Weekly Wages by Race"
 )
 
-st.altair_chart(raceBachChart)
+st.altair_chart(raceChart)
