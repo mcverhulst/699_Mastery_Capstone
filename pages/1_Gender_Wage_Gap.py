@@ -21,7 +21,7 @@ st.write(
 
 
 # READ IN AND MELT DATASET
-data = load_data("edu_wages.csv")
+data = load_data("edu_wages_2022.csv")
 data.set_index("report_name")
 data = data.rename(columns={"report_name": "group"})
 
