@@ -4,9 +4,13 @@ import bokeh as b
 import pandas as pd
 from utils.util_funcs import load_data
 
-from streamlit_elements import elements, mui
 
-st.set_page_config(page_title="Earning Potential", page_icon="💰")
+st.set_page_config(
+    page_title="Earning Potential",
+    page_icon="💰",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
 
 st.markdown("# Higher Education Degrees and Earning Potential")
 # st.sidebar.header("Earning Potential")
@@ -20,7 +24,7 @@ st.write(
 )
 
 # READ IN AND MELT DATASET
-data = load_data("edu_wages.csv")
+data = load_data("edu_wages_2022.csv")
 # data = pd.read_csv("../data/edu_wages.csv")
 data.set_index("report_name")
 data = data.rename(columns={"report_name": "group"})
@@ -202,7 +206,7 @@ filters = [
 
 # SET UP RADIO BUTTONS
 
-filters = st.sidebar.radio("Select a filter: ", ("By Degree", "By Gender & Degree", "By Race & Degree"))
+filters = st.radio("Select a filter: ", ("By Degree", "By Gender & Degree", "By Race & Degree"))
 
 if filters == "By Degree":
     data = all_degrees
@@ -225,7 +229,7 @@ line = (
     .encode(
         alt.X("year:T", axis=alt.Axis(title="")),
         alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
-        color="group:N",
+        color=alt.Color("group:N", legend=None),
     )
 )
 
@@ -260,19 +264,21 @@ rules = (
 )
 
 # Put the five layers into a chart and bind the data
-multilineChart = alt.layer(line, selectors, points, rules, text, data=data, title="")
+multilineChart = alt.layer(line, selectors, points, rules, text, data=data, width=600, height=300, title="")
 
 # st.altair_chart(multilineChart)
 
 # SET UP COLUMN GRID LAYOUT
-col1, col2 = st.columns([5, 2], gap="large")
+col1, col2 = st.columns([3, 3], gap="large")
 
 col1.markdown("**MultiLine Chart**")
 col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
 
+col1.markdown("**Placeholder**")
+col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
+
 col2.markdown("**Placeholder**")
 col2.altair_chart(multilineChart, use_container_width=True)
-
 
 col2.markdown("**Placeholder**")
 col2.altair_chart(multilineChart, use_container_width=True)
