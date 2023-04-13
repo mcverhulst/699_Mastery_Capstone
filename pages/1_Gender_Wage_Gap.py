@@ -188,7 +188,7 @@ female = female.T
 female = female.tail(-1)
 female = female.reset_index()
 female.rename(columns={2: "Total women", 42: "White women",
-                       43: "Hispanic or Latino Women", 66: "Black women",
+                       43: "Hispanic or Latino women", 66: "Black women",
                        84: "Asian women", "index": 'year'}, inplace=True)
 female = female.iloc[:26, :]
 
@@ -197,11 +197,11 @@ cuts = ["Total women:Q", "White women:Q", "Hispanic or Lation women:Q", "Black w
 
 title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
 
-base = alt.Chart(male, title=title).mark_line(point=True, strokeDash=[6,1]).encode(
+base = alt.Chart(male, title=title, height=600).mark_line(point=True, strokeDash=[6,1]).encode(
     x = alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
     y = alt.Y("men:Q", scale=alt.Scale(domain=(500, 1400)), title="Median Weekly Wages ($2022)"),
     color = alt.value("black"),
-)
+)#.interactive()
 
 base_women = alt.Chart(female).mark_line(point=True).encode(
     x = alt.X("year:N", axis=alt.Axis(labelAngle=-45)),
