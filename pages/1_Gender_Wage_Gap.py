@@ -6,7 +6,11 @@ import os
 from utils.util_funcs import load_data
 
 
-st.set_page_config(page_title="Gender Wage Gap", page_icon="⚖️")
+st.set_page_config(page_title="Gender Wage Gap",
+                   page_icon="⚖️",
+                   layout="wide",
+                   initial_sidebar_state="collapsed",
+)
 
 st.markdown("# Education and the gender wage gap")
 st.sidebar.header("Gender Wage Gap")
