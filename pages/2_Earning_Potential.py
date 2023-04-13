@@ -23,11 +23,14 @@ st.write(
     culpa qui officia deserunt mollit anim id est laborum."""
 )
 
+##########################################
+####### READ IN AND FORMAT DATA ##########
+##########################################
+
 # READ IN AND MELT DATASET
-data = load_data("edu_wages_2022.csv")
-# data = pd.read_csv("../data/edu_wages.csv")
-data.set_index("report_name")
-data = data.rename(columns={"report_name": "group"})
+data_raw = load_data("edu_wages_2022.csv")
+# data_raw.set_index("report_name")
+data = data_raw.rename(columns={"report_name": "group"})
 
 data = pd.melt(data, id_vars="group")
 data = data.rename(columns={"variable": "year"})
@@ -168,6 +171,106 @@ filters = [
     "Hispanic or Latino By Education Level",
 ]
 
+#####################################
+####### RATIO CALCULATIONS ##########
+#####################################
+data_raw = data_raw.rename(columns={"report_name": "group"})
+data_raw = data_raw[
+    [
+        "group",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+    ]
+]
+
+data_raw = data_raw.T
+data_raw.columns = data_raw.iloc[0]
+data_raw = data_raw[1:]
+data_raw
+
+# CREATE NEW DF WITH RATIO VALUES
+earn_ratios_df = pd.DataFrame()
+
+## BY DEGREE
+earn_ratios_df["ratio_HS_total"] = data_raw["High School"] / data_raw["total"]
+earn_ratios_df["ratio_SC_total"] = data_raw["Some College"] / data_raw["total"]
+earn_ratios_df["ratio_BA_total"] = data_raw["Bachelors Degree"] / data_raw["total"]
+earn_ratios_df["ratio_AD_total"] = data_raw["Advanced Degree"] / data_raw["total"]
+
+## BY DEGREE + RACE
+# Asian
+earn_ratios_df["ratio_A_BA_total"] = data_raw["Asian + Bachelors Degree"] / data_raw["total"]
+earn_ratios_df["ratio_A_AD_total"] = data_raw["Asian + Advanced Degree"] / data_raw["total"]
+earn_ratios_df["ratio_A_SC_total"] = data_raw["Asian + Some College"] / data_raw["total"]
+earn_ratios_df["ratio_A_HS_total"] = data_raw["Asian + High School"] / data_raw["total"]
+
+# Black
+earn_ratios_df["ratio_B_BA_total"] = data_raw["Black + Bachelors Degree"] / data_raw["total"]
+earn_ratios_df["ratio_B_AD_total"] = data_raw["Black + Advanced Degree"] / data_raw["total"]
+earn_ratios_df["ratio_B_SC_total"] = data_raw["Black + Some College"] / data_raw["total"]
+earn_ratios_df["ratio_B_HS_total"] = data_raw["Black + High School"] / data_raw["total"]
+
+# White
+earn_ratios_df["ratio_W_BA_total"] = data_raw["White + Bachelors Degree"] / data_raw["total"]
+earn_ratios_df["ratio_W_AD_total"] = data_raw["White + Advanced Degree"] / data_raw["total"]
+earn_ratios_df["ratio_W_SC_total"] = data_raw["White + Some College"] / data_raw["total"]
+earn_ratios_df["ratio_W_HS_total"] = data_raw["White + High School"] / data_raw["total"]
+
+# Latino
+earn_ratios_df["ratio_L_BA_total"] = data_raw["Hispanic or Latino + Bachelors Degree"] / data_raw["total"]
+earn_ratios_df["ratio_L_AD_total"] = data_raw["Hispanic or Latino + Advanced Degree"] / data_raw["total"]
+earn_ratios_df["ratio_L_SC_total"] = data_raw["Hispanic or Latino + Some College"] / data_raw["total"]
+earn_ratios_df["ratio_L_HS_total"] = data_raw["Hispanic or Latino + High School"] / data_raw["total"]
+
+## BY DEGREE + GENDER
+
+## BY DEGREE + RACE + GENDER
+
+
+earn_ratios_df
+
+
+### WRITE NEW DF TO CSV
+@st.cache_data
+def convert_df(df):
+    return df.to_csv(index=False).encode("utf-8")
+
+
+csv = convert_df(earn_ratios_df)
+
+st.download_button("Press to Download", csv, "earn_ratios_2022.csv", "text/csv", key="download-csv")
+
+# SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+
+
+#########################
+####### INPUTS ##########
+#########################
+
 # # SET UP SELECT BOX
 # chart_options_select = st.sidebar.selectbox("Select a category:", filters)
 
@@ -215,6 +318,9 @@ elif filters == "By Gender & Degree":
 elif filters == "By Race & Degree":
     data = all_race_degrees
 
+#########################
+####### CHARTS ##########
+#########################
 
 # CHART WITH MULTILINE TOOL TIP
 # Source: https://matthewkudija.com/blog/2018/06/22/altair-interactive/#building-interactive-altair-charts:~:text=in%20Vega%20Editor-,Stocks,-Example
@@ -267,6 +373,11 @@ rules = (
 multilineChart = alt.layer(line, selectors, points, rules, text, data=data, width=600, height=300, title="")
 
 # st.altair_chart(multilineChart)
+
+
+#########################
+####### LAYOUT ##########
+#########################
 
 # SET UP COLUMN GRID LAYOUT
 col1, col2 = st.columns([3, 3], gap="large")
