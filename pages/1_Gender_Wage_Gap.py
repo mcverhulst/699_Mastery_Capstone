@@ -125,7 +125,7 @@ line = (
     alt.Chart(ratio_df)
     .mark_line()
     .encode(
-        x=alt.X("year:N", title="Year"),
+        x=alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
         y=alt.Y("ratio:Q", scale=alt.Scale(domain=(0.65, 1)), title="Female to male wage ratio"),
     )
 )
@@ -165,3 +165,73 @@ bar2 = (
 )
 
 st.altair_chart(bar2, theme="streamlit", use_container_width=False)
+
+#####################
+### Women by race ###
+#####################
+
+data = load_data("edu_wages_2022.csv")
+data.set_index("report_name")
+data = data.rename(columns={"report_name": "group"})
+
+# male baseline
+male = data[(data['male'] == 1) & (data['all_edu'] == 1) & data['all_races'] == 1]
+male = male.T
+male = male.tail(-1)
+male = male.reset_index()
+male.rename(columns={"index": "year", 1: "men"}, inplace=True)
+male = male.iloc[:26, :]
+
+# female by race
+female = data[(data['female'] == 1) & data['all_edu'] == 1]
+female = female.T
+female = female.tail(-1)
+female = female.reset_index()
+female.rename(columns={2: "Total women", 42: "White women",
+                       43: "Hispanic or Latino women", 66: "Black women",
+                       84: "Asian women", "index": 'year'}, inplace=True)
+female = female.iloc[:26, :]
+
+
+cuts = ["Total women:Q", "White women:Q", "Hispanic or Lation women:Q", "Black women", "Asian women"]
+
+title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
+
+base = alt.Chart(male, title=title, height=600).mark_line(point=True, strokeDash=[6,1]).encode(
+    x = alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
+    y = alt.Y("men:Q", scale=alt.Scale(domain=(500, 1400)), title="Median Weekly Wages ($2022)"),
+    color = alt.value("black"),
+)#.interactive()
+
+base_women = alt.Chart(female).mark_line(point=True).encode(
+    x = alt.X("year:N", axis=alt.Axis(labelAngle=-45)),
+    y = alt.Y("Total women:Q", scale=alt.Scale(domain=(500, 1400)), title=""),
+    color = alt.value("blue")
+)
+
+white_women = base_women.encode(
+    y = alt.Y("White women:Q"),
+    color = alt.value("red")
+)
+
+his_women = base_women.encode(
+    y = alt.Y("Hispanic or Latino women:Q"),
+    color = alt.value("green")
+)
+
+black_women = base_women.encode(
+    y = alt.Y("Black women:Q"),
+    color = alt.value("orange")
+)
+
+asian_women = base_women.encode(
+    y = alt.Y("Asian women:Q"),
+    color = alt.value("pink")
+)
+
+races = base + base_women + white_women + his_women + black_women + asian_women
+
+st.markdown("""### How much do women make by race?""")
+st.write("""The median wage for all men is indicated by the black line...
+""")
+st.altair_chart(races, theme="streamlit", use_container_width=True)
