@@ -21,10 +21,10 @@ data_only = data[:2340]
 ## FILTER MEDIAN WAGES BY GENDER/RACE/DEGREE ##
 ###############################################
 
+total_median = data_only[data_only["group"] == "total"]
 all_degrees = data_only[
     data_only["group"].isin(
         [
-            "Less than HS",
             "High School",
             "Some College",
             "Bachelors Degree",
@@ -36,12 +36,10 @@ all_degrees = data_only[
 all_gender_degrees = data_only[
     data_only["group"].isin(
         [
-            "Male + Less than HS",
             "Male + High School",
             "Male + Some College",
             "Male + Bachelors Degree",
             "Male + Advanced Degree",
-            "Female + Less than HS",
             "Female + High School",
             "Female + Some College",
             "Female + Bachelors Degree",
@@ -52,7 +50,6 @@ all_gender_degrees = data_only[
 male_degrees = data_only[
     data_only["group"].isin(
         [
-            "Male + Less than HS",
             "Male + High School",
             "Male + Some College",
             "Male + Bachelors Degree",
@@ -63,7 +60,6 @@ male_degrees = data_only[
 female_degrees = data_only[
     data_only["group"].isin(
         [
-            "Female + Less than HS",
             "Female + High School",
             "Female + Some College",
             "Female + Bachelors Degree",
@@ -109,8 +105,8 @@ all_races_bach = data_only[
         [
             "Asian + Bachelors Degree",
             "Black + Bachelors Degree",
-            "Hispanic or Latino + Advanced Degree",
-            "White + Advanced Degree",
+            "Hispanic or Latino + Bachelors Degree",
+            "White + Bachelors Degree",
         ]
     )
 ]
@@ -141,18 +137,18 @@ latino_degrees = data_only[
 ]
 
 # LIST OF FILTERED SELECTIONS
-filters = [
-    "By Gender and Education Level",
-    "Male By Education Level",
-    "Female By Education Level",
-    "By Race",
-    "Bachelors Degrees By Race",
-    "Advanced Degrees By Race",
-    "Asian By Education Level",
-    "Black By Education Level",
-    "White By Education Level",
-    "Hispanic or Latino By Education Level",
-]
+# filters = [
+#     "By Gender and Education Level",
+#     "Male By Education Level",
+#     "Female By Education Level",
+#     "By Race",
+#     "Bachelors Degrees By Race",
+#     "Advanced Degrees By Race",
+#     "Asian By Education Level",
+#     "Black By Education Level",
+#     "White By Education Level",
+#     "Hispanic or Latino By Education Level",
+# ]
 
 ###############################################
 ####### RATIO CALCULATIONS BY FILTER ##########
