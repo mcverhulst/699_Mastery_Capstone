@@ -1,9 +1,6 @@
 import streamlit as st
 import altair as alt
-import bokeh as b
 import pandas as pd
-from utils.util_funcs import load_data
-
 
 st.set_page_config(
     page_title="Earning Potential",
@@ -23,255 +20,31 @@ st.write(
     culpa qui officia deserunt mollit anim id est laborum."""
 )
 
-##########################################
-####### READ IN AND FORMAT DATA ##########
-##########################################
+# import additional functions and data filters as modules
+from preprocessing.earning_filters import *
 
-# READ IN AND MELT DATASET
-data_raw = load_data("edu_wages_2022.csv")
-# data_raw.set_index("report_name")
-data = data_raw.rename(columns={"report_name": "group"})
+###############################################
+######### SAVED CODE FOR DOWNLAOD BUTTON ######
+###############################################
 
-data = pd.melt(data, id_vars="group")
-data = data.rename(columns={"variable": "year"})
-data_only = data[:2340]
+# ### WRITE NEW DF TO CSV
+# @st.cache_data
+# def convert_df(df):
+#     return df.to_csv(index=True).encode("utf-8")
 
+# csv = convert_df(earn_ratios_df)
 
-# FILTER DATASET BY GENDER/RACE/DEGREE
-all_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Less than HS",
-            "High School",
-            "Some College",
-            "Bachelors Degree",
-            "Advanced Degree",
-        ]
-    )
-]
+# st.download_button("Download the Raw Data", csv, "earn_ratios_2022.csv", "text/csv", key="download-csv")
 
-all_gender_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Male + Less than HS",
-            "Male + High School",
-            "Male + Some College",
-            "Male + Bachelors Degree",
-            "Male + Advanced Degree",
-            "Female + Less than HS",
-            "Female + High School",
-            "Female + Some College",
-            "Female + Bachelors Degree",
-            "Female + Advanced Degree",
-        ]
-    )
-]
-male_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Male + Less than HS",
-            "Male + High School",
-            "Male + Some College",
-            "Male + Bachelors Degree",
-            "Male + Advanced Degree",
-        ]
-    )
-]
-female_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Female + Less than HS",
-            "Female + High School",
-            "Female + Some College",
-            "Female + Bachelors Degree",
-            "Female + Advanced Degree",
-        ]
-    )
-]
-all_races = data_only[data_only["group"].isin(["Asian", "Black", "Hispanic or Latino", "White"])]
-all_race_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Asian + Bachelors Degree",
-            "Asian + Advanced Degree",
-            "Asian + Some College",
-            "Asian + High School",
-            "Black + Bachelors Degree",
-            "Black + Advanced Degree",
-            "Black + Some College",
-            "Black + High School",
-            "White + Bachelors Degree",
-            "White + Advanced Degree",
-            "White + Some College",
-            "White + High School",
-            "Hispanic or Latino + Bachelors Degree",
-            "Hispanic or Latino + Advanced Degree",
-            "Hispanic or Latino + Some College",
-            "Hispanic or Latino + High School",
-        ]
-    )
-]
-all_races_advan = data_only[
-    data_only["group"].isin(
-        [
-            "Asian + Advanced Degree",
-            "Black + Advanced Degree",
-            "Hispanic or Latino + Advanced Degree",
-            "White + Advanced Degree",
-        ]
-    )
-]
-all_races_bach = data_only[
-    data_only["group"].isin(
-        [
-            "Asian + Bachelors Degree",
-            "Black + Bachelors Degree",
-            "Hispanic or Latino + Advanced Degree",
-            "White + Advanced Degree",
-        ]
-    )
-]
-asian_degrees = data_only[
-    data_only["group"].isin(
-        ["Asian + Bachelors Degree", "Asian + Advanced Degree", "Asian + Some College", "Asian + High School"]
-    )
-]
-black_degrees = data_only[
-    data_only["group"].isin(
-        ["Black + Bachelors Degree", "Black + Advanced Degree", "Black + Some College", "Black + High School"]
-    )
-]
-white_degrees = data_only[
-    data_only["group"].isin(
-        ["White + Bachelors Degree", "White + Advanced Degree", "White + Some College", "White + High School"]
-    )
-]
-latino_degrees = data_only[
-    data_only["group"].isin(
-        [
-            "Hispanic or Latino + Bachelors Degree",
-            "Hispanic or Latino + Advanced Degree",
-            "Hispanic or Latino + Some College",
-            "Hispanic or Latino + High School",
-        ]
-    )
-]
-
-# LIST OF FILTERED SELECTIONS
-filters = [
-    "By Gender and Education Level",
-    "Male By Education Level",
-    "Female By Education Level",
-    "By Race",
-    "Bachelors Degrees By Race",
-    "Advanced Degrees By Race",
-    "Asian By Education Level",
-    "Black By Education Level",
-    "White By Education Level",
-    "Hispanic or Latino By Education Level",
-]
-
-#####################################
-####### RATIO CALCULATIONS ##########
-#####################################
-data_raw = data_raw.rename(columns={"report_name": "group"})
-data_raw = data_raw[
-    [
-        "group",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-    ]
-]
-
-data_raw = data_raw.T
-data_raw.columns = data_raw.iloc[0]
-data_raw = data_raw[1:]
-data_raw
-
-# CREATE NEW DF WITH RATIO VALUES
-earn_ratios_df = pd.DataFrame()
-
-## BY DEGREE
-earn_ratios_df["ratio_HS_total"] = data_raw["High School"] / data_raw["total"]
-earn_ratios_df["ratio_SC_total"] = data_raw["Some College"] / data_raw["total"]
-earn_ratios_df["ratio_BA_total"] = data_raw["Bachelors Degree"] / data_raw["total"]
-earn_ratios_df["ratio_AD_total"] = data_raw["Advanced Degree"] / data_raw["total"]
-
-## BY DEGREE + RACE
-# Asian
-earn_ratios_df["ratio_A_BA_total"] = data_raw["Asian + Bachelors Degree"] / data_raw["total"]
-earn_ratios_df["ratio_A_AD_total"] = data_raw["Asian + Advanced Degree"] / data_raw["total"]
-earn_ratios_df["ratio_A_SC_total"] = data_raw["Asian + Some College"] / data_raw["total"]
-earn_ratios_df["ratio_A_HS_total"] = data_raw["Asian + High School"] / data_raw["total"]
-
-# Black
-earn_ratios_df["ratio_B_BA_total"] = data_raw["Black + Bachelors Degree"] / data_raw["total"]
-earn_ratios_df["ratio_B_AD_total"] = data_raw["Black + Advanced Degree"] / data_raw["total"]
-earn_ratios_df["ratio_B_SC_total"] = data_raw["Black + Some College"] / data_raw["total"]
-earn_ratios_df["ratio_B_HS_total"] = data_raw["Black + High School"] / data_raw["total"]
-
-# White
-earn_ratios_df["ratio_W_BA_total"] = data_raw["White + Bachelors Degree"] / data_raw["total"]
-earn_ratios_df["ratio_W_AD_total"] = data_raw["White + Advanced Degree"] / data_raw["total"]
-earn_ratios_df["ratio_W_SC_total"] = data_raw["White + Some College"] / data_raw["total"]
-earn_ratios_df["ratio_W_HS_total"] = data_raw["White + High School"] / data_raw["total"]
-
-# Latino
-earn_ratios_df["ratio_L_BA_total"] = data_raw["Hispanic or Latino + Bachelors Degree"] / data_raw["total"]
-earn_ratios_df["ratio_L_AD_total"] = data_raw["Hispanic or Latino + Advanced Degree"] / data_raw["total"]
-earn_ratios_df["ratio_L_SC_total"] = data_raw["Hispanic or Latino + Some College"] / data_raw["total"]
-earn_ratios_df["ratio_L_HS_total"] = data_raw["Hispanic or Latino + High School"] / data_raw["total"]
-
-## BY DEGREE + GENDER
-
-## BY DEGREE + RACE + GENDER
-
-
-earn_ratios_df
-
-
-### WRITE NEW DF TO CSV
-@st.cache_data
-def convert_df(df):
-    return df.to_csv(index=False).encode("utf-8")
-
-
-csv = convert_df(earn_ratios_df)
-
-st.download_button("Press to Download", csv, "earn_ratios_2022.csv", "text/csv", key="download-csv")
-
-# SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+# # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 
 
 #########################
 ####### INPUTS ##########
 #########################
 
-# # SET UP SELECT BOX
+####### SET UP SELECT BOX ########
+
 # chart_options_select = st.sidebar.selectbox("Select a category:", filters)
 
 # if chart_options_select == "By Education Level":
@@ -307,7 +80,7 @@ st.download_button("Press to Download", csv, "earn_ratios_2022.csv", "text/csv",
 # elif chart_options_select == "Hispanic or Latino By Education Level":
 #     data = latino_degrees
 
-# SET UP RADIO BUTTONS
+######### SET UP RADIO BUTTONS ########
 
 filters = st.radio("Select a filter: ", ("By Degree", "By Gender & Degree", "By Race & Degree"))
 
@@ -318,11 +91,11 @@ elif filters == "By Gender & Degree":
 elif filters == "By Race & Degree":
     data = all_race_degrees
 
-#########################
-####### CHARTS ##########
-#########################
+##########################################
+################ CHARTS ##################
+##########################################
 
-# CHART WITH MULTILINE TOOL TIP
+############# CHART WITH MULTILINE TOOL TIP ##############
 # Source: https://matthewkudija.com/blog/2018/06/22/altair-interactive/#building-interactive-altair-charts:~:text=in%20Vega%20Editor-,Stocks,-Example
 
 # Create a selection that chooses the nearest point & selects based on x-value
@@ -375,9 +148,22 @@ multilineChart = alt.layer(line, selectors, points, rules, text, data=data, widt
 # st.altair_chart(multilineChart)
 
 
-#########################
-####### LAYOUT ##########
-#########################
+############ CHART WITH SINGLE LINE HIGHLIGHT ########################
+highlight = alt.selection(type="single", on="mouseover", fields=["group"], nearest=True)
+
+base = alt.Chart(all_gender_degrees).encode(x="year:T", y="value:Q", color="group")
+
+points = base.mark_circle().encode(opacity=alt.value(0)).add_selection(highlight).properties(width=600)
+
+lines = base.mark_line().encode(size=alt.condition(~highlight, alt.value(1), alt.value(3)))
+
+highlight_chart = points + lines
+
+
+##############################
+####### PAGE LAYOUT ##########
+##############################
+earn_ratios_df
 
 # SET UP COLUMN GRID LAYOUT
 col1, col2 = st.columns([3, 3], gap="large")
@@ -386,10 +172,10 @@ col1.markdown("**MultiLine Chart**")
 col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
 
 col1.markdown("**Placeholder**")
-col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
+col1.altair_chart(highlight_chart, use_container_width=True, theme="streamlit")
 
 col2.markdown("**Placeholder**")
-col2.altair_chart(multilineChart, use_container_width=True)
+# col2.altair_chart(multilineChart, use_container_width=True)
 
 col2.markdown("**Placeholder**")
-col2.altair_chart(multilineChart, use_container_width=True)
+# col2.altair_chart(multilineChart, use_container_width=True)
