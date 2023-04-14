@@ -25,7 +25,8 @@ st.write(
 # earn_ratios_df
 # earn_ratios_df_melted
 # final_earn_ratios
-all_degrees
+# all_degrees
+# total_median
 
 ###############################################
 ######### SAVED CODE FOR DOWNLAOD BUTTON ######
