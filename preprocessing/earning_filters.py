@@ -308,4 +308,16 @@ earn_ratios_df["ratio_A_F_AD_total"] = data_raw["Asian + Female + Advanced Degre
 
 earn_ratios_df = earn_ratios_df.reset_index()
 earn_ratios_df = earn_ratios_df.rename(columns={"index": "year"})
-earn_ratios_df
+
+
+##########################################
+########## MELT THE RATIOS DF ############
+##########################################
+earn_ratios_df_melted = pd.melt(earn_ratios_df, id_vars=["year"])
+earn_ratios_df_melted = earn_ratios_df_melted.rename(columns={"variable": "group", "value": "earn_ratios_%"})
+earn_ratios_df_melted["earn_ratios_%"] = earn_ratios_df_melted["earn_ratios_%"].astype(float)
+# earn_ratios_df_melted["earn_ratios_%"] = round(earn_ratios_df_melted["earn_ratios_%"])
+earn_ratios_df_melted["earn_ratios_%"] = round(earn_ratios_df_melted["earn_ratios_%"] * 100, 2)
+
+## READ IN UPDATED MELTED DF FROM CSV/.ipynb file
+final_earn_ratios = load_data("earning_ratios_melted.csv", index_col=0)
