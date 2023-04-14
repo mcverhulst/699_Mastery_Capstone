@@ -5,8 +5,14 @@ import pandas as pd
 import os
 from utils.util_funcs import load_data
 
+st.set_page_config(page_title="Gender Wage Gap",
+                   page_icon="⚖️",
+                   layout="wide",
+                   initial_sidebar_state="collapsed",
+)
 
-st.set_page_config(page_title="Gender Wage Gap", page_icon="⚖️")
+### IMPORT FILTERED DATA
+from preprocessing.gender_ratios import *
 
 st.markdown("# Education and the gender wage gap")
 st.sidebar.header("Gender Wage Gap")
@@ -18,57 +24,6 @@ st.write(
     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum."""
 )
-
-
-# READ IN AND MELT DATASET
-data = load_data("edu_wages_2022.csv")
-data.set_index("report_name")
-data = data.rename(columns={"report_name": "group"})
-
-ratio_df = data[(data.group == "total men") | (data.group == "total women")]
-
-data = pd.melt(data, id_vars=["group"])
-data = data.rename(columns={"variable": "year"})
-data_only = data[:2340]
-
-ratio_df = ratio_df[
-    [
-        "group",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-    ]
-]
-ratio_df = ratio_df.T
-ratio_df = ratio_df.tail(-1)
-ratio_df.rename(columns={1: "total men", 2: "total women"}, inplace=True)
-ratio_df["ratio"] = ratio_df["total women"] / ratio_df["total men"]
-ratio_df = ratio_df.reset_index()
-ratio_df.rename(columns={"index": "year"}, inplace=True)
-
 
 # FILTER TO SUBSET OF DATA
 data_filtered = data_only[(data_only["group"] == "total men") | (data_only["group"] == "total women")]
@@ -86,20 +41,20 @@ data_filtered = data_only[(data_only["group"] == "total men") | (data_only["grou
 
 
 ####################
-### Pyramid Plot ###
+### PYRAMID PLOT ###
 ####################
 
 color_scale = alt.Scale(domain=["total men", "total women"], range=["#1f77b4", "#e377c2"])
 base = alt.Chart(ratio_df).mark_bar().encode(tooltip=["ratio"]).properties(width=250)
 
-# left chart
+# LEFT CHART
 left = base.encode(
     alt.X("total men:Q", title="wages", sort="descending", scale=alt.Scale(domain=[0, 1200])),
     alt.Y("year:N", axis=None, sort="descending"),
     color=alt.value("#31b0a5"),
 )
 
-# right chart
+# RIGHT CHART
 right = base.encode(
     alt.X("total women:Q", title="wages", sort="ascending", scale=alt.Scale(domain=[0, 1200])),
     alt.Y("year:N", axis=None, sort="descending"),
@@ -107,7 +62,7 @@ right = base.encode(
     # alt.Color('group:O', scale=color_scale)
 )
 
-# middle chart
+# MIDDLE CHART
 middle = (
     base.encode(
         alt.Y("year:N", axis=None, sort="descending"),
@@ -117,10 +72,10 @@ middle = (
     .properties(width=35)
 )
 
-# concating 3 charts for the tree diagram
+# CONCATING FINAL TREE DIAGRAM
 ch = alt.hconcat(left, middle, right, spacing=5)
 
-# line chart
+# PAY GAP RATIO CHART
 line = (
     alt.Chart(ratio_df)
     .mark_line()
@@ -130,7 +85,7 @@ line = (
     )
 )
 
-# concating tree and line charts
+# CONCATING PYRAMID AND RATIO CHARTS
 combo = alt.vconcat(ch, line)
 st.altair_chart(combo, theme="streamlit", use_container_width=True)
 
@@ -169,29 +124,6 @@ st.altair_chart(bar2, theme="streamlit", use_container_width=False)
 #####################
 ### Women by race ###
 #####################
-
-data = load_data("edu_wages_2022.csv")
-data.set_index("report_name")
-data = data.rename(columns={"report_name": "group"})
-
-# male baseline
-male = data[(data['male'] == 1) & (data['all_edu'] == 1) & data['all_races'] == 1]
-male = male.T
-male = male.tail(-1)
-male = male.reset_index()
-male.rename(columns={"index": "year", 1: "men"}, inplace=True)
-male = male.iloc[:26, :]
-
-# female by race
-female = data[(data['female'] == 1) & data['all_edu'] == 1]
-female = female.T
-female = female.tail(-1)
-female = female.reset_index()
-female.rename(columns={2: "Total women", 42: "White women",
-                       43: "Hispanic or Latino women", 66: "Black women",
-                       84: "Asian women", "index": 'year'}, inplace=True)
-female = female.iloc[:26, :]
-
 
 cuts = ["Total women:Q", "White women:Q", "Hispanic or Lation women:Q", "Black women", "Asian women"]
 
