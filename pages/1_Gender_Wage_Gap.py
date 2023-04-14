@@ -30,24 +30,22 @@ colors = alt.Scale(domain=("Male", "Female"), range=["#31b0a5", "#de8b33"])  # [
 
 values = st.slider("Select a range of years", 1995, 2020, (1995, 2020))
 
-bar2 = (
-    alt.Chart(data_filtered).mark_bar().encode(
-        x=alt.X("group:N", title=None, axis=None),
-        y=alt.Y("value:Q", title="Median Weekly Pay", scale=alt.Scale(domain=(0, 1200))),
-        color=alt.Color("group:N", scale=colors),
-        column=alt.Column(
-            "year:N",
+bars = alt.Chart(data_filtered).mark_bar().encode(
+    x = alt.X('group:N', title=None, axis=None),
+    y = alt.Y('value:Q', title="Median Weekly Pay", scale=alt.Scale(domain=(0, 1200))),
+    color=alt.Color("group:N", scale=alt.Scale(range=["#31b0a5", "#de8b33"])),
+    column=alt.Column(
+            "year:O",
             title=None,
-            header=alt.Header(labelAngle=-45, labelFontSize=13, labelOrient="bottom", labelPadding=35)),
-        tooltip=["group", "value", "year"],
+            header=alt.Header(labelAngle=-45, labelFontSize=13, labelOrient="bottom", labelPadding=35))
+    # alt.Column('group:N')
     ).transform_filter(
         values[0] <= alt.datum.year
     ).transform_filter(
         alt.datum.year <= values[1]
     ).transform_calculate(
         "group", alt.expr.if_(alt.datum.group == "total men", "Male", "Female")
-    )
-)
+    ).properties(width=30)
 
 # RATIO LINE CHART
 line = alt.Chart(ratio_df).mark_line(point=True).encode(
@@ -69,9 +67,9 @@ equal_pay = alt.Chart(pd.DataFrame({'y': [1]})).mark_rule(
     color = alt.value("#31b0a5")
 )
 
-line2 = line + equal_pay
+line2 = (line + equal_pay)
 
-combo2 = alt.vconcat(bar2, line2).configure_facet(spacing=8)
+combo2 = alt.vconcat(bars, line2).configure_facet(spacing=8)
 
 st.altair_chart(combo2, theme="streamlit", use_container_width=True)
 
@@ -83,7 +81,7 @@ cuts = ["Total women:Q", "White women:Q", "Hispanic or Lation women:Q", "Black w
 
 title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
 
-base = alt.Chart(male, title=title, height=600).mark_line(point=True, strokeDash=[6,1]).encode(
+base = alt.Chart(male, title=title, height=600).mark_line(point=True,strokeDash=[6,1]).encode(
     x = alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
     y = alt.Y("men:Q", scale=alt.Scale(domain=(500, 1400)), title="Median Weekly Wages ($2022)"),
     color = alt.value("#31b0a5"),

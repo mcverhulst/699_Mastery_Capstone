@@ -9,6 +9,9 @@ data = load_data("edu_wages_2022.csv")
 data.set_index("report_name")
 data = data.rename(columns={"report_name": "group"})
 
+bar_data = data[(data["group"] == "total men") | (data["group"] == "total women")]
+bar_data = bar_data.iloc[:, :27]
+
 ratio_df = data[(data.group == "total men") | (data.group == "total women")]
 
 data = pd.melt(data, id_vars=["group"])
