@@ -3,7 +3,7 @@ import altair as alt
 import bokeh as b
 import pandas as pd
 
-st.set_page_config(page_title="Union Coverage", page_icon="🚧")
+st.set_page_config(page_title="Union Coverage", page_icon="💼")
 
 st.markdown("# Education and Union Coverage")
 # st.sidebar.header("Union Coverage")
