@@ -21,10 +21,6 @@ st.write(
     How do Gender and Race impact earning potential?"""
 )
 
-# earn_ratios_df
-# earn_ratios_df_melted
-final_earn_ratios
-
 ###############################################
 ######### SAVED CODE FOR DOWNLAOD BUTTON ######
 ###############################################
@@ -36,88 +32,281 @@ final_earn_ratios
 # # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 
 
-#########################
-####### INPUTS ##########
-#########################
+###############################
+####### SAVED INPUT CODE ######
+###############################
+# filters1 = st.radio(
+#         "Select a filter: ",
+#         (
+#             "All",
+#             "High School",
+#             "Some College",
+#             "Bachelors Degree",
+#             "Advanced Degree",
+#         ),
+#     )
 
-######### SET UP RADIO BUTTONS ########
+#     if filters1 == "All":
+#         data1 = all_degrees
+#     elif filters1 == "High School":
+#         data1 = all_degrees[all_degrees.group == "High School"]
+#     elif filters1 == "Some College":
+#         pass
+#     elif filters1 == "Bachelors Degree":
+#         pass
+#     elif filters1 == "Advanced Degree":
+#         pass
 
-# filters = st.radio("Select a filter: ", ("By Degree", "By Gender & Degree", "By Race & Degree"))
+######################################################################
+########################### PAGE LAYOUT ##############################
+######################################################################
 
-# if filters == "By Degree":
-#     data = all_degrees
-# elif filters == "By Gender & Degree":
-#     data = all_gender_degrees
-# elif filters == "By Race & Degree":
-#     data = all_race_degrees
-
-##########################################
-################ CHARTS ##################
-##########################################
-
-
-##############################
-####### PAGE LAYOUT ##########
-##############################
-
+##########
 ## TABS ##
+##########
+
 tab1, tab2, tab3, tab4 = st.tabs(
     [
         "By Degree   ",
-        "  By Race and Degree   ",
         "  By Gender and Degree   ",
+        "  By Race and Degree   ",
         "  By Gender, Race and Degree   ",
     ]
 )
 
 with tab1:
-    col1, col2 = st.columns(2)
-    with col1:
-        st.header("A cat")
-        st.image("https://static.streamlit.io/examples/cat.jpg")
+    ##################################
+    ########TAB 1: CHART 1 ###########
+    ##################################
 
-        csv = convert_df(earn_ratios_df)
-        st.download_button(
-            "Download the Raw Data", csv, "earn_ratios_2022.csv", "text/csv", key="download-csv"
+    ## BY DEGREE WAGE CHART
+    # Create a selection that chooses the nearest point & selects based on x-value
+    nearest = alt.selection(type="single", nearest=True, on="mouseover", fields=["year"], empty="none")
+    title = alt.TitleParams(
+        "Median Weekly Earnings in 2022 Dollars",
+        anchor="middle",
+        fontSize=25,
+        subtitle="Total Median Weekly Wages Indicated by Black Dotted Line",
+    )
+    # The basic line
+    line = (
+        alt.Chart()
+        .mark_line(interpolate="basis")
+        .encode(
+            alt.X("year:T", axis=alt.Axis(title="")),
+            alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
+            color="group:N",
         )
+    )
+
+    line2 = (
+        alt.Chart(total_median)
+        .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
+        .encode(
+            x="year:T",
+            y="value:Q",
+        )
+    )
+
+    # Transparent selectors across the chart. This is what tells us
+    # the x-value of the cursor
+    selectors = (
+        alt.Chart()
+        .mark_point()
+        .encode(
+            x="year:T",
+            opacity=alt.value(0),
+        )
+        .add_selection(nearest)
+    )
+
+    # Draw points on the line, and highlight based on selection
+    points = line.mark_point().encode(opacity=alt.condition(nearest, alt.value(1), alt.value(0)))
+    points2 = line2.mark_point(color="black").encode(
+        opacity=alt.condition(nearest, alt.value(1), alt.value(0))
+    )
+
+    # Draw text labels near the points, and highlight based on selection
+    text = line.mark_text(align="left", dx=5, dy=-5).encode(
+        text=alt.condition(nearest, "value:Q", alt.value(" "))
+    )
+    text2 = line2.mark_text(align="left", dx=5, dy=-5).encode(
+        text=alt.condition(nearest, "value:Q", alt.value(" "))
+    )
+
+    # Draw a rule at the location of the selection
+    rules = (
+        alt.Chart()
+        .mark_rule(color="gray")
+        .encode(
+            x="year:T",
+        )
+        .transform_filter(nearest)
+    )
+
+    # Put the five layers into a chart and bind the data
+    DegreeWageChart = alt.layer(
+        line,
+        line2,
+        selectors,
+        points,
+        points2,
+        rules,
+        text,
+        text2,
+        data=all_degrees,
+        width=700,
+        height=400,
+        title=title,
+    ).configure_legend(orient="bottom", columnPadding=25, padding=10)
+
+    ##################################
+    ########TAB 1: CHART 2 ###########
+    ##################################
+
+    ##################################
+    ######## COLUMN LAYOUT ###########
+    ##################################
+
+    col1, col2 = st.columns(2, gap="medium")
+    with col1:
+        st.altair_chart(DegreeWageChart, theme="streamlit", use_container_width=True)
 
     with col2:
-        st.header("A dog")
-        st.image("https://static.streamlit.io/examples/dog.jpg")
+        pass
 
 
 with tab2:
-    import numpy as np
+    ##################################
+    ########TAB 2: CHART 1 ###########
+    ##################################
 
-    col1, col2 = st.columns([3, 1])
-    data = np.random.randn(10, 1)
+    ## BY DEGREE WAGE CHART
+    # Create a selection that chooses the nearest point & selects based on x-value
+    nearest = alt.selection(type="single", nearest=True, on="mouseover", fields=["year"], empty="none")
+    title = alt.TitleParams(
+        "Median Weekly Earnings in 2022 Dollars",
+        anchor="middle",
+        fontSize=25,
+        subtitle="Total Median Weekly Wages Indicated by Black Dotted Line",
+    )
+    # The basic line
+    line = (
+        alt.Chart()
+        .mark_line(interpolate="basis")
+        .encode(
+            alt.X("year:T", axis=alt.Axis(title="")),
+            alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
+            color="group:N",
+        )
+    )
 
-    col1.subheader("A wide column with a chart")
-    col1.line_chart(data)
+    line2 = (
+        alt.Chart(total_median)
+        .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
+        .encode(
+            x="year:T",
+            y="value:Q",
+        )
+    )
 
-    col2.subheader("A narrow column with the data")
-    col2.write(data)
+    # Transparent selectors across the chart. This is what tells us
+    # the x-value of the cursor
+    selectors = (
+        alt.Chart()
+        .mark_point()
+        .encode(
+            x="year:T",
+            opacity=alt.value(0),
+        )
+        .add_selection(nearest)
+    )
+
+    # Draw points on the line, and highlight based on selection
+    points = line.mark_point().encode(opacity=alt.condition(nearest, alt.value(1), alt.value(0)))
+    points2 = line2.mark_point(color="black").encode(
+        opacity=alt.condition(nearest, alt.value(1), alt.value(0))
+    )
+
+    # Draw text labels near the points, and highlight based on selection
+    text = line.mark_text(align="left", dx=5, dy=-5).encode(
+        text=alt.condition(nearest, "value:Q", alt.value(" "))
+    )
+    text2 = line2.mark_text(align="left", dx=5, dy=-5).encode(
+        text=alt.condition(nearest, "value:Q", alt.value(" "))
+    )
+
+    # Draw a rule at the location of the selection
+    rules = (
+        alt.Chart()
+        .mark_rule(color="gray")
+        .encode(
+            x="year:T",
+        )
+        .transform_filter(nearest)
+    )
+
+    # Put the five layers into a chart and bind the data
+    GenderDegreeChart = alt.layer(
+        line,
+        line2,
+        selectors,
+        points,
+        points2,
+        rules,
+        text,
+        text2,
+        data=all_gender_degrees,
+        width=800,
+        height=600,
+        title=title,
+    ).configure_legend(orient="bottom", direction="horizontal", columns=2, columnPadding=25, padding=10)
+
+    ##################################
+    ########TAB 2: CHART 2 ###########
+    ##################################
+
+    ##################################
+    ######## COLUMN LAYOUT ###########
+    ##################################
+
+    col3, col4 = st.columns(2, gap="medium")
+
+    with col3:
+        st.altair_chart(GenderDegreeChart, theme="streamlit", use_container_width=True)
+
+    with col4:
+        pass
 
 with tab3:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+    ##################################
+    ########TAB 3: CHART 1 ###########
+    ##################################
+
+    ##################################
+    ########TAB 3: CHART 2 ###########
+    ##################################
+
+    col5, col6 = st.columns(2, gap="medium")
+
+    with col5:
+        pass
+
+    with col6:
+        pass
 
 with tab4:
-    st.header("An owl")
-    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+    ##################################
+    ########TAB 4: CHART 1 ###########
+    ##################################
 
+    ##################################
+    ########TAB 4: CHART 2 ###########
+    ##################################
+    col7, col8 = st.columns(2, gap="medium")
 
-## COLUMNS ##
-# col1, col2 = st.columns([3, 3], gap="large")
+    with col7:
+        pass
 
-# col1.markdown("**MultiLine Chart**")
-# col1.altair_chart(multilineChart, use_container_width=True, theme="streamlit")
-
-# col1.markdown("**Placeholder**")
-# col1.altair_chart(highlight_chart, use_container_width=True, theme="streamlit")
-
-# col2.markdown("**Placeholder**")
-# # col2.altair_chart(multilineChart, use_container_width=True)
-
-# col2.markdown("**Placeholder**")
-# # col2.altair_chart(multilineChart, use_container_width=True)
+    with col8:
+        pass
