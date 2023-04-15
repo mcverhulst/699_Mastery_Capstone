@@ -88,6 +88,9 @@ with tab1:
 ### LAYERED RACE CHART WITH SELECT ###
 ######################################
 with tab2:
+    st.markdown("""### How much do women make by race?""")
+    st.write("""The median wage for all men is indicated by the black line...
+    """)
 
     # DEFINE CHECKBOX OPTIONS
     cuts = ["total men", "total women", "White + Female", "Hispanic or Latino + Female",
@@ -97,9 +100,22 @@ with tab2:
     race_checkboxes = new.group.unique()
 
     # COLLECT CHECKBOX VALUES
+    # https://discuss.streamlit.io/t/horizontal-checkbox/32751
     val = [None]* len(race_checkboxes)
-    for i, cut in enumerate(race_checkboxes):
-        val[i] = st.checkbox(cut, value=True)
+
+    checks = st.columns(6)
+    with checks[0]:
+        val[0] = st.checkbox(cuts[0], value=True)
+    with checks[1]:
+        val[1] = st.checkbox(cuts[1], value=True)
+    with checks[2]:
+        val[2] = st.checkbox(cuts[2], value=True)
+    with checks[3]:
+        val[3] = st.checkbox(cuts[3], value=True)
+    with checks[4]:
+        val[4] = st.checkbox(cuts[4], value=True)
+    with checks[5]:
+        val[5] = st.checkbox(cuts[5], value=True)
 
     # FILTER DATAFRAME TO ONLY CHECKED BOXES
     new_filt = new[new.group.isin(race_checkboxes[val])].reset_index(drop=True)
@@ -112,9 +128,6 @@ with tab2:
     )
 
     # PLOT CHART
-    st.markdown("""### How much do women make by race?""")
-    st.write("""The median wage for all men is indicated by the black line...
-    """)
     st.altair_chart(races, theme="streamlit", use_container_width=True)
 
 ######################
