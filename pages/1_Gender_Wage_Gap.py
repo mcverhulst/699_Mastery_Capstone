@@ -165,14 +165,14 @@ with tab3:
     m_months = alt.Chart(d_months, height=500).mark_area().encode(
         alt.X("year:O", title="", axis=alt.Axis(labelAngle=-45)),
         alt.Y('months:Q', title="", scale=alt.Scale(domain=(0, 12))),
-        color=alt.value("#1f77b4"),
+        color=alt.value("#31b0a5"),
         tooltip=[]
     )
 
     w_months = alt.Chart(ratio_df,height=500).mark_area().encode(
         alt.X("year:O", axis=alt.Axis(labelAngle=-45), title='Year'),
         alt.Y("f_months:Q", title='Additional Months', scale=alt.Scale(domain=(0, 12))),
-        color=alt.value("#ff7f0e")
+        color=alt.value("#de8b33")
     )
 
     mw_months = m_months + w_months
