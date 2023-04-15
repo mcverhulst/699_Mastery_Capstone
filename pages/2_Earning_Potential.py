@@ -1,6 +1,7 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
+import numpy as np
 from utils.util_funcs import convert_df, load_data
 
 st.set_page_config(
@@ -20,18 +21,62 @@ st.write(
     """What is a person's earning potential based on their most recent completed degree?
     How do Gender and Race impact earning potential?"""
 )
+earn_perc_diff_df_melted
 
-###############################################
-######### SAVED CODE FOR DOWNLAOD BUTTON ######
-###############################################
+# ###############################################
+# ######### SAVED CODE FOR DOWNLAOD BUTTON ######
+# ###############################################
 
-# csv = convert_df(earn_ratios_df)
+# csv = convert_df(earn_perc_diff_df)
 
-# st.download_button("Download the Raw Data", csv, "earn_ratios_2022.csv", "text/csv", key="download-csv")
+# st.download_button("Download the Raw Data", csv, "earn_perc_diff.csv", "text/csv", key="download-csv")
 
-# # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+# # # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 
+##################################
+######## TEST RADIO BUTTON #######
+##################################
 
+genre = st.radio(
+    "Select a filter: ",
+    ("By Degree", "By Degree and Race", "By Degree and Gender", "By Degree, Gender, and Race"),
+)
+
+if genre == "By Degree":
+    data = earn_perc_diff_df_melted[
+        earn_perc_diff_df_melted["group_legend"].isin(
+            [
+                "High School",
+                "Some College",
+                "Bachelors Degree",
+                "Advanced Degree",
+            ]
+        )
+    ]
+elif genre == "By Degree and Race":
+    pass
+elif genre == "By Degree and Gender":
+    pass
+elif genre == "By Degree, Gender, and Race":
+    pass
+
+##################################
+######### TEST CHART #############
+##################################
+
+st.write("## test line chart")
+
+test = (
+    alt.Chart(data)
+    .mark_line()
+    .encode(
+        x="year:T",
+        y="earn_perc_diff_from_total",
+        color="group_legend",
+        strokeDash="group_legend",
+    )
+)
+test
 ###############################
 ####### SAVED INPUT CODE ######
 ###############################
