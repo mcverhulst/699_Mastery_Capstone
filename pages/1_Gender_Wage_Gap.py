@@ -25,8 +25,10 @@ st.write(
 ### STACKED BAR CHART ###
 #########################
 
-st.write("## Testing2...")
 colors = alt.Scale(domain=("Male", "Female"), range=["#31b0a5", "#de8b33"])  # ['#31b0a5', '#de8b33']
+
+st.markdown("""### How does median pay for women and men compare?""")
+st.write("""Lorem ipsum...""")
 
 values = st.slider("Select a range of years", 1995, 2020, (1995, 2020))
 
@@ -71,6 +73,7 @@ line2 = (line + equal_pay)
 
 combo2 = alt.vconcat(bars, line2).configure_facet(spacing=8)
 
+# SHOW CHART
 st.altair_chart(combo2, theme="streamlit", use_container_width=True)
 
 #####################
@@ -119,3 +122,20 @@ st.markdown("""### How much do women make by race?""")
 st.write("""The median wage for all men is indicated by the black line...
 """)
 st.altair_chart(races, theme="streamlit", use_container_width=True)
+
+######################
+### HOURS TO MATCH ###
+######################
+
+title = alt.TitleParams("Hours Women Would Have to Work to Match Mens' Pay", anchor='middle')
+
+hours = alt.Chart(ratio_df, title=title).mark_bar().encode(
+    x = alt.X('year:O', title='Year', axis=alt.Axis(labelAngle=-45)),
+    y = alt.Y('hours:Q', title='Hours'),
+    color = alt.value("#de8b33")
+)
+
+st.markdown("""### How many hours would women have to work to earn equal pay""")
+st.write("""Lorem ipsum...""")
+
+st.altair_chart(hours, theme="streamlit", use_container_width=True)
