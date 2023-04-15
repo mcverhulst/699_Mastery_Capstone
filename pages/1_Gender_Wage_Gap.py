@@ -21,10 +21,11 @@ st.write(
     culpa qui officia deserunt mollit anim id est laborum."""
 )
 
+### ESTABLISH TAB STRUCTURE
 tab1, tab2, tab3 = st.tabs(
     [
         "Men and Womens' Pay Compared   ",
-        "  Pay by Race   ",
+        "  Female Pay by Race   ",
         "  Hours Needed to Match Mens' Pay   ",
     ]
 )
@@ -48,7 +49,6 @@ with tab1:
                 "year:O",
                 title=None,
                 header=alt.Header(labelAngle=-45, labelFontSize=13, labelOrient="bottom", labelPadding=35))
-        # alt.Column('group:N')
         ).transform_filter(
             values[0] <= alt.datum.year
         ).transform_filter(
@@ -81,52 +81,37 @@ with tab1:
 
     combo2 = alt.vconcat(bars, line2).configure_facet(spacing=8)
 
-    # SHOW CHART
+    # PLOT CHART
     st.altair_chart(combo2, theme="streamlit", use_container_width=True)
 
-#####################
-### WOMEN BY RACE ###
-#####################
-
+######################################
+### LAYERED RACE CHART WITH SELECT ###
+######################################
 with tab2:
-    cuts = ["Total women:Q", "White women:Q", "Hispanic or Lation women:Q", "Black women", "Asian women"]
+
+    # DEFINE CHECKBOX OPTIONS
+    cuts = ["total men", "total women", "White + Female", "Hispanic or Latino + Female",
+            "Black + Female", "Asian + Female"]
+    new = data_only[data_only['group'].isin(cuts)]
+
+    race_checkboxes = new.group.unique()
+
+    # COLLECT CHECKBOX VALUES
+    val = [None]* len(race_checkboxes)
+    for i, cut in enumerate(race_checkboxes):
+        val[i] = st.checkbox(cut, value=True)
+
+    # FILTER DATAFRAME TO ONLY CHECKED BOXES
+    new_filt = new[new.group.isin(race_checkboxes[val])].reset_index(drop=True)
 
     title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
-
-    base = alt.Chart(male, title=title, height=600).mark_line(point=True,strokeDash=[6,1]).encode(
-        x = alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
-        y = alt.Y("men:Q", scale=alt.Scale(domain=(500, 1400)), title="Median Weekly Wages ($2022)"),
-        color = alt.value("#31b0a5"),
+    races = alt.Chart(new_filt, title=title).mark_line(point=True).encode(
+        x=alt.X('year:N', title='Year',axis=alt.Axis(labelAngle=-45)),
+        y=alt.Y('value:Q', title="Median Weekly Wages", scale=alt.Scale(domain=(500, 1400))),
+        color='group'
     )
 
-    base_women = alt.Chart(female).mark_line(point=True).encode(
-        x = alt.X("year:N", axis=alt.Axis(labelAngle=-45)),
-        y = alt.Y("Total women:Q", scale=alt.Scale(domain=(500, 1400)), title=""),
-        color = alt.value("blue")
-    )
-
-    white_women = base_women.encode(
-        y = alt.Y("White women:Q"),
-        color = alt.value("red")
-    )
-
-    his_women = base_women.encode(
-        y = alt.Y("Hispanic or Latino women:Q"),
-        color = alt.value("green")
-    )
-
-    black_women = base_women.encode(
-        y = alt.Y("Black women:Q"),
-        color = alt.value("orange")
-    )
-
-    asian_women = base_women.encode(
-        y = alt.Y("Asian women:Q"),
-        color = alt.value("pink")
-    )
-
-    races = base + base_women + white_women + his_women + black_women + asian_women
-
+    # PLOT CHART
     st.markdown("""### How much do women make by race?""")
     st.write("""The median wage for all men is indicated by the black line...
     """)
@@ -147,4 +132,5 @@ with tab3:
     st.markdown("""### How many hours would women have to work to earn equal pay""")
     st.write("""Lorem ipsum...""")
 
+    # PLOT CHART
     st.altair_chart(hours, theme="streamlit", use_container_width=True)
