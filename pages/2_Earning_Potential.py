@@ -130,8 +130,8 @@ with tab1:
         text,
         text2,
         data=all_degrees,
-        width=700,
-        height=450,
+        width=400,
+        height=500,
         title=title,
     ).configure_legend(orient="bottom", columnPadding=25, padding=10)
 
@@ -170,7 +170,7 @@ with tab1:
     line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
     DegreeChngChart = (
         (line1 + line2)
-        .properties(width=700, height=450, title=title)
+        .properties(width=400, height=500, title=title)
         .configure_legend(orient="bottom", columnPadding=25, padding=10)
     )
 
@@ -332,8 +332,8 @@ with tab2:
         text,
         text2,
         data=data,
-        width=800,
-        height=600,
+        width=400,
+        height=500,
         title=title,
     ).configure_legend(orient="bottom", direction="horizontal", columns=2, columnPadding=25, padding=10)
 
@@ -362,7 +362,7 @@ with tab2:
     line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
     GenderDegreeChngChart = (
         (line1 + line2)
-        .properties(width=700, height=500, title=title)
+        .properties(width=400, height=500, title=title)
         .configure_legend(orient="bottom", direction="horizontal", columns=2, columnPadding=25, padding=10)
     )
 
@@ -459,8 +459,8 @@ with tab3:
         text,
         text2,
         data=all_race_degrees,
-        width=800,
-        height=600,
+        width=400,
+        height=500,
         title=title,
     ).configure_legend(orient="bottom", direction="horizontal", columns=2, columnPadding=25, padding=10)
 
@@ -510,7 +510,7 @@ with tab3:
     line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
     RaceDegreeChngChart = (
         (line1 + line2)
-        .properties(width=700, height=600, title=title)
+        .properties(width=400, height=500, title=title)
         .configure_legend(orient="bottom", direction="horizontal", columns=2, columnPadding=25, padding=10)
     )
 
@@ -605,8 +605,8 @@ with tab4:
         text,
         text2,
         data=all_race_gender_degrees,
-        width=800,
-        height=700,
+        width=400,
+        height=500,
         title=title,
     ).configure_legend(orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10)
 
@@ -673,7 +673,7 @@ with tab4:
     line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
     RaceGenderDegreeChngChart = (
         (line1 + line2)
-        .properties(width=800, height=700, title=title)
+        .properties(width=400, height=500, title=title)
         .configure_legend(orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10)
     )
 
