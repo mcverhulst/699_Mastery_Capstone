@@ -23,36 +23,36 @@ White + High School,653.0
 White + Some College,741.0
 White + Bachelors Degree,1040.0
 White + Advanced Degree,1385.0
-Hispanic or Latino,796.0
-Hispanic or Latino + Less than HS,462.0
-Hispanic or Latino + High School,634.0
-Hispanic or Latino + Some College,720.0
-Hispanic or Latino + Bachelors Degree,1019.0
-Hispanic or Latino + Advanced Degree,1384.0
+Hispanic or Latino,576.0
+Hispanic or Latino + Less than HS,440.0
+Hispanic or Latino + High School,546.0
+Hispanic or Latino + Some College,625.0
+Hispanic or Latino + Bachelors Degree,900.0
+Hispanic or Latino + Advanced Degree,1200.0
 White + Male,904.0
-Hispanic or Latino + Male,880.0
+Hispanic or Latino + Male,600.0
 White + Male + Less than HS,519.0
-Hispanic or Latino + Male + Less than HS,500.0
+Hispanic or Latino + Male + Less than HS,480.0
 White + Male + High School,740.0
-Hispanic or Latino + Male + High School,720.0
+Hispanic or Latino + Male + High School,600.0
 White + Male + Some College,846.0
-Hispanic or Latino + Male + Some College,808.0
+Hispanic or Latino + Male + Some College,700.0
 White + Male + Bachelors Degree,1220.0
-Hispanic or Latino + Male + Bachelors Degree,1200.0
+Hispanic or Latino + Male + Bachelors Degree,1000.0
 White + Male + Advanced Degree,1634.0
-Hispanic or Latino + Male + Advanced Degree,1596.0
+Hispanic or Latino + Male + Advanced Degree,1346.0
 White + Female,712.0
-Hispanic or Latino + Female,698.0
+Hispanic or Latino + Female,523.0
 White + Female + Less than HS,400.0
-Hispanic or Latino + Female + Less than HS,397.0
+Hispanic or Latino + Female + Less than HS,370.0
 White + Female + High School,560.0
-Hispanic or Latino + Female + High School,540.0
+Hispanic or Latino + Female + High School,480.0
 White + Female + Some College,640.0
-Hispanic or Latino + Female + Some College,630.0
+Hispanic or Latino + Female + Some College,577.0
 White + Female + Bachelors Degree,900.0
-Hispanic or Latino + Female + Bachelors Degree,885.0
+Hispanic or Latino + Female + Bachelors Degree,800.0
 White + Female + Advanced Degree,1154.0
-Hispanic or Latino + Female + Advanced Degree,1154.0
+Hispanic or Latino + Female + Advanced Degree,1105.0
 Black,642.0
 Black + Less than HS,400.0
 Black + High School,538.0

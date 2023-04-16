@@ -126,8 +126,6 @@ with tab2:
     # FILTER DATAFRAME TO ONLY CHECKED BOXES
     new_filt = new[new.group.isin(race_checkboxes[val])].reset_index(drop=True)
 
-
-
     title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
     races = alt.Chart(new_filt, title=title, height=600).mark_line(point=True).encode(
         x=alt.X('year:N', title='Year',axis=alt.Axis(labelAngle=-45)),
