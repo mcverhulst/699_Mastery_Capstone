@@ -31,14 +31,31 @@ ratio_df.rename(columns={1: "total men", 2: "total women"}, inplace=True)
 
 # RATIO OF FEMALE PAY TO MALE PAY
 ratio_df["ratio"] = ratio_df["total women"] / ratio_df["total men"]
+ratio_df["ratio"] = ratio_df["ratio"].apply(lambda x: round(x, 3))
 
 # HOURS WOMEN NEED TO WORK TO MATCH MEN PAY
 # https://www.geeksforgeeks.org/applying-lambda-functions-to-pandas-dataframe/#
 ratio_df = ratio_df.assign(hours=lambda x: (x["total men"] - x["total women"]) / (x["total women"] / 40))
+ratio_df["hours"] = ratio_df["hours"].apply(lambda x: round(x, 2))
+
+# FULL TIME WEEKS NEEDED TO WORK A YEAR TO MATCH MENS PAY
+ratio_df = ratio_df.assign(f_weeks=lambda x: ((x["hours"] * 52) / 40))
+ratio_df = ratio_df.assign(m_weeks=lambda x: (52 - x["f_weeks"]))
+
+ratio_df["f_weeks"] = ratio_df["f_weeks"].apply(lambda x: round(x, 2))
+ratio_df["m_weeks"] = ratio_df["m_weeks"].apply(lambda x: round(x, 2))
+
+# FULL TIME MONTHS NEEDED TO WORK OVER THE COURSE OF YEAR TO MATCH MENS PAY (4 WEEKS A MONTH)
+ratio_df = ratio_df.assign(f_months=lambda x: (x["f_weeks"] / 4))
+ratio_df = ratio_df.assign(m_months=lambda x: 12 - x["f_months"])
+
+ratio_df["f_months"] = ratio_df["f_months"].apply(lambda x: round(x, 2))
+ratio_df["m_months"] = ratio_df["m_months"].apply(lambda x: round(x, 2))
 
 ratio_df = ratio_df.reset_index()
 ratio_df.rename(columns={"index": "year"}, inplace=True)
 
+weeks_months = ratio_df
 
 ##########################
 ### FEMALE PAY BY RACE ###
