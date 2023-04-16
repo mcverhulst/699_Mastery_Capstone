@@ -149,12 +149,12 @@ with tab1:
     )
     line1 = (
         alt.Chart(degrees)
-        .mark_line()
+        .mark_line(point=True)
         .encode(
             x=alt.X("year:T", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
-            tooltip=["group_legend"],
+            tooltip=["group_legend", "earn_perc_chng_from_total"],
             strokeDash="group_legend:N",
         )
     )
@@ -343,11 +343,12 @@ with tab2:
     )
     line1 = (
         alt.Chart(chng_data)
-        .mark_line()
+        .mark_line(point=True)
         .encode(
             x=alt.X("year:T", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
+            tooltip=["group_legend", "earn_perc_chng_from_total"],
             strokeDash="group_legend:N",
         )
     )
@@ -586,11 +587,12 @@ with tab3:
     )
     line1 = (
         alt.Chart(chng_data)
-        .mark_line()
+        .mark_line(point=True)
         .encode(
             x=alt.X("year:T", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
+            tooltip=["group_legend", "earn_perc_chng_from_total"],
             strokeDash="group_legend:N",
         )
     )
@@ -618,52 +620,12 @@ with tab4:
     #########################################
     race_gender = st.radio(
         "Select a filter: ",
-        ("Asian", "Black", "Hispanic or Latino", "White", "All"),
+        ("Asian", "Black", "Hispanic or Latino", "White"),
         key="race_gender",
         horizontal=True,
     )
 
-    if race_gender == "All":
-        data = all_race_gender_degrees
-        chng_data = earn_perc_chng_df_melted[
-            earn_perc_chng_df_melted["group_legend"].isin(
-                [
-                    "Asian + Male + Bachelors Degree",
-                    "Asian + Male + Advanced Degree",
-                    "Asian + Male + Some College",
-                    "Asian + Male + High School",
-                    "Black + Male + Bachelors Degree",
-                    "Black + Male + Advanced Degree",
-                    "Black + Male + Some College",
-                    "Black + Male + High School",
-                    "White + Male + Bachelors Degree",
-                    "White + Male + Advanced Degree",
-                    "White + Male + Some College",
-                    "White + Male + High School",
-                    "Hispanic or Latino + Male + Bachelors Degree",
-                    "Hispanic or Latino + Male + Advanced Degree",
-                    "Hispanic or Latino + Male + Some College",
-                    "Hispanic or Latino + Male + High School",
-                    "Asian + Female + Bachelors Degree",
-                    "Asian + Female + Advanced Degree",
-                    "Asian + Female + Some College",
-                    "Asian + Female + High School",
-                    "Black + Female + Bachelors Degree",
-                    "Black + Female + Advanced Degree",
-                    "Black + Female + Some College",
-                    "Black + Female + High School",
-                    "White + Female + Bachelors Degree",
-                    "White + Female + Advanced Degree",
-                    "White + Female + Some College",
-                    "White + Female + High School",
-                    "Hispanic or Latino + Female + Bachelors Degree",
-                    "Hispanic or Latino + Female + Advanced Degree",
-                    "Hispanic or Latino + Female + Some College",
-                    "Hispanic or Latino + Female + High School",
-                ]
-            )
-        ]
-    elif race_gender == "Asian":
+    if race_gender == "Asian":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -916,11 +878,12 @@ with tab4:
     )
     line1 = (
         alt.Chart(chng_data)
-        .mark_line()
+        .mark_line(point=True)
         .encode(
             x=alt.X("year:T", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
+            tooltip=["group_legend", "earn_perc_chng_from_total"],
             strokeDash="group_legend:N",
         )
     )
