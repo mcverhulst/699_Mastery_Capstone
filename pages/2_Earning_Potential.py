@@ -22,16 +22,6 @@ st.write(
     How do Gender and Race impact earning potential?"""
 )
 
-# ###############################################
-# ######### SAVED CODE FOR DOWNLAOD BUTTON ######
-# ###############################################
-
-# csv = convert_df(earn_perc_chng_df_melted)
-
-# st.download_button("Download the Raw Data", csv, "earn_perc_diff.csv", "text/csv", key="download-csv")
-
-# # # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-
 ######################################################################
 ########################### PAGE LAYOUT ##############################
 ######################################################################
@@ -185,12 +175,6 @@ with tab1:
 
     with col2:
         st.altair_chart(DegreeChngChart, theme="streamlit", use_container_width=True)
-        csv = convert_df(earn_perc_chng_df_melted)
-        st.download_button(
-            "Download the Chart Data", csv, "earn_perc_diff_2022.csv", "text/csv", key="download-csv"
-        )
-        # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-
 
 with tab2:
     ##################################
