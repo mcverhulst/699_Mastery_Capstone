@@ -151,34 +151,14 @@ with tab3:
         color = alt.value("#de8b33")
     )
 
-    dummy_years = ["1995", "1996", "1997", "1998", "1999", "2000",
-                     "2001", "2002", "2003", "2004", "2005", "2006", "2007",
-                     "2008", "2009", "2010", "2011", "2012", "2013", "2014",
-                     "2015", "2016", "2017", "2018", "2019", "2020"]
-
-    dummy_weeks = {'weeks': 52, 'year': dummy_years}
-    d_weeks = pd.DataFrame(data=dummy_weeks)
-
-    dummy_months = {'months': 12, 'year': dummy_years}
-    d_months = pd.DataFrame(data=dummy_months)
-
     ### MONTHS AREA CHART
-    title = alt.TitleParams("Proportion of a Year Women Would Have to Work to Match Men's Pay", anchor='middle')
+    title = alt.TitleParams("Proportion of an Additional Year Women Would Have to Work to Match Men's Pay", anchor='middle')
 
-    m_months = alt.Chart(d_months, height=500, title=title).mark_area().encode(
-        alt.X("year:O", title="", axis=alt.Axis(labelAngle=-45)),
-        alt.Y('months:Q', title="", scale=alt.Scale(domain=(0, 12))),
-        color=alt.value("#31b0a5"),
-        tooltip=[]
-    )
-
-    w_months = alt.Chart(ratio_df,height=500).mark_area().encode(
+    w_months = alt.Chart(ratio_df,height=500, title=title).mark_area(line=True, point=True).encode(
         alt.X("year:O", axis=alt.Axis(labelAngle=-45), title='Year'),
         alt.Y("f_months:Q", title='Additional Months', scale=alt.Scale(domain=(0, 12))),
         color=alt.value("#de8b33")
     )
-
-    mw_months = m_months + w_months
 
     # PLOT CHART
     st.markdown("""### How many hours would women have to work to earn equal pay""")
@@ -186,6 +166,6 @@ with tab3:
     st.altair_chart(hours, theme="streamlit", use_container_width=True)
 
     # PLOT CHART
-    st.markdown("""### How many ***months*** into the next year would women have to work to earn equal pay?""")
+    st.markdown("""### How many additional ***months*** into the next year would women have to work to earn equal pay?""")
     st.write("""Lorem ipsum...""")
-    st.altair_chart(mw_months, theme="streamlit", use_container_width=True)
+    st.altair_chart(w_months, theme="streamlit", use_container_width=True)
