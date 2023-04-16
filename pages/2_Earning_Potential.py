@@ -623,7 +623,7 @@ with tab4:
         horizontal=True,
     )
 
-    if race == "All":
+    if race_gender == "All":
         data = all_race_gender_degrees
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
@@ -663,7 +663,7 @@ with tab4:
                 ]
             )
         ]
-    elif race == "Asian":
+    elif race_gender == "Asian":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -692,7 +692,7 @@ with tab4:
                 ]
             )
         ]
-    elif race == "Black":
+    elif race_gender == "Black":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -721,7 +721,7 @@ with tab4:
                 ]
             )
         ]
-    elif race == "Hispanic or Latino":
+    elif race_gender == "Hispanic or Latino":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -750,7 +750,7 @@ with tab4:
                 ]
             )
         ]
-    elif race == "White":
+    elif race_gender == "White":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -861,7 +861,9 @@ with tab4:
         width=400,
         height=500,
         title=title,
-    ).configure_legend(orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10)
+    ).configure_legend(
+        orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10, labelFontSize=10
+    )
 
     ##################################
     ########TAB 4: CHART 2 ###########
@@ -926,7 +928,9 @@ with tab4:
     RaceGenderDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
-        .configure_legend(orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10)
+        .configure_legend(
+            orient="bottom", direction="horizontal", columns=3, columnPadding=25, padding=10, labelFontSize=10
+        )
     )
 
     ##################################
