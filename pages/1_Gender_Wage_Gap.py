@@ -39,7 +39,7 @@ with tab1:
     st.markdown("""### How does median pay for women and men compare?""")
     st.write("""Lorem ipsum...""")
 
-    values = st.slider("Select a range of years", 1995, 2020, (1995, 2020))
+    values = st.slider("Select a range of years to compare", 1995, 2020, (1995, 2020))
 
     bars = alt.Chart(data_filtered).mark_bar().encode(
         x = alt.X('group:N', title=None, axis=None),
@@ -60,7 +60,7 @@ with tab1:
     # RATIO LINE CHART
     line = alt.Chart(ratio_df).mark_line(point=True).encode(
             x=alt.X("year:N", title="Year", axis=alt.Axis(labelAngle=-45)),
-            y=alt.Y("ratio:Q", scale=alt.Scale(domain=(0, 1.2)), title="Female to male wage ratio"),
+            y=alt.Y("ratio:Q", scale=alt.Scale(domain=(0, 1.2)), title="Female to Male Wage Ratio"),
             color = alt.value("#de8b33")
     ).transform_filter(
         values[0] <= alt.datum.year
@@ -92,6 +92,7 @@ with tab2:
     st.write("""The median wage for all men is indicated by the black line...
     """)
 
+    # https://stackoverflow.com/questions/54015895/altair-default-color-palette-colors-in-hex
     # DEFINE CHECKBOX OPTIONS
     cuts = ["total men", "total women", "White + Female", "Hispanic or Latino + Female",
             "Black + Female", "Asian + Female"]
@@ -128,9 +129,9 @@ with tab2:
 
 
     title = alt.TitleParams("Median Weekly Earnings in 2022 Dollars", anchor='middle')
-    races = alt.Chart(new_filt, title=title).mark_line(point=True).encode(
+    races = alt.Chart(new_filt, title=title, height=600).mark_line(point=True).encode(
         x=alt.X('year:N', title='Year',axis=alt.Axis(labelAngle=-45)),
-        y=alt.Y('value:Q', title="Median Weekly Wages", scale=alt.Scale(domain=(500, 1400))),
+        y=alt.Y('value:Q', title="Median Weekly Wages", scale=alt.Scale(domain=(0, 1400))),
         # color='group'
         color=alt.Color("group:N", scale=colors)
     )
@@ -142,7 +143,7 @@ with tab2:
 ### HOURS TO MATCH ###
 ######################
 with tab3:
-    title = alt.TitleParams("Hours Women Would Have to Work to Match Mens' Pay", anchor='middle')
+    title = alt.TitleParams("Hours Women Would Have to Work to Match Men's Pay", anchor='middle')
 
     hours = alt.Chart(ratio_df, title=title,height=500).mark_bar().encode(
         x = alt.X('year:O', title='Year', axis=alt.Axis(labelAngle=-45)),
@@ -162,7 +163,9 @@ with tab3:
     d_months = pd.DataFrame(data=dummy_months)
 
     ### MONTHS AREA CHART
-    m_months = alt.Chart(d_months, height=500).mark_area().encode(
+    title = alt.TitleParams("Proportion of a Year Women Would Have to Work to Match Men's Pay", anchor='middle')
+
+    m_months = alt.Chart(d_months, height=500, title=title).mark_area().encode(
         alt.X("year:O", title="", axis=alt.Axis(labelAngle=-45)),
         alt.Y('months:Q', title="", scale=alt.Scale(domain=(0, 12))),
         color=alt.value("#31b0a5"),
@@ -177,11 +180,12 @@ with tab3:
 
     mw_months = m_months + w_months
 
+    # PLOT CHART
     st.markdown("""### How many hours would women have to work to earn equal pay""")
     st.write("""Lorem ipsum...""")
-
-    # PLOT CHART
     st.altair_chart(hours, theme="streamlit", use_container_width=True)
 
+    # PLOT CHART
     st.markdown("""### How many ***months*** into the next year would women have to work to earn equal pay?""")
+    st.write("""Lorem ipsum...""")
     st.altair_chart(mw_months, theme="streamlit", use_container_width=True)
