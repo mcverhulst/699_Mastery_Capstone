@@ -15,7 +15,7 @@ st.set_page_config(
 ## WARN: handle this import after the streamlit set_page_config as that needs to be the first element
 from preprocessing.earning_filters import *
 
-st.markdown("# Higher Education Degrees and Earning Potential")
+st.markdown("# How does higher education impact earning potential?")
 # st.sidebar.header("Earning Potential")
 st.write(
     """What is a person's earning potential based on their most recent completed degree?
@@ -68,7 +68,7 @@ with tab1:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            alt.X("year:T", axis=alt.Axis(title="")),
+            alt.X("year:T", axis=alt.Axis(title="Year")),
             alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
             color="group:N",
         )
@@ -78,8 +78,8 @@ with tab1:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x="year:T",
-            y="value:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
 
@@ -89,7 +89,7 @@ with tab1:
         alt.Chart()
         .mark_point()
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -114,7 +114,7 @@ with tab1:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -152,7 +152,7 @@ with tab1:
         )
     ]
     title = alt.TitleParams(
-        "Percent Change Median Weekly Earnings vs. Total Median",
+        "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
@@ -161,9 +161,10 @@ with tab1:
         alt.Chart(degrees)
         .mark_line()
         .encode(
-            x="year:T",
-            y="earn_perc_chng_from_total:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
+            tooltip=["group_legend"],
             strokeDash="group_legend:N",
         )
     )
@@ -184,6 +185,11 @@ with tab1:
 
     with col2:
         st.altair_chart(DegreeChngChart, theme="streamlit", use_container_width=True)
+        csv = convert_df(earn_perc_chng_df_melted)
+        st.download_button(
+            "Download the Chart Data", csv, "earn_perc_diff_2022.csv", "text/csv", key="download-csv"
+        )
+        # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 
 
 with tab2:
@@ -282,8 +288,8 @@ with tab2:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x="year:T",
-            y="value:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
 
@@ -293,7 +299,7 @@ with tab2:
         alt.Chart()
         .mark_point()
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -318,7 +324,7 @@ with tab2:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -346,7 +352,7 @@ with tab2:
     ## FILTER DIFFS DATA TO GEnder and DEGREES ONLY
     total = earn_perc_chng_df_melted[earn_perc_chng_df_melted.group_legend == "total"]
     title = alt.TitleParams(
-        "Percent Change Median Weekly Earnings vs. Total Median",
+        "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
@@ -355,8 +361,8 @@ with tab2:
         alt.Chart(chng_data)
         .mark_line()
         .encode(
-            x="year:T",
-            y="earn_perc_chng_from_total:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
             strokeDash="group_legend:N",
         )
@@ -516,8 +522,8 @@ with tab3:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            alt.X("year:T", axis=alt.Axis(title="")),
-            alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
             color="group:N",
         )
     )
@@ -526,8 +532,8 @@ with tab3:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x="year:T",
-            y="value:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
 
@@ -537,7 +543,7 @@ with tab3:
         alt.Chart()
         .mark_point()
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -562,7 +568,7 @@ with tab3:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -589,7 +595,7 @@ with tab3:
     ## FILTER DIFFS DATA TO RACE and DEGREES ONLY
     total = earn_perc_chng_df_melted[earn_perc_chng_df_melted.group_legend == "total"]
     title = alt.TitleParams(
-        "Percent Change Median Weekly Earnings vs. Total Median",
+        "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
@@ -598,8 +604,8 @@ with tab3:
         alt.Chart(chng_data)
         .mark_line()
         .encode(
-            x="year:T",
-            y="earn_perc_chng_from_total:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
             strokeDash="group_legend:N",
         )
@@ -816,8 +822,8 @@ with tab4:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x="year:T",
-            y="value:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
 
@@ -827,7 +833,7 @@ with tab4:
         alt.Chart()
         .mark_point()
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -852,7 +858,7 @@ with tab4:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x="year:T",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -917,7 +923,7 @@ with tab4:
         )
     ]
     title = alt.TitleParams(
-        "Percent Change Median Weekly Earnings vs. Total Median",
+        "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
@@ -926,8 +932,8 @@ with tab4:
         alt.Chart(chng_data)
         .mark_line()
         .encode(
-            x="year:T",
-            y="earn_perc_chng_from_total:Q",
+            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
             strokeDash="group_legend:N",
         )

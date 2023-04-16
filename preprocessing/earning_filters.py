@@ -242,234 +242,226 @@ earn_perc_chng_df["year"] = data_raw["year"]
 
 
 ## Total % change for comparison to the rest below:
-earn_perc_chng_df["diff_%_total_total"] = ((data_raw["total"] - data_raw["total"]) / data_raw["total"]) * 100
+earn_perc_chng_df["diff_%_total_total"] = (data_raw["total"] - data_raw["total"]) / data_raw["total"]
 
 
 ## BY DEGREE
-earn_perc_chng_df["diff_%_HS_total"] = (
-    (data_raw["High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_SC_total"] = (
-    (data_raw["Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_BA_total"] = (
-    (data_raw["Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_AD_total"] = (
-    (data_raw["Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+earn_perc_chng_df["diff_%_HS_total"] = (data_raw["High School"] - data_raw["total"]) / data_raw["total"]
+earn_perc_chng_df["diff_%_SC_total"] = (data_raw["Some College"] - data_raw["total"]) / data_raw["total"]
+earn_perc_chng_df["diff_%_BA_total"] = (data_raw["Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
+earn_perc_chng_df["diff_%_AD_total"] = (data_raw["Advanced Degree"] - data_raw["total"]) / data_raw["total"]
 
 ## BY DEGREE + RACE
 # Asian
 earn_perc_chng_df["diff_%_A_BA_total"] = (
-    (data_raw["Asian + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_A_AD_total"] = (
-    (data_raw["Asian + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_A_SC_total"] = (
-    (data_raw["Asian + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_A_HS_total"] = (
-    (data_raw["Asian + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
+earn_perc_chng_df["diff_%_A_AD_total"] = (data_raw["Asian + Advanced Degree"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_A_SC_total"] = (data_raw["Asian + Some College"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_A_HS_total"] = (data_raw["Asian + High School"] - data_raw["total"]) / data_raw[
+    "total"
+]
 
 
 # Black
 earn_perc_chng_df["diff_%_B_BA_total"] = (
-    (data_raw["Black + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_B_AD_total"] = (
-    (data_raw["Black + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_B_SC_total"] = (
-    (data_raw["Black + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_B_HS_total"] = (
-    (data_raw["Black + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
+earn_perc_chng_df["diff_%_B_AD_total"] = (data_raw["Black + Advanced Degree"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_B_SC_total"] = (data_raw["Black + Some College"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_B_HS_total"] = (data_raw["Black + High School"] - data_raw["total"]) / data_raw[
+    "total"
+]
 
 
 # White
 earn_perc_chng_df["diff_%_W_BA_total"] = (
-    (data_raw["White + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_W_AD_total"] = (
-    (data_raw["White + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_W_SC_total"] = (
-    (data_raw["White + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_W_HS_total"] = (
-    (data_raw["White + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
+earn_perc_chng_df["diff_%_W_AD_total"] = (data_raw["White + Advanced Degree"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_W_SC_total"] = (data_raw["White + Some College"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_W_HS_total"] = (data_raw["White + High School"] - data_raw["total"]) / data_raw[
+    "total"
+]
 
 
 # Latino
 earn_perc_chng_df["diff_%_L_BA_total"] = (
-    (data_raw["Hispanic or Latino + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_AD_total"] = (
-    (data_raw["Hispanic or Latino + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_SC_total"] = (
-    (data_raw["Hispanic or Latino + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_HS_total"] = (
-    (data_raw["Hispanic or Latino + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + High School"] - data_raw["total"]
+) / data_raw["total"]
 
 
 ## BY DEGREE + GENDER
 # Male
-earn_perc_chng_df["diff_%_M_HS_total"] = (
-    (data_raw["Male + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_M_SC_total"] = (
-    (data_raw["Male + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_M_BA_total"] = (
-    (data_raw["Male + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_M_AD_total"] = (
-    (data_raw["Male + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+earn_perc_chng_df["diff_%_M_HS_total"] = (data_raw["Male + High School"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_M_SC_total"] = (data_raw["Male + Some College"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_M_BA_total"] = (data_raw["Male + Bachelors Degree"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_M_AD_total"] = (data_raw["Male + Advanced Degree"] - data_raw["total"]) / data_raw[
+    "total"
+]
 
 
 # Female
-earn_perc_chng_df["diff_%_F_HS_total"] = (
-    (data_raw["Female + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
-earn_perc_chng_df["diff_%_F_SC_total"] = (
-    (data_raw["Female + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+earn_perc_chng_df["diff_%_F_HS_total"] = (data_raw["Female + High School"] - data_raw["total"]) / data_raw[
+    "total"
+]
+earn_perc_chng_df["diff_%_F_SC_total"] = (data_raw["Female + Some College"] - data_raw["total"]) / data_raw[
+    "total"
+]
 earn_perc_chng_df["diff_%_F_BA_total"] = (
-    (data_raw["Female + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Female + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_F_AD_total"] = (
-    (data_raw["Female + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Female + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 ## BY DEGREE + RACE + GENDER
 # W + M + Degrees
 earn_perc_chng_df["diff_%_W_M_HS_total"] = (
-    (data_raw["White + Male + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Male + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_M_SC_total"] = (
-    (data_raw["White + Male + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Male + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_M_BA_total"] = (
-    (data_raw["White + Male + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Male + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_M_AD_total"] = (
-    (data_raw["White + Male + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Male + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # W + F + Degrees
 earn_perc_chng_df["diff_%_W_F_HS_total"] = (
-    (data_raw["White + Female + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Female + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_F_SC_total"] = (
-    (data_raw["White + Female + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Female + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_F_BA_total"] = (
-    (data_raw["White + Female + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Female + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_W_F_AD_total"] = (
-    (data_raw["White + Female + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["White + Female + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # L + M + Degrees
 earn_perc_chng_df["diff_%_L_M_HS_total"] = (
-    (data_raw["Hispanic or Latino + Male + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Male + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_M_SC_total"] = (
-    (data_raw["Hispanic or Latino + Male + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Male + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_M_BA_total"] = (
-    (data_raw["Hispanic or Latino + Male + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Male + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_M_AD_total"] = (
-    (data_raw["Hispanic or Latino + Male + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Male + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # L + F + Degrees
 earn_perc_chng_df["diff_%_L_F_HS_total"] = (
-    (data_raw["Hispanic or Latino + Female + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Female + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_F_SC_total"] = (
-    (data_raw["Hispanic or Latino + Female + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Female + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_F_BA_total"] = (
-    (data_raw["Hispanic or Latino + Female + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Female + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_L_F_AD_total"] = (
-    (data_raw["Hispanic or Latino + Female + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Hispanic or Latino + Female + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # B + M + Degrees
 earn_perc_chng_df["diff_%_B_M_HS_total"] = (
-    (data_raw["Black + Male + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Male + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_M_SC_total"] = (
-    (data_raw["Black + Male + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Male + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_M_BA_total"] = (
-    (data_raw["Black + Male + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Male + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_M_AD_total"] = (
-    (data_raw["Black + Male + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Male + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # B + F + Degrees
 earn_perc_chng_df["diff_%_B_F_HS_total"] = (
-    (data_raw["Black + Female + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Female + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_F_SC_total"] = (
-    (data_raw["Black + Female + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Female + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_F_BA_total"] = (
-    (data_raw["Black + Female + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Female + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_B_F_AD_total"] = (
-    (data_raw["Black + Female + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Black + Female + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # A + M + Degrees
 earn_perc_chng_df["diff_%_A_M_HS_total"] = (
-    (data_raw["Asian + Male + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Male + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_M_SC_total"] = (
-    (data_raw["Asian + Male + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Male + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_M_BA_total"] = (
-    (data_raw["Asian + Male + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Male + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_M_AD_total"] = (
-    (data_raw["Asian + Male + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Male + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 # A + F + Degrees
 earn_perc_chng_df["diff_%_A_F_HS_total"] = (
-    (data_raw["Asian + Female + High School"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Female + High School"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_F_SC_total"] = (
-    (data_raw["Asian + Female + Some College"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Female + Some College"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_F_BA_total"] = (
-    (data_raw["Asian + Female + Bachelors Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Female + Bachelors Degree"] - data_raw["total"]
+) / data_raw["total"]
 earn_perc_chng_df["diff_%_A_F_AD_total"] = (
-    (data_raw["Asian + Female + Advanced Degree"] - data_raw["total"]) / data_raw["total"]
-) * 100
+    data_raw["Asian + Female + Advanced Degree"] - data_raw["total"]
+) / data_raw["total"]
 
 
 ##########################################
