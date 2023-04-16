@@ -192,7 +192,9 @@ with tab2:
     ##################################
     genre = st.radio(
         "Select a filter: ",
-        ("All", "Female", "Male"),
+        ("Female", "Male", "All"),
+        key="gender",
+        horizontal=True,
     )
 
     if genre == "All":
