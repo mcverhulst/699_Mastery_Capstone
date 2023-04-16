@@ -542,16 +542,16 @@ earn_perc_chng_df_melted.loc[
 
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_BA_total", "group_legend"
-] = "Latinx + Bachelors Degree"
+] = "Hispanic or Latino + Bachelors Degree"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_AD_total", "group_legend"
-] = "Latinx + Advanced Degree"
+] = "Hispanic or Latino + Advanced Degree"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_SC_total", "group_legend"
-] = "Latinx + Some College"
+] = "Hispanic or Latino + Some College"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_HS_total", "group_legend"
-] = "Latinx + High School"
+] = "Hispanic or Latino + High School"
 
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_M_HS_total", "group_legend"
@@ -607,29 +607,29 @@ earn_perc_chng_df_melted.loc[
 
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_M_HS_total", "group_legend"
-] = "Latinx + Male + High School"
+] = "Hispanic or Latino + Male + High School"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_M_SC_total", "group_legend"
-] = "Latinx + Male + Some College"
+] = "Hispanic or Latino + Male + Some College"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_M_BA_total", "group_legend"
-] = "Latinx + Male + Bachelors Degree"
+] = "Hispanic or Latino + Male + Bachelors Degree"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_M_AD_total", "group_legend"
-] = "Latinx + Male + Advanced Degree"
+] = "Hispanic or Latino + Male + Advanced Degree"
 
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_F_HS_total", "group_legend"
-] = "Latinx + Female + High School"
+] = "Hispanic or Latino + Female + High School"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_F_SC_total", "group_legend"
-] = "Latinx + Female + Some College"
+] = "Hispanic or Latino + Female + Some College"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_F_BA_total", "group_legend"
-] = "Latinx + Female + Bachelors Degree"
+] = "Hispanic or Latino + Female + Bachelors Degree"
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_L_F_AD_total", "group_legend"
-] = "Latinx + Female + Advanced Degree"
+] = "Hispanic or Latino + Female + Advanced Degree"
 
 earn_perc_chng_df_melted.loc[
     earn_perc_chng_df_melted["group_legend"] == "diff_%_B_M_HS_total", "group_legend"

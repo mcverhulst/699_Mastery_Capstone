@@ -441,110 +441,110 @@
 439,2018,diff_%_W_HS_total,-17.81609195402299,White + High School
 440,2019,diff_%_W_HS_total,-19.065420560747665,White + High School
 441,2020,diff_%_W_HS_total,-20.0,White + High School
-442,1995,diff_%_L_BA_total,19.95661605206074,Latinx + Bachelors
-443,1996,diff_%_L_BA_total,22.489082969432314,Latinx + Bachelors
-444,1997,diff_%_L_BA_total,25.164835164835164,Latinx + Bachelors
-445,1998,diff_%_L_BA_total,24.076029567053855,Latinx + Bachelors
-446,1999,diff_%_L_BA_total,25.826446280991732,Latinx + Bachelors
-447,2000,diff_%_L_BA_total,21.552604698672116,Latinx + Bachelors
-448,2001,diff_%_L_BA_total,21.15971515768057,Latinx + Bachelors
-449,2002,diff_%_L_BA_total,24.693877551020407,Latinx + Bachelors
-450,2003,diff_%_L_BA_total,38.74873864783047,Latinx + Bachelors
-451,2004,diff_%_L_BA_total,34.3687374749499,Latinx + Bachelors
-452,2005,diff_%_L_BA_total,35.27054108216433,Latinx + Bachelors
-453,2006,diff_%_L_BA_total,37.52535496957404,Latinx + Bachelors
-454,2007,diff_%_L_BA_total,37.38601823708207,Latinx + Bachelors
-455,2008,diff_%_L_BA_total,31.46853146853147,Latinx + Bachelors
-456,2009,diff_%_L_BA_total,31.52804642166344,Latinx + Bachelors
-457,2010,diff_%_L_BA_total,30.097087378640776,Latinx + Bachelors
-458,2011,diff_%_L_BA_total,30.0,Latinx + Bachelors
-459,2012,diff_%_L_BA_total,27.992087042532148,Latinx + Bachelors
-460,2013,diff_%_L_BA_total,32.242063492063494,Latinx + Bachelors
-461,2014,diff_%_L_BA_total,31.06893106893107,Latinx + Bachelors
-462,2015,diff_%_L_BA_total,33.29979879275654,Latinx + Bachelors
-463,2016,diff_%_L_BA_total,32.553606237816766,Latinx + Bachelors
-464,2017,diff_%_L_BA_total,33.33333333333333,Latinx + Bachelors
-465,2018,diff_%_L_BA_total,28.256704980842912,Latinx + Bachelors
-466,2019,diff_%_L_BA_total,27.850467289719628,Latinx + Bachelors
-467,2020,diff_%_L_BA_total,24.95575221238938,Latinx + Bachelors
-468,1995,diff_%_L_AD_total,68.00433839479393,Latinx + Advanced
-469,1996,diff_%_L_AD_total,76.63755458515283,Latinx + Advanced
-470,1997,diff_%_L_AD_total,53.84615384615385,Latinx + Advanced
-471,1998,diff_%_L_AD_total,55.43822597676874,Latinx + Advanced
-472,1999,diff_%_L_AD_total,67.76859504132231,Latinx + Advanced
-473,2000,diff_%_L_AD_total,60.26557711950971,Latinx + Advanced
-474,2001,diff_%_L_AD_total,54.93387589013224,Latinx + Advanced
-475,2002,diff_%_L_AD_total,58.673469387755105,Latinx + Advanced
-476,2003,diff_%_L_AD_total,78.91019172552977,Latinx + Advanced
-477,2004,diff_%_L_AD_total,79.25851703406813,Latinx + Advanced
-478,2005,diff_%_L_AD_total,73.44689378757515,Latinx + Advanced
-479,2006,diff_%_L_AD_total,76.47058823529412,Latinx + Advanced
-480,2007,diff_%_L_AD_total,77.10233029381965,Latinx + Advanced
-481,2008,diff_%_L_AD_total,73.72627372627373,Latinx + Advanced
-482,2009,diff_%_L_AD_total,74.56479690522244,Latinx + Advanced
-483,2010,diff_%_L_AD_total,75.14563106796116,Latinx + Advanced
-484,2011,diff_%_L_AD_total,75.0,Latinx + Advanced
-485,2012,diff_%_L_AD_total,73.88724035608308,Latinx + Advanced
-486,2013,diff_%_L_AD_total,73.11507936507937,Latinx + Advanced
-487,2014,diff_%_L_AD_total,69.93006993006993,Latinx + Advanced
-488,2015,diff_%_L_AD_total,71.42857142857143,Latinx + Advanced
-489,2016,diff_%_L_AD_total,71.44249512670565,Latinx + Advanced
-490,2017,diff_%_L_AD_total,66.76384839650146,Latinx + Advanced
-491,2018,diff_%_L_AD_total,66.66666666666666,Latinx + Advanced
-492,2019,diff_%_L_AD_total,63.83177570093458,Latinx + Advanced
-493,2020,diff_%_L_AD_total,61.504424778761056,Latinx + Advanced
-494,1995,diff_%_L_SC_total,-15.40130151843818,Latinx + Some College
-495,1996,diff_%_L_SC_total,-15.72052401746725,Latinx + Some College
-496,1997,diff_%_L_SC_total,-11.978021978021978,Latinx + Some College
-497,1998,diff_%_L_SC_total,-14.46673706441394,Latinx + Some College
-498,1999,diff_%_L_SC_total,-16.219008264462808,Latinx + Some College
-499,2000,diff_%_L_SC_total,-16.649642492339122,Latinx + Some College
-500,2001,diff_%_L_SC_total,-12.71617497456765,Latinx + Some College
-501,2002,diff_%_L_SC_total,-10.510204081632653,Latinx + Some College
-502,2003,diff_%_L_SC_total,-3.733602421796166,Latinx + Some College
-503,2004,diff_%_L_SC_total,-4.509018036072145,Latinx + Some College
-504,2005,diff_%_L_SC_total,-4.709418837675351,Latinx + Some College
-505,2006,diff_%_L_SC_total,-4.462474645030426,Latinx + Some College
-506,2007,diff_%_L_SC_total,-3.850050658561297,Latinx + Some College
-507,2008,diff_%_L_SC_total,-6.493506493506493,Latinx + Some College
-508,2009,diff_%_L_SC_total,-8.994197292069632,Latinx + Some College
-509,2010,diff_%_L_SC_total,-8.932038834951456,Latinx + Some College
-510,2011,diff_%_L_SC_total,-8.7,Latinx + Some College
-511,2012,diff_%_L_SC_total,-9.594460929772502,Latinx + Some College
-512,2013,diff_%_L_SC_total,-10.01984126984127,Latinx + Some College
-513,2014,diff_%_L_SC_total,-9.490509490509492,Latinx + Some College
-514,2015,diff_%_L_SC_total,-10.160965794768611,Latinx + Some College
-515,2016,diff_%_L_SC_total,-10.818713450292398,Latinx + Some College
-516,2017,diff_%_L_SC_total,-11.078717201166182,Latinx + Some College
-517,2018,diff_%_L_SC_total,-11.11111111111111,Latinx + Some College
-518,2019,diff_%_L_SC_total,-13.925233644859814,Latinx + Some College
-519,2020,diff_%_L_SC_total,-13.539823008849558,Latinx + Some College
-520,1995,diff_%_L_HS_total,-27.114967462039047,Latinx + High School
-521,1996,diff_%_L_HS_total,-28.16593886462882,Latinx + High School
-522,1997,diff_%_L_HS_total,-28.021978021978022,Latinx + High School
-523,1998,diff_%_L_HS_total,-24.39281942977825,Latinx + High School
-524,1999,diff_%_L_HS_total,-27.27272727272727,Latinx + High School
-525,2000,diff_%_L_HS_total,-30.541368743615934,Latinx + High School
-526,2001,diff_%_L_HS_total,-26.14445574771109,Latinx + High School
-527,2002,diff_%_L_HS_total,-26.53061224489796,Latinx + High School
-528,2003,diff_%_L_HS_total,-16.548940464177598,Latinx + High School
-529,2004,diff_%_L_HS_total,-16.132264529058116,Latinx + High School
-530,2005,diff_%_L_HS_total,-16.03206412825651,Latinx + High School
-531,2006,diff_%_L_HS_total,-15.720081135902635,Latinx + High School
-532,2007,diff_%_L_HS_total,-17.1225937183384,Latinx + High School
-533,2008,diff_%_L_HS_total,-18.48151848151848,Latinx + High School
-534,2009,diff_%_L_HS_total,-21.08317214700193,Latinx + High School
-535,2010,diff_%_L_HS_total,-21.941747572815533,Latinx + High School
-536,2011,diff_%_L_HS_total,-19.400000000000002,Latinx + High School
-537,2012,diff_%_L_HS_total,-20.375865479723046,Latinx + High School
-538,2013,diff_%_L_HS_total,-20.03968253968254,Latinx + High School
-539,2014,diff_%_L_HS_total,-19.480519480519483,Latinx + High School
-540,2015,diff_%_L_HS_total,-19.517102615694164,Latinx + High School
-541,2016,diff_%_L_HS_total,-20.56530214424951,Latinx + High School
-542,2017,diff_%_L_HS_total,-21.379980563654033,Latinx + High School
-543,2018,diff_%_L_HS_total,-21.0727969348659,Latinx + High School
-544,2019,diff_%_L_HS_total,-23.271028037383175,Latinx + High School
-545,2020,diff_%_L_HS_total,-23.097345132743364,Latinx + High School
+442,1995,diff_%_L_BA_total,19.95661605206074,Hispanic or Latino + Bachelors
+443,1996,diff_%_L_BA_total,22.489082969432314,Hispanic or Latino + Bachelors
+444,1997,diff_%_L_BA_total,25.164835164835164,Hispanic or Latino + Bachelors
+445,1998,diff_%_L_BA_total,24.076029567053855,Hispanic or Latino + Bachelors
+446,1999,diff_%_L_BA_total,25.826446280991732,Hispanic or Latino + Bachelors
+447,2000,diff_%_L_BA_total,21.552604698672116,Hispanic or Latino + Bachelors
+448,2001,diff_%_L_BA_total,21.15971515768057,Hispanic or Latino + Bachelors
+449,2002,diff_%_L_BA_total,24.693877551020407,Hispanic or Latino + Bachelors
+450,2003,diff_%_L_BA_total,38.74873864783047,Hispanic or Latino + Bachelors
+451,2004,diff_%_L_BA_total,34.3687374749499,Hispanic or Latino + Bachelors
+452,2005,diff_%_L_BA_total,35.27054108216433,Hispanic or Latino + Bachelors
+453,2006,diff_%_L_BA_total,37.52535496957404,Hispanic or Latino + Bachelors
+454,2007,diff_%_L_BA_total,37.38601823708207,Hispanic or Latino + Bachelors
+455,2008,diff_%_L_BA_total,31.46853146853147,Hispanic or Latino + Bachelors
+456,2009,diff_%_L_BA_total,31.52804642166344,Hispanic or Latino + Bachelors
+457,2010,diff_%_L_BA_total,30.097087378640776,Hispanic or Latino + Bachelors
+458,2011,diff_%_L_BA_total,30.0,Hispanic or Latino + Bachelors
+459,2012,diff_%_L_BA_total,27.992087042532148,Hispanic or Latino + Bachelors
+460,2013,diff_%_L_BA_total,32.242063492063494,Hispanic or Latino + Bachelors
+461,2014,diff_%_L_BA_total,31.06893106893107,Hispanic or Latino + Bachelors
+462,2015,diff_%_L_BA_total,33.29979879275654,Hispanic or Latino + Bachelors
+463,2016,diff_%_L_BA_total,32.553606237816766,Hispanic or Latino + Bachelors
+464,2017,diff_%_L_BA_total,33.33333333333333,Hispanic or Latino + Bachelors
+465,2018,diff_%_L_BA_total,28.256704980842912,Hispanic or Latino + Bachelors
+466,2019,diff_%_L_BA_total,27.850467289719628,Hispanic or Latino + Bachelors
+467,2020,diff_%_L_BA_total,24.95575221238938,Hispanic or Latino + Bachelors
+468,1995,diff_%_L_AD_total,68.00433839479393,Hispanic or Latino + Advanced
+469,1996,diff_%_L_AD_total,76.63755458515283,Hispanic or Latino + Advanced
+470,1997,diff_%_L_AD_total,53.84615384615385,Hispanic or Latino + Advanced
+471,1998,diff_%_L_AD_total,55.43822597676874,Hispanic or Latino + Advanced
+472,1999,diff_%_L_AD_total,67.76859504132231,Hispanic or Latino + Advanced
+473,2000,diff_%_L_AD_total,60.26557711950971,Hispanic or Latino + Advanced
+474,2001,diff_%_L_AD_total,54.93387589013224,Hispanic or Latino + Advanced
+475,2002,diff_%_L_AD_total,58.673469387755105,Hispanic or Latino + Advanced
+476,2003,diff_%_L_AD_total,78.91019172552977,Hispanic or Latino + Advanced
+477,2004,diff_%_L_AD_total,79.25851703406813,Hispanic or Latino + Advanced
+478,2005,diff_%_L_AD_total,73.44689378757515,Hispanic or Latino + Advanced
+479,2006,diff_%_L_AD_total,76.47058823529412,Hispanic or Latino + Advanced
+480,2007,diff_%_L_AD_total,77.10233029381965,Hispanic or Latino + Advanced
+481,2008,diff_%_L_AD_total,73.72627372627373,Hispanic or Latino + Advanced
+482,2009,diff_%_L_AD_total,74.56479690522244,Hispanic or Latino + Advanced
+483,2010,diff_%_L_AD_total,75.14563106796116,Hispanic or Latino + Advanced
+484,2011,diff_%_L_AD_total,75.0,Hispanic or Latino + Advanced
+485,2012,diff_%_L_AD_total,73.88724035608308,Hispanic or Latino + Advanced
+486,2013,diff_%_L_AD_total,73.11507936507937,Hispanic or Latino + Advanced
+487,2014,diff_%_L_AD_total,69.93006993006993,Hispanic or Latino + Advanced
+488,2015,diff_%_L_AD_total,71.42857142857143,Hispanic or Latino + Advanced
+489,2016,diff_%_L_AD_total,71.44249512670565,Hispanic or Latino + Advanced
+490,2017,diff_%_L_AD_total,66.76384839650146,Hispanic or Latino + Advanced
+491,2018,diff_%_L_AD_total,66.66666666666666,Hispanic or Latino + Advanced
+492,2019,diff_%_L_AD_total,63.83177570093458,Hispanic or Latino + Advanced
+493,2020,diff_%_L_AD_total,61.504424778761056,Hispanic or Latino + Advanced
+494,1995,diff_%_L_SC_total,-15.40130151843818,Hispanic or Latino + Some College
+495,1996,diff_%_L_SC_total,-15.72052401746725,Hispanic or Latino + Some College
+496,1997,diff_%_L_SC_total,-11.978021978021978,Hispanic or Latino + Some College
+497,1998,diff_%_L_SC_total,-14.46673706441394,Hispanic or Latino + Some College
+498,1999,diff_%_L_SC_total,-16.219008264462808,Hispanic or Latino + Some College
+499,2000,diff_%_L_SC_total,-16.649642492339122,Hispanic or Latino + Some College
+500,2001,diff_%_L_SC_total,-12.71617497456765,Hispanic or Latino + Some College
+501,2002,diff_%_L_SC_total,-10.510204081632653,Hispanic or Latino + Some College
+502,2003,diff_%_L_SC_total,-3.733602421796166,Hispanic or Latino + Some College
+503,2004,diff_%_L_SC_total,-4.509018036072145,Hispanic or Latino + Some College
+504,2005,diff_%_L_SC_total,-4.709418837675351,Hispanic or Latino + Some College
+505,2006,diff_%_L_SC_total,-4.462474645030426,Hispanic or Latino + Some College
+506,2007,diff_%_L_SC_total,-3.850050658561297,Hispanic or Latino + Some College
+507,2008,diff_%_L_SC_total,-6.493506493506493,Hispanic or Latino + Some College
+508,2009,diff_%_L_SC_total,-8.994197292069632,Hispanic or Latino + Some College
+509,2010,diff_%_L_SC_total,-8.932038834951456,Hispanic or Latino + Some College
+510,2011,diff_%_L_SC_total,-8.7,Hispanic or Latino + Some College
+511,2012,diff_%_L_SC_total,-9.594460929772502,Hispanic or Latino + Some College
+512,2013,diff_%_L_SC_total,-10.01984126984127,Hispanic or Latino + Some College
+513,2014,diff_%_L_SC_total,-9.490509490509492,Hispanic or Latino + Some College
+514,2015,diff_%_L_SC_total,-10.160965794768611,Hispanic or Latino + Some College
+515,2016,diff_%_L_SC_total,-10.818713450292398,Hispanic or Latino + Some College
+516,2017,diff_%_L_SC_total,-11.078717201166182,Hispanic or Latino + Some College
+517,2018,diff_%_L_SC_total,-11.11111111111111,Hispanic or Latino + Some College
+518,2019,diff_%_L_SC_total,-13.925233644859814,Hispanic or Latino + Some College
+519,2020,diff_%_L_SC_total,-13.539823008849558,Hispanic or Latino + Some College
+520,1995,diff_%_L_HS_total,-27.114967462039047,Hispanic or Latino + High School
+521,1996,diff_%_L_HS_total,-28.16593886462882,Hispanic or Latino + High School
+522,1997,diff_%_L_HS_total,-28.021978021978022,Hispanic or Latino + High School
+523,1998,diff_%_L_HS_total,-24.39281942977825,Hispanic or Latino + High School
+524,1999,diff_%_L_HS_total,-27.27272727272727,Hispanic or Latino + High School
+525,2000,diff_%_L_HS_total,-30.541368743615934,Hispanic or Latino + High School
+526,2001,diff_%_L_HS_total,-26.14445574771109,Hispanic or Latino + High School
+527,2002,diff_%_L_HS_total,-26.53061224489796,Hispanic or Latino + High School
+528,2003,diff_%_L_HS_total,-16.548940464177598,Hispanic or Latino + High School
+529,2004,diff_%_L_HS_total,-16.132264529058116,Hispanic or Latino + High School
+530,2005,diff_%_L_HS_total,-16.03206412825651,Hispanic or Latino + High School
+531,2006,diff_%_L_HS_total,-15.720081135902635,Hispanic or Latino + High School
+532,2007,diff_%_L_HS_total,-17.1225937183384,Hispanic or Latino + High School
+533,2008,diff_%_L_HS_total,-18.48151848151848,Hispanic or Latino + High School
+534,2009,diff_%_L_HS_total,-21.08317214700193,Hispanic or Latino + High School
+535,2010,diff_%_L_HS_total,-21.941747572815533,Hispanic or Latino + High School
+536,2011,diff_%_L_HS_total,-19.400000000000002,Hispanic or Latino + High School
+537,2012,diff_%_L_HS_total,-20.375865479723046,Hispanic or Latino + High School
+538,2013,diff_%_L_HS_total,-20.03968253968254,Hispanic or Latino + High School
+539,2014,diff_%_L_HS_total,-19.480519480519483,Hispanic or Latino + High School
+540,2015,diff_%_L_HS_total,-19.517102615694164,Hispanic or Latino + High School
+541,2016,diff_%_L_HS_total,-20.56530214424951,Hispanic or Latino + High School
+542,2017,diff_%_L_HS_total,-21.379980563654033,Hispanic or Latino + High School
+543,2018,diff_%_L_HS_total,-21.0727969348659,Hispanic or Latino + High School
+544,2019,diff_%_L_HS_total,-23.271028037383175,Hispanic or Latino + High School
+545,2020,diff_%_L_HS_total,-23.097345132743364,Hispanic or Latino + High School
 546,1995,diff_%_M_HS_total,0.0,Male + High School
 547,1996,diff_%_M_HS_total,1.0917030567685588,Male + High School
 548,1997,diff_%_M_HS_total,0.0,Male + High School
@@ -961,214 +961,214 @@
 959,2018,diff_%_W_F_AD_total,45.593869731800766,White + Female + Advanced
 960,2019,diff_%_W_F_AD_total,43.36448598130841,White + Female + Advanced
 961,2020,diff_%_W_F_AD_total,40.0,White + Female + Advanced
-962,1995,diff_%_L_M_HS_total,-18.76355748373102,Latinx + Male + High School
-963,1996,diff_%_L_M_HS_total,-20.41484716157205,Latinx + Male + High School
-964,1997,diff_%_L_M_HS_total,-20.0,Latinx + Male + High School
-965,1998,diff_%_L_M_HS_total,-19.640971488912353,Latinx + Male + High School
-966,1999,diff_%_L_M_HS_total,-20.041322314049587,Latinx + Male + High School
-967,2000,diff_%_L_M_HS_total,-23.595505617977526,Latinx + Male + High School
-968,2001,diff_%_L_M_HS_total,-19.430315361139368,Latinx + Male + High School
-969,2002,diff_%_L_M_HS_total,-16.83673469387755,Latinx + Male + High School
-970,2003,diff_%_L_M_HS_total,-3.733602421796166,Latinx + Male + High School
-971,2004,diff_%_L_M_HS_total,-4.909819639278557,Latinx + Male + High School
-972,2005,diff_%_L_M_HS_total,-6.813627254509018,Latinx + Male + High School
-973,2006,diff_%_L_M_HS_total,-4.462474645030426,Latinx + Male + High School
-974,2007,diff_%_L_M_HS_total,-4.761904761904762,Latinx + Male + High School
-975,2008,diff_%_L_M_HS_total,-6.493506493506493,Latinx + Male + High School
-976,2009,diff_%_L_M_HS_total,-8.704061895551257,Latinx + Male + High School
-977,2010,diff_%_L_M_HS_total,-10.0,Latinx + Male + High School
-978,2011,diff_%_L_M_HS_total,-9.0,Latinx + Male + High School
-979,2012,diff_%_L_M_HS_total,-9.594460929772502,Latinx + Male + High School
-980,2013,diff_%_L_M_HS_total,-10.01984126984127,Latinx + Male + High School
-981,2014,diff_%_L_M_HS_total,-9.490509490509492,Latinx + Male + High School
-982,2015,diff_%_L_M_HS_total,-8.651911468812877,Latinx + Male + High School
-983,2016,diff_%_L_M_HS_total,-11.208576998050681,Latinx + Male + High School
-984,2017,diff_%_L_M_HS_total,-11.078717201166182,Latinx + Male + High School
-985,2018,diff_%_L_M_HS_total,-11.11111111111111,Latinx + Male + High School
-986,2019,diff_%_L_M_HS_total,-14.018691588785046,Latinx + Male + High School
-987,2020,diff_%_L_M_HS_total,-13.982300884955754,Latinx + Male + High School
-988,1995,diff_%_L_M_SC_total,0.0,Latinx + Male + Some College
-989,1996,diff_%_L_M_SC_total,-1.9650655021834063,Latinx + Male + Some College
-990,1997,diff_%_L_M_SC_total,-3.9560439560439558,Latinx + Male + Some College
-991,1998,diff_%_L_M_SC_total,-4.963041182682154,Latinx + Male + Some College
-992,1999,diff_%_L_M_SC_total,-2.169421487603306,Latinx + Male + Some College
-993,2000,diff_%_L_M_SC_total,-4.49438202247191,Latinx + Male + Some College
-994,2001,diff_%_L_M_SC_total,-3.1536113936927768,Latinx + Male + Some College
-995,2002,diff_%_L_M_SC_total,-0.20408163265306123,Latinx + Male + Some College
-996,2003,diff_%_L_M_SC_total,12.31079717457114,Latinx + Male + Some College
-997,2004,diff_%_L_M_SC_total,11.823647294589177,Latinx + Male + Some College
-998,2005,diff_%_L_M_SC_total,9.719438877755511,Latinx + Male + Some College
-999,2006,diff_%_L_M_SC_total,11.76470588235294,Latinx + Male + Some College
-1000,2007,diff_%_L_M_SC_total,9.827760891590678,Latinx + Male + Some College
-1001,2008,diff_%_L_M_SC_total,8.691308691308691,Latinx + Male + Some College
-1002,2009,diff_%_L_M_SC_total,5.222437137330754,Latinx + Male + Some College
-1003,2010,diff_%_L_M_SC_total,4.077669902912621,Latinx + Male + Some College
-1004,2011,diff_%_L_M_SC_total,4.5,Latinx + Male + Some College
-1005,2012,diff_%_L_M_SC_total,1.483679525222552,Latinx + Male + Some College
-1006,2013,diff_%_L_M_SC_total,0.992063492063492,Latinx + Male + Some College
-1007,2014,diff_%_L_M_SC_total,3.796203796203796,Latinx + Male + Some College
-1008,2015,diff_%_L_M_SC_total,4.929577464788732,Latinx + Male + Some College
-1009,2016,diff_%_L_M_SC_total,2.8265107212475633,Latinx + Male + Some College
-1010,2017,diff_%_L_M_SC_total,1.749271137026239,Latinx + Male + Some College
-1011,2018,diff_%_L_M_SC_total,2.586206896551724,Latinx + Male + Some College
-1012,2019,diff_%_L_M_SC_total,2.5233644859813085,Latinx + Male + Some College
-1013,2020,diff_%_L_M_SC_total,0.0,Latinx + Male + Some College
-1014,1995,diff_%_L_M_BA_total,28.091106290672453,Latinx + Male + Bachelors
-1015,1996,diff_%_L_M_BA_total,31.65938864628821,Latinx + Male + Bachelors
-1016,1997,diff_%_L_M_BA_total,38.35164835164836,Latinx + Male + Bachelors
-1017,1998,diff_%_L_M_BA_total,42.555438225976765,Latinx + Male + Bachelors
-1018,1999,diff_%_L_M_BA_total,39.77272727272727,Latinx + Male + Bachelors
-1019,2000,diff_%_L_M_BA_total,33.50357507660878,Latinx + Male + Bachelors
-1020,2001,diff_%_L_M_BA_total,35.50356052899288,Latinx + Male + Bachelors
-1021,2002,diff_%_L_M_BA_total,35.204081632653065,Latinx + Male + Bachelors
-1022,2003,diff_%_L_M_BA_total,60.44399596367306,Latinx + Male + Bachelors
-1023,2004,diff_%_L_M_BA_total,55.31062124248497,Latinx + Male + Bachelors
-1024,2005,diff_%_L_M_BA_total,56.01202404809619,Latinx + Male + Bachelors
-1025,2006,diff_%_L_M_BA_total,55.57809330628803,Latinx + Male + Bachelors
-1026,2007,diff_%_L_M_BA_total,57.95339412360689,Latinx + Male + Bachelors
-1027,2008,diff_%_L_M_BA_total,56.743256743256744,Latinx + Male + Bachelors
-1028,2009,diff_%_L_M_BA_total,51.74081237911026,Latinx + Male + Bachelors
-1029,2010,diff_%_L_M_BA_total,50.09708737864078,Latinx + Male + Bachelors
-1030,2011,diff_%_L_M_BA_total,50.0,Latinx + Male + Bachelors
-1031,2012,diff_%_L_M_BA_total,50.74183976261127,Latinx + Male + Bachelors
-1032,2013,diff_%_L_M_BA_total,55.25793650793651,Latinx + Male + Bachelors
-1033,2014,diff_%_L_M_BA_total,50.049950049950056,Latinx + Male + Bachelors
-1034,2015,diff_%_L_M_BA_total,54.72837022132797,Latinx + Male + Bachelors
-1035,2016,diff_%_L_M_BA_total,53.606237816764136,Latinx + Male + Bachelors
-1036,2017,diff_%_L_M_BA_total,55.68513119533528,Latinx + Male + Bachelors
-1037,2018,diff_%_L_M_BA_total,49.52107279693487,Latinx + Male + Bachelors
-1038,2019,diff_%_L_M_BA_total,47.570093457943926,Latinx + Male + Bachelors
-1039,2020,diff_%_L_M_BA_total,44.690265486725664,Latinx + Male + Bachelors
-1040,1995,diff_%_L_M_AD_total,88.06941431670282,Latinx + Male + Advanced
-1041,1996,diff_%_L_M_AD_total,88.42794759825327,Latinx + Male + Advanced
-1042,1997,diff_%_L_M_AD_total,60.76923076923077,Latinx + Male + Advanced
-1043,1998,diff_%_L_M_AD_total,79.61985216473073,Latinx + Male + Advanced
-1044,1999,diff_%_L_M_AD_total,91.32231404958677,Latinx + Male + Advanced
-1045,2000,diff_%_L_M_AD_total,80.28600612870275,Latinx + Male + Advanced
-1046,2001,diff_%_L_M_AD_total,67.85350966429297,Latinx + Male + Advanced
-1047,2002,diff_%_L_M_AD_total,78.9795918367347,Latinx + Male + Advanced
-1048,2003,diff_%_L_M_AD_total,105.04540867810293,Latinx + Male + Advanced
-1049,2004,diff_%_L_M_AD_total,109.01803607214428,Latinx + Male + Advanced
-1050,2005,diff_%_L_M_AD_total,105.01002004008015,Latinx + Male + Advanced
-1051,2006,diff_%_L_M_AD_total,109.22920892494929,Latinx + Male + Advanced
-1052,2007,diff_%_L_M_AD_total,105.97771023302937,Latinx + Male + Advanced
-1053,2008,diff_%_L_M_AD_total,103.7962037962038,Latinx + Male + Advanced
-1054,2009,diff_%_L_M_AD_total,102.32108317214701,Latinx + Male + Advanced
-1055,2010,diff_%_L_M_AD_total,100.09708737864078,Latinx + Male + Advanced
-1056,2011,diff_%_L_M_AD_total,99.9,Latinx + Male + Advanced
-1057,2012,diff_%_L_M_AD_total,100.49455984174085,Latinx + Male + Advanced
-1058,2013,diff_%_L_M_AD_total,101.88492063492063,Latinx + Male + Advanced
-1059,2014,diff_%_L_M_AD_total,100.09990009990011,Latinx + Male + Advanced
-1060,2015,diff_%_L_M_AD_total,100.20120724346076,Latinx + Male + Advanced
-1061,2016,diff_%_L_M_AD_total,96.68615984405457,Latinx + Male + Advanced
-1062,2017,diff_%_L_M_AD_total,100.0971817298348,Latinx + Male + Advanced
-1063,2018,diff_%_L_M_AD_total,94.44444444444444,Latinx + Male + Advanced
-1064,2019,diff_%_L_M_AD_total,96.6355140186916,Latinx + Male + Advanced
-1065,2020,diff_%_L_M_AD_total,92.30088495575221,Latinx + Male + Advanced
-1066,1995,diff_%_L_F_HS_total,-37.52711496746204,Latinx + Female + High School
-1067,1996,diff_%_L_F_HS_total,-35.043668122270745,Latinx + Female + High School
-1068,1997,diff_%_L_F_HS_total,-36.043956043956044,Latinx + Female + High School
-1069,1998,diff_%_L_F_HS_total,-34.21330517423443,Latinx + Female + High School
-1070,1999,diff_%_L_F_HS_total,-34.50413223140496,Latinx + Female + High School
-1071,2000,diff_%_L_F_HS_total,-35.75076608784474,Latinx + Female + High School
-1072,2001,diff_%_L_F_HS_total,-32.858596134282806,Latinx + Female + High School
-1073,2002,diff_%_L_F_HS_total,-33.46938775510204,Latinx + Female + High School
-1074,2003,diff_%_L_F_HS_total,-27.749747729566092,Latinx + Female + High School
-1075,2004,diff_%_L_F_HS_total,-27.955911823647295,Latinx + Female + High School
-1076,2005,diff_%_L_F_HS_total,-27.85571142284569,Latinx + Female + High School
-1077,2006,diff_%_L_F_HS_total,-29.411764705882355,Latinx + Female + High School
-1078,2007,diff_%_L_F_HS_total,-28.57142857142857,Latinx + Female + High School
-1079,2008,diff_%_L_F_HS_total,-30.66933066933067,Latinx + Female + High School
-1080,2009,diff_%_L_F_HS_total,-31.6247582205029,Latinx + Female + High School
-1081,2010,diff_%_L_F_HS_total,-31.650485436893206,Latinx + Female + High School
-1082,2011,diff_%_L_F_HS_total,-29.299999999999997,Latinx + Female + High School
-1083,2012,diff_%_L_F_HS_total,-32.146389713155294,Latinx + Female + High School
-1084,2013,diff_%_L_F_HS_total,-30.357142857142854,Latinx + Female + High School
-1085,2014,diff_%_L_F_HS_total,-30.66933066933067,Latinx + Female + High School
-1086,2015,diff_%_L_F_HS_total,-30.6841046277666,Latinx + Female + High School
-1087,2016,diff_%_L_F_HS_total,-31.48148148148148,Latinx + Female + High School
-1088,2017,diff_%_L_F_HS_total,-31.778425655976676,Latinx + Female + High School
-1089,2018,diff_%_L_F_HS_total,-33.33333333333333,Latinx + Female + High School
-1090,2019,diff_%_L_F_HS_total,-34.57943925233645,Latinx + Female + High School
-1091,2020,diff_%_L_F_HS_total,-34.7787610619469,Latinx + Female + High School
-1092,1995,diff_%_L_F_SC_total,-23.210412147505423,Latinx + Female + Some College
-1093,1996,diff_%_L_F_SC_total,-24.67248908296943,Latinx + Female + Some College
-1094,1997,diff_%_L_F_SC_total,-20.0,Latinx + Female + Some College
-1095,1998,diff_%_L_F_SC_total,-23.970432946145724,Latinx + Female + Some College
-1096,1999,diff_%_L_F_SC_total,-24.6900826446281,Latinx + Female + Some College
-1097,2000,diff_%_L_F_SC_total,-23.595505617977526,Latinx + Female + Some College
-1098,2001,diff_%_L_F_SC_total,-23.09257375381485,Latinx + Female + Some College
-1099,2002,diff_%_L_F_SC_total,-20.20408163265306,Latinx + Female + Some College
-1100,2003,diff_%_L_F_SC_total,-16.548940464177598,Latinx + Female + Some College
-1101,2004,diff_%_L_F_SC_total,-16.432865731462925,Latinx + Female + Some College
-1102,2005,diff_%_L_F_SC_total,-17.034068136272545,Latinx + Female + Some College
-1103,2006,diff_%_L_F_SC_total,-16.734279918864097,Latinx + Female + Some College
-1104,2007,diff_%_L_F_SC_total,-17.52786220871327,Latinx + Female + Some College
-1105,2008,diff_%_L_F_SC_total,-18.48151848151848,Latinx + Female + Some College
-1106,2009,diff_%_L_F_SC_total,-21.08317214700193,Latinx + Female + Some College
-1107,2010,diff_%_L_F_SC_total,-21.941747572815533,Latinx + Female + Some College
-1108,2011,diff_%_L_F_SC_total,-20.0,Latinx + Female + Some College
-1109,2012,diff_%_L_F_SC_total,-20.870425321463898,Latinx + Female + Some College
-1110,2013,diff_%_L_F_SC_total,-21.23015873015873,Latinx + Female + Some College
-1111,2014,diff_%_L_F_SC_total,-21.37862137862138,Latinx + Female + Some College
-1112,2015,diff_%_L_F_SC_total,-21.52917505030181,Latinx + Female + Some College
-1113,2016,diff_%_L_F_SC_total,-22.709551656920077,Latinx + Female + Some College
-1114,2017,diff_%_L_F_SC_total,-22.157434402332363,Latinx + Female + Some College
-1115,2018,diff_%_L_F_SC_total,-24.42528735632184,Latinx + Female + Some College
-1116,2019,diff_%_L_F_SC_total,-24.205607476635514,Latinx + Female + Some College
-1117,2020,diff_%_L_F_SC_total,-23.98230088495575,Latinx + Female + Some College
-1118,1995,diff_%_L_F_BA_total,9.327548806941431,Latinx + Female + Bachelors
-1119,1996,diff_%_L_F_BA_total,15.393013100436681,Latinx + Female + Bachelors
-1120,1997,diff_%_L_F_BA_total,15.164835164835164,Latinx + Female + Bachelors
-1121,1998,diff_%_L_F_BA_total,12.882787750791975,Latinx + Female + Bachelors
-1122,1999,diff_%_L_F_BA_total,11.776859504132231,Latinx + Female + Bachelors
-1123,2000,diff_%_L_F_BA_total,8.375893769152196,Latinx + Female + Bachelors
-1124,2001,diff_%_L_F_BA_total,9.257375381485248,Latinx + Female + Bachelors
-1125,2002,diff_%_L_F_BA_total,8.571428571428571,Latinx + Female + Bachelors
-1126,2003,diff_%_L_F_BA_total,20.282542885973765,Latinx + Female + Bachelors
-1127,2004,diff_%_L_F_BA_total,19.438877755511022,Latinx + Female + Bachelors
-1128,2005,diff_%_L_F_BA_total,15.631262525050099,Latinx + Female + Bachelors
-1129,2006,diff_%_L_F_BA_total,17.647058823529413,Latinx + Female + Bachelors
-1130,2007,diff_%_L_F_BA_total,17.52786220871327,Latinx + Female + Bachelors
-1131,2008,diff_%_L_F_BA_total,15.484515484515486,Latinx + Female + Bachelors
-1132,2009,diff_%_L_F_BA_total,13.733075435203096,Latinx + Female + Bachelors
-1133,2010,diff_%_L_F_BA_total,12.524271844660195,Latinx + Female + Bachelors
-1134,2011,diff_%_L_F_BA_total,15.4,Latinx + Female + Bachelors
-1135,2012,diff_%_L_F_BA_total,11.177052423343223,Latinx + Female + Bachelors
-1136,2013,diff_%_L_F_BA_total,16.17063492063492,Latinx + Female + Bachelors
-1137,2014,diff_%_L_F_BA_total,17.282717282717282,Latinx + Female + Bachelors
-1138,2015,diff_%_L_F_BA_total,17.50503018108652,Latinx + Female + Bachelors
-1139,2016,diff_%_L_F_BA_total,14.230019493177387,Latinx + Female + Bachelors
-1140,2017,diff_%_L_F_BA_total,15.646258503401361,Latinx + Female + Bachelors
-1141,2018,diff_%_L_F_BA_total,11.11111111111111,Latinx + Female + Bachelors
-1142,2019,diff_%_L_F_BA_total,12.616822429906541,Latinx + Female + Bachelors
-1143,2020,diff_%_L_F_BA_total,10.0,Latinx + Female + Bachelors
-1144,1995,diff_%_L_F_AD_total,58.45986984815619,Latinx + Female + Advanced
-1145,1996,diff_%_L_F_AD_total,56.98689956331878,Latinx + Female + Advanced
-1146,1997,diff_%_L_F_AD_total,38.35164835164836,Latinx + Female + Advanced
-1147,1998,diff_%_L_F_AD_total,34.21330517423443,Latinx + Female + Advanced
-1148,1999,diff_%_L_F_AD_total,39.77272727272727,Latinx + Female + Advanced
-1149,2000,diff_%_L_F_AD_total,34.42288049029622,Latinx + Female + Advanced
-1150,2001,diff_%_L_F_AD_total,35.50356052899288,Latinx + Female + Advanced
-1151,2002,diff_%_L_F_AD_total,36.42857142857142,Latinx + Female + Advanced
-1152,2003,diff_%_L_F_AD_total,54.18768920282543,Latinx + Female + Advanced
-1153,2004,diff_%_L_F_AD_total,50.80160320641283,Latinx + Female + Advanced
-1154,2005,diff_%_L_F_AD_total,50.300601202404806,Latinx + Female + Advanced
-1155,2006,diff_%_L_F_AD_total,49.89858012170386,Latinx + Female + Advanced
-1156,2007,diff_%_L_F_AD_total,51.16514690982776,Latinx + Female + Advanced
-1157,2008,diff_%_L_F_AD_total,51.44855144855145,Latinx + Female + Advanced
-1158,2009,diff_%_L_F_AD_total,51.64410058027079,Latinx + Female + Advanced
-1159,2010,diff_%_L_F_AD_total,50.09708737864078,Latinx + Female + Advanced
-1160,2011,diff_%_L_F_AD_total,50.0,Latinx + Female + Advanced
-1161,2012,diff_%_L_F_AD_total,45.00494559841741,Latinx + Female + Advanced
-1162,2013,diff_%_L_F_AD_total,50.0,Latinx + Female + Advanced
-1163,2014,diff_%_L_F_AD_total,47.65234765234766,Latinx + Female + Advanced
-1164,2015,diff_%_L_F_AD_total,47.48490945674044,Latinx + Female + Advanced
-1165,2016,diff_%_L_F_AD_total,48.635477582846,Latinx + Female + Advanced
-1166,2017,diff_%_L_F_AD_total,46.7444120505345,Latinx + Female + Advanced
-1167,2018,diff_%_L_F_AD_total,45.30651340996169,Latinx + Female + Advanced
-1168,2019,diff_%_L_F_AD_total,43.36448598130841,Latinx + Female + Advanced
-1169,2020,diff_%_L_F_AD_total,42.30088495575221,Latinx + Female + Advanced
+962,1995,diff_%_L_M_HS_total,-18.76355748373102,Hispanic or Latino + Male + High School
+963,1996,diff_%_L_M_HS_total,-20.41484716157205,Hispanic or Latino + Male + High School
+964,1997,diff_%_L_M_HS_total,-20.0,Hispanic or Latino + Male + High School
+965,1998,diff_%_L_M_HS_total,-19.640971488912353,Hispanic or Latino + Male + High School
+966,1999,diff_%_L_M_HS_total,-20.041322314049587,Hispanic or Latino + Male + High School
+967,2000,diff_%_L_M_HS_total,-23.595505617977526,Hispanic or Latino + Male + High School
+968,2001,diff_%_L_M_HS_total,-19.430315361139368,Hispanic or Latino + Male + High School
+969,2002,diff_%_L_M_HS_total,-16.83673469387755,Hispanic or Latino + Male + High School
+970,2003,diff_%_L_M_HS_total,-3.733602421796166,Hispanic or Latino + Male + High School
+971,2004,diff_%_L_M_HS_total,-4.909819639278557,Hispanic or Latino + Male + High School
+972,2005,diff_%_L_M_HS_total,-6.813627254509018,Hispanic or Latino + Male + High School
+973,2006,diff_%_L_M_HS_total,-4.462474645030426,Hispanic or Latino + Male + High School
+974,2007,diff_%_L_M_HS_total,-4.761904761904762,Hispanic or Latino + Male + High School
+975,2008,diff_%_L_M_HS_total,-6.493506493506493,Hispanic or Latino + Male + High School
+976,2009,diff_%_L_M_HS_total,-8.704061895551257,Hispanic or Latino + Male + High School
+977,2010,diff_%_L_M_HS_total,-10.0,Hispanic or Latino + Male + High School
+978,2011,diff_%_L_M_HS_total,-9.0,Hispanic or Latino + Male + High School
+979,2012,diff_%_L_M_HS_total,-9.594460929772502,Hispanic or Latino + Male + High School
+980,2013,diff_%_L_M_HS_total,-10.01984126984127,Hispanic or Latino + Male + High School
+981,2014,diff_%_L_M_HS_total,-9.490509490509492,Hispanic or Latino + Male + High School
+982,2015,diff_%_L_M_HS_total,-8.651911468812877,Hispanic or Latino + Male + High School
+983,2016,diff_%_L_M_HS_total,-11.208576998050681,Hispanic or Latino + Male + High School
+984,2017,diff_%_L_M_HS_total,-11.078717201166182,Hispanic or Latino + Male + High School
+985,2018,diff_%_L_M_HS_total,-11.11111111111111,Hispanic or Latino + Male + High School
+986,2019,diff_%_L_M_HS_total,-14.018691588785046,Hispanic or Latino + Male + High School
+987,2020,diff_%_L_M_HS_total,-13.982300884955754,Hispanic or Latino + Male + High School
+988,1995,diff_%_L_M_SC_total,0.0,Hispanic or Latino + Male + Some College
+989,1996,diff_%_L_M_SC_total,-1.9650655021834063,Hispanic or Latino + Male + Some College
+990,1997,diff_%_L_M_SC_total,-3.9560439560439558,Hispanic or Latino + Male + Some College
+991,1998,diff_%_L_M_SC_total,-4.963041182682154,Hispanic or Latino + Male + Some College
+992,1999,diff_%_L_M_SC_total,-2.169421487603306,Hispanic or Latino + Male + Some College
+993,2000,diff_%_L_M_SC_total,-4.49438202247191,Hispanic or Latino + Male + Some College
+994,2001,diff_%_L_M_SC_total,-3.1536113936927768,Hispanic or Latino + Male + Some College
+995,2002,diff_%_L_M_SC_total,-0.20408163265306123,Hispanic or Latino + Male + Some College
+996,2003,diff_%_L_M_SC_total,12.31079717457114,Hispanic or Latino + Male + Some College
+997,2004,diff_%_L_M_SC_total,11.823647294589177,Hispanic or Latino + Male + Some College
+998,2005,diff_%_L_M_SC_total,9.719438877755511,Hispanic or Latino + Male + Some College
+999,2006,diff_%_L_M_SC_total,11.76470588235294,Hispanic or Latino + Male + Some College
+1000,2007,diff_%_L_M_SC_total,9.827760891590678,Hispanic or Latino + Male + Some College
+1001,2008,diff_%_L_M_SC_total,8.691308691308691,Hispanic or Latino + Male + Some College
+1002,2009,diff_%_L_M_SC_total,5.222437137330754,Hispanic or Latino + Male + Some College
+1003,2010,diff_%_L_M_SC_total,4.077669902912621,Hispanic or Latino + Male + Some College
+1004,2011,diff_%_L_M_SC_total,4.5,Hispanic or Latino + Male + Some College
+1005,2012,diff_%_L_M_SC_total,1.483679525222552,Hispanic or Latino + Male + Some College
+1006,2013,diff_%_L_M_SC_total,0.992063492063492,Hispanic or Latino + Male + Some College
+1007,2014,diff_%_L_M_SC_total,3.796203796203796,Hispanic or Latino + Male + Some College
+1008,2015,diff_%_L_M_SC_total,4.929577464788732,Hispanic or Latino + Male + Some College
+1009,2016,diff_%_L_M_SC_total,2.8265107212475633,Hispanic or Latino + Male + Some College
+1010,2017,diff_%_L_M_SC_total,1.749271137026239,Hispanic or Latino + Male + Some College
+1011,2018,diff_%_L_M_SC_total,2.586206896551724,Hispanic or Latino + Male + Some College
+1012,2019,diff_%_L_M_SC_total,2.5233644859813085,Hispanic or Latino + Male + Some College
+1013,2020,diff_%_L_M_SC_total,0.0,Hispanic or Latino + Male + Some College
+1014,1995,diff_%_L_M_BA_total,28.091106290672453,Hispanic or Latino + Male + Bachelors
+1015,1996,diff_%_L_M_BA_total,31.65938864628821,Hispanic or Latino + Male + Bachelors
+1016,1997,diff_%_L_M_BA_total,38.35164835164836,Hispanic or Latino + Male + Bachelors
+1017,1998,diff_%_L_M_BA_total,42.555438225976765,Hispanic or Latino + Male + Bachelors
+1018,1999,diff_%_L_M_BA_total,39.77272727272727,Hispanic or Latino + Male + Bachelors
+1019,2000,diff_%_L_M_BA_total,33.50357507660878,Hispanic or Latino + Male + Bachelors
+1020,2001,diff_%_L_M_BA_total,35.50356052899288,Hispanic or Latino + Male + Bachelors
+1021,2002,diff_%_L_M_BA_total,35.204081632653065,Hispanic or Latino + Male + Bachelors
+1022,2003,diff_%_L_M_BA_total,60.44399596367306,Hispanic or Latino + Male + Bachelors
+1023,2004,diff_%_L_M_BA_total,55.31062124248497,Hispanic or Latino + Male + Bachelors
+1024,2005,diff_%_L_M_BA_total,56.01202404809619,Hispanic or Latino + Male + Bachelors
+1025,2006,diff_%_L_M_BA_total,55.57809330628803,Hispanic or Latino + Male + Bachelors
+1026,2007,diff_%_L_M_BA_total,57.95339412360689,Hispanic or Latino + Male + Bachelors
+1027,2008,diff_%_L_M_BA_total,56.743256743256744,Hispanic or Latino + Male + Bachelors
+1028,2009,diff_%_L_M_BA_total,51.74081237911026,Hispanic or Latino + Male + Bachelors
+1029,2010,diff_%_L_M_BA_total,50.09708737864078,Hispanic or Latino + Male + Bachelors
+1030,2011,diff_%_L_M_BA_total,50.0,Hispanic or Latino + Male + Bachelors
+1031,2012,diff_%_L_M_BA_total,50.74183976261127,Hispanic or Latino + Male + Bachelors
+1032,2013,diff_%_L_M_BA_total,55.25793650793651,Hispanic or Latino + Male + Bachelors
+1033,2014,diff_%_L_M_BA_total,50.049950049950056,Hispanic or Latino + Male + Bachelors
+1034,2015,diff_%_L_M_BA_total,54.72837022132797,Hispanic or Latino + Male + Bachelors
+1035,2016,diff_%_L_M_BA_total,53.606237816764136,Hispanic or Latino + Male + Bachelors
+1036,2017,diff_%_L_M_BA_total,55.68513119533528,Hispanic or Latino + Male + Bachelors
+1037,2018,diff_%_L_M_BA_total,49.52107279693487,Hispanic or Latino + Male + Bachelors
+1038,2019,diff_%_L_M_BA_total,47.570093457943926,Hispanic or Latino + Male + Bachelors
+1039,2020,diff_%_L_M_BA_total,44.690265486725664,Hispanic or Latino + Male + Bachelors
+1040,1995,diff_%_L_M_AD_total,88.06941431670282,Hispanic or Latino + Male + Advanced
+1041,1996,diff_%_L_M_AD_total,88.42794759825327,Hispanic or Latino + Male + Advanced
+1042,1997,diff_%_L_M_AD_total,60.76923076923077,Hispanic or Latino + Male + Advanced
+1043,1998,diff_%_L_M_AD_total,79.61985216473073,Hispanic or Latino + Male + Advanced
+1044,1999,diff_%_L_M_AD_total,91.32231404958677,Hispanic or Latino + Male + Advanced
+1045,2000,diff_%_L_M_AD_total,80.28600612870275,Hispanic or Latino + Male + Advanced
+1046,2001,diff_%_L_M_AD_total,67.85350966429297,Hispanic or Latino + Male + Advanced
+1047,2002,diff_%_L_M_AD_total,78.9795918367347,Hispanic or Latino + Male + Advanced
+1048,2003,diff_%_L_M_AD_total,105.04540867810293,Hispanic or Latino + Male + Advanced
+1049,2004,diff_%_L_M_AD_total,109.01803607214428,Hispanic or Latino + Male + Advanced
+1050,2005,diff_%_L_M_AD_total,105.01002004008015,Hispanic or Latino + Male + Advanced
+1051,2006,diff_%_L_M_AD_total,109.22920892494929,Hispanic or Latino + Male + Advanced
+1052,2007,diff_%_L_M_AD_total,105.97771023302937,Hispanic or Latino + Male + Advanced
+1053,2008,diff_%_L_M_AD_total,103.7962037962038,Hispanic or Latino + Male + Advanced
+1054,2009,diff_%_L_M_AD_total,102.32108317214701,Hispanic or Latino + Male + Advanced
+1055,2010,diff_%_L_M_AD_total,100.09708737864078,Hispanic or Latino + Male + Advanced
+1056,2011,diff_%_L_M_AD_total,99.9,Hispanic or Latino + Male + Advanced
+1057,2012,diff_%_L_M_AD_total,100.49455984174085,Hispanic or Latino + Male + Advanced
+1058,2013,diff_%_L_M_AD_total,101.88492063492063,Hispanic or Latino + Male + Advanced
+1059,2014,diff_%_L_M_AD_total,100.09990009990011,Hispanic or Latino + Male + Advanced
+1060,2015,diff_%_L_M_AD_total,100.20120724346076,Hispanic or Latino + Male + Advanced
+1061,2016,diff_%_L_M_AD_total,96.68615984405457,Hispanic or Latino + Male + Advanced
+1062,2017,diff_%_L_M_AD_total,100.0971817298348,Hispanic or Latino + Male + Advanced
+1063,2018,diff_%_L_M_AD_total,94.44444444444444,Hispanic or Latino + Male + Advanced
+1064,2019,diff_%_L_M_AD_total,96.6355140186916,Hispanic or Latino + Male + Advanced
+1065,2020,diff_%_L_M_AD_total,92.30088495575221,Hispanic or Latino + Male + Advanced
+1066,1995,diff_%_L_F_HS_total,-37.52711496746204,Hispanic or Latino + Female + High School
+1067,1996,diff_%_L_F_HS_total,-35.043668122270745,Hispanic or Latino + Female + High School
+1068,1997,diff_%_L_F_HS_total,-36.043956043956044,Hispanic or Latino + Female + High School
+1069,1998,diff_%_L_F_HS_total,-34.21330517423443,Hispanic or Latino + Female + High School
+1070,1999,diff_%_L_F_HS_total,-34.50413223140496,Hispanic or Latino + Female + High School
+1071,2000,diff_%_L_F_HS_total,-35.75076608784474,Hispanic or Latino + Female + High School
+1072,2001,diff_%_L_F_HS_total,-32.858596134282806,Hispanic or Latino + Female + High School
+1073,2002,diff_%_L_F_HS_total,-33.46938775510204,Hispanic or Latino + Female + High School
+1074,2003,diff_%_L_F_HS_total,-27.749747729566092,Hispanic or Latino + Female + High School
+1075,2004,diff_%_L_F_HS_total,-27.955911823647295,Hispanic or Latino + Female + High School
+1076,2005,diff_%_L_F_HS_total,-27.85571142284569,Hispanic or Latino + Female + High School
+1077,2006,diff_%_L_F_HS_total,-29.411764705882355,Hispanic or Latino + Female + High School
+1078,2007,diff_%_L_F_HS_total,-28.57142857142857,Hispanic or Latino + Female + High School
+1079,2008,diff_%_L_F_HS_total,-30.66933066933067,Hispanic or Latino + Female + High School
+1080,2009,diff_%_L_F_HS_total,-31.6247582205029,Hispanic or Latino + Female + High School
+1081,2010,diff_%_L_F_HS_total,-31.650485436893206,Hispanic or Latino + Female + High School
+1082,2011,diff_%_L_F_HS_total,-29.299999999999997,Hispanic or Latino + Female + High School
+1083,2012,diff_%_L_F_HS_total,-32.146389713155294,Hispanic or Latino + Female + High School
+1084,2013,diff_%_L_F_HS_total,-30.357142857142854,Hispanic or Latino + Female + High School
+1085,2014,diff_%_L_F_HS_total,-30.66933066933067,Hispanic or Latino + Female + High School
+1086,2015,diff_%_L_F_HS_total,-30.6841046277666,Hispanic or Latino + Female + High School
+1087,2016,diff_%_L_F_HS_total,-31.48148148148148,Hispanic or Latino + Female + High School
+1088,2017,diff_%_L_F_HS_total,-31.778425655976676,Hispanic or Latino + Female + High School
+1089,2018,diff_%_L_F_HS_total,-33.33333333333333,Hispanic or Latino + Female + High School
+1090,2019,diff_%_L_F_HS_total,-34.57943925233645,Hispanic or Latino + Female + High School
+1091,2020,diff_%_L_F_HS_total,-34.7787610619469,Hispanic or Latino + Female + High School
+1092,1995,diff_%_L_F_SC_total,-23.210412147505423,Hispanic or Latino + Female + Some College
+1093,1996,diff_%_L_F_SC_total,-24.67248908296943,Hispanic or Latino + Female + Some College
+1094,1997,diff_%_L_F_SC_total,-20.0,Hispanic or Latino + Female + Some College
+1095,1998,diff_%_L_F_SC_total,-23.970432946145724,Hispanic or Latino + Female + Some College
+1096,1999,diff_%_L_F_SC_total,-24.6900826446281,Hispanic or Latino + Female + Some College
+1097,2000,diff_%_L_F_SC_total,-23.595505617977526,Hispanic or Latino + Female + Some College
+1098,2001,diff_%_L_F_SC_total,-23.09257375381485,Hispanic or Latino + Female + Some College
+1099,2002,diff_%_L_F_SC_total,-20.20408163265306,Hispanic or Latino + Female + Some College
+1100,2003,diff_%_L_F_SC_total,-16.548940464177598,Hispanic or Latino + Female + Some College
+1101,2004,diff_%_L_F_SC_total,-16.432865731462925,Hispanic or Latino + Female + Some College
+1102,2005,diff_%_L_F_SC_total,-17.034068136272545,Hispanic or Latino + Female + Some College
+1103,2006,diff_%_L_F_SC_total,-16.734279918864097,Hispanic or Latino + Female + Some College
+1104,2007,diff_%_L_F_SC_total,-17.52786220871327,Hispanic or Latino + Female + Some College
+1105,2008,diff_%_L_F_SC_total,-18.48151848151848,Hispanic or Latino + Female + Some College
+1106,2009,diff_%_L_F_SC_total,-21.08317214700193,Hispanic or Latino + Female + Some College
+1107,2010,diff_%_L_F_SC_total,-21.941747572815533,Hispanic or Latino + Female + Some College
+1108,2011,diff_%_L_F_SC_total,-20.0,Hispanic or Latino + Female + Some College
+1109,2012,diff_%_L_F_SC_total,-20.870425321463898,Hispanic or Latino + Female + Some College
+1110,2013,diff_%_L_F_SC_total,-21.23015873015873,Hispanic or Latino + Female + Some College
+1111,2014,diff_%_L_F_SC_total,-21.37862137862138,Hispanic or Latino + Female + Some College
+1112,2015,diff_%_L_F_SC_total,-21.52917505030181,Hispanic or Latino + Female + Some College
+1113,2016,diff_%_L_F_SC_total,-22.709551656920077,Hispanic or Latino + Female + Some College
+1114,2017,diff_%_L_F_SC_total,-22.157434402332363,Hispanic or Latino + Female + Some College
+1115,2018,diff_%_L_F_SC_total,-24.42528735632184,Hispanic or Latino + Female + Some College
+1116,2019,diff_%_L_F_SC_total,-24.205607476635514,Hispanic or Latino + Female + Some College
+1117,2020,diff_%_L_F_SC_total,-23.98230088495575,Hispanic or Latino + Female + Some College
+1118,1995,diff_%_L_F_BA_total,9.327548806941431,Hispanic or Latino + Female + Bachelors
+1119,1996,diff_%_L_F_BA_total,15.393013100436681,Hispanic or Latino + Female + Bachelors
+1120,1997,diff_%_L_F_BA_total,15.164835164835164,Hispanic or Latino + Female + Bachelors
+1121,1998,diff_%_L_F_BA_total,12.882787750791975,Hispanic or Latino + Female + Bachelors
+1122,1999,diff_%_L_F_BA_total,11.776859504132231,Hispanic or Latino + Female + Bachelors
+1123,2000,diff_%_L_F_BA_total,8.375893769152196,Hispanic or Latino + Female + Bachelors
+1124,2001,diff_%_L_F_BA_total,9.257375381485248,Hispanic or Latino + Female + Bachelors
+1125,2002,diff_%_L_F_BA_total,8.571428571428571,Hispanic or Latino + Female + Bachelors
+1126,2003,diff_%_L_F_BA_total,20.282542885973765,Hispanic or Latino + Female + Bachelors
+1127,2004,diff_%_L_F_BA_total,19.438877755511022,Hispanic or Latino + Female + Bachelors
+1128,2005,diff_%_L_F_BA_total,15.631262525050099,Hispanic or Latino + Female + Bachelors
+1129,2006,diff_%_L_F_BA_total,17.647058823529413,Hispanic or Latino + Female + Bachelors
+1130,2007,diff_%_L_F_BA_total,17.52786220871327,Hispanic or Latino + Female + Bachelors
+1131,2008,diff_%_L_F_BA_total,15.484515484515486,Hispanic or Latino + Female + Bachelors
+1132,2009,diff_%_L_F_BA_total,13.733075435203096,Hispanic or Latino + Female + Bachelors
+1133,2010,diff_%_L_F_BA_total,12.524271844660195,Hispanic or Latino + Female + Bachelors
+1134,2011,diff_%_L_F_BA_total,15.4,Hispanic or Latino + Female + Bachelors
+1135,2012,diff_%_L_F_BA_total,11.177052423343223,Hispanic or Latino + Female + Bachelors
+1136,2013,diff_%_L_F_BA_total,16.17063492063492,Hispanic or Latino + Female + Bachelors
+1137,2014,diff_%_L_F_BA_total,17.282717282717282,Hispanic or Latino + Female + Bachelors
+1138,2015,diff_%_L_F_BA_total,17.50503018108652,Hispanic or Latino + Female + Bachelors
+1139,2016,diff_%_L_F_BA_total,14.230019493177387,Hispanic or Latino + Female + Bachelors
+1140,2017,diff_%_L_F_BA_total,15.646258503401361,Hispanic or Latino + Female + Bachelors
+1141,2018,diff_%_L_F_BA_total,11.11111111111111,Hispanic or Latino + Female + Bachelors
+1142,2019,diff_%_L_F_BA_total,12.616822429906541,Hispanic or Latino + Female + Bachelors
+1143,2020,diff_%_L_F_BA_total,10.0,Hispanic or Latino + Female + Bachelors
+1144,1995,diff_%_L_F_AD_total,58.45986984815619,Hispanic or Latino + Female + Advanced
+1145,1996,diff_%_L_F_AD_total,56.98689956331878,Hispanic or Latino + Female + Advanced
+1146,1997,diff_%_L_F_AD_total,38.35164835164836,Hispanic or Latino + Female + Advanced
+1147,1998,diff_%_L_F_AD_total,34.21330517423443,Hispanic or Latino + Female + Advanced
+1148,1999,diff_%_L_F_AD_total,39.77272727272727,Hispanic or Latino + Female + Advanced
+1149,2000,diff_%_L_F_AD_total,34.42288049029622,Hispanic or Latino + Female + Advanced
+1150,2001,diff_%_L_F_AD_total,35.50356052899288,Hispanic or Latino + Female + Advanced
+1151,2002,diff_%_L_F_AD_total,36.42857142857142,Hispanic or Latino + Female + Advanced
+1152,2003,diff_%_L_F_AD_total,54.18768920282543,Hispanic or Latino + Female + Advanced
+1153,2004,diff_%_L_F_AD_total,50.80160320641283,Hispanic or Latino + Female + Advanced
+1154,2005,diff_%_L_F_AD_total,50.300601202404806,Hispanic or Latino + Female + Advanced
+1155,2006,diff_%_L_F_AD_total,49.89858012170386,Hispanic or Latino + Female + Advanced
+1156,2007,diff_%_L_F_AD_total,51.16514690982776,Hispanic or Latino + Female + Advanced
+1157,2008,diff_%_L_F_AD_total,51.44855144855145,Hispanic or Latino + Female + Advanced
+1158,2009,diff_%_L_F_AD_total,51.64410058027079,Hispanic or Latino + Female + Advanced
+1159,2010,diff_%_L_F_AD_total,50.09708737864078,Hispanic or Latino + Female + Advanced
+1160,2011,diff_%_L_F_AD_total,50.0,Hispanic or Latino + Female + Advanced
+1161,2012,diff_%_L_F_AD_total,45.00494559841741,Hispanic or Latino + Female + Advanced
+1162,2013,diff_%_L_F_AD_total,50.0,Hispanic or Latino + Female + Advanced
+1163,2014,diff_%_L_F_AD_total,47.65234765234766,Hispanic or Latino + Female + Advanced
+1164,2015,diff_%_L_F_AD_total,47.48490945674044,Hispanic or Latino + Female + Advanced
+1165,2016,diff_%_L_F_AD_total,48.635477582846,Hispanic or Latino + Female + Advanced
+1166,2017,diff_%_L_F_AD_total,46.7444120505345,Hispanic or Latino + Female + Advanced
+1167,2018,diff_%_L_F_AD_total,45.30651340996169,Hispanic or Latino + Female + Advanced
+1168,2019,diff_%_L_F_AD_total,43.36448598130841,Hispanic or Latino + Female + Advanced
+1169,2020,diff_%_L_F_AD_total,42.30088495575221,Hispanic or Latino + Female + Advanced
 1170,1995,diff_%_B_M_HS_total,-20.065075921908893,Black + Male + High School
 1171,1996,diff_%_B_M_HS_total,-21.61572052401747,Black + Male + High School
 1172,1997,diff_%_B_M_HS_total,-20.0,Black + Male + High School

@@ -190,14 +190,14 @@ with tab2:
     ##################################
     #########RADIO GENDER#############
     ##################################
-    genre = st.radio(
+    gender = st.radio(
         "Select a filter: ",
         ("Female", "Male", "All"),
         key="gender",
         horizontal=True,
     )
 
-    if genre == "All":
+    if gender == "All":
         data = all_gender_degrees
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
@@ -213,7 +213,7 @@ with tab2:
                 ]
             )
         ]
-    elif genre == "Female":
+    elif gender == "Female":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -234,7 +234,7 @@ with tab2:
                 ]
             )
         ]
-    elif genre == "Male":
+    elif gender == "Male":
         chng_data = earn_perc_chng_df_melted[
             earn_perc_chng_df_melted["group_legend"].isin(
                 [
@@ -382,9 +382,126 @@ with tab2:
 
 with tab3:
     ##################################
+    ######### RADIO RACE #############
+    ##################################
+    race = st.radio(
+        "Select a filter: ",
+        ("Asian", "Black", "Hispanic or Latino", "White", "All"),
+        key="race",
+        horizontal=True,
+    )
+
+    if race == "All":
+        data = all_race_degrees
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Asian + Bachelors Degree",
+                    "Asian + Advanced Degree",
+                    "Asian + Some College",
+                    "Asian + High School",
+                    "Black + Bachelors Degree",
+                    "Black + Advanced Degree",
+                    "Black + Some College",
+                    "Black + High School",
+                    "White + Bachelors Degree",
+                    "White + Advanced Degree",
+                    "White + Some College",
+                    "White + High School",
+                    "Hispanic or Latino + Bachelors Degree",
+                    "Hispanic or Latino + Advanced Degree",
+                    "Hispanic or Latino + Some College",
+                    "Hispanic or Latino + High School",
+                ]
+            )
+        ]
+    elif race == "Asian":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Asian + Bachelors Degree",
+                    "Asian + Advanced Degree",
+                    "Asian + Some College",
+                    "Asian + High School",
+                ]
+            )
+        ]
+        data = all_race_degrees[
+            all_race_degrees["group"].isin(
+                [
+                    "Asian + Bachelors Degree",
+                    "Asian + Advanced Degree",
+                    "Asian + Some College",
+                    "Asian + High School",
+                ]
+            )
+        ]
+    elif race == "Black":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Black + Bachelors Degree",
+                    "Black + Advanced Degree",
+                    "Black + Some College",
+                    "Black + High School",
+                ]
+            )
+        ]
+        data = all_race_degrees[
+            all_race_degrees["group"].isin(
+                [
+                    "Black + Bachelors Degree",
+                    "Black + Advanced Degree",
+                    "Black + Some College",
+                    "Black + High School",
+                ]
+            )
+        ]
+    elif race == "Hispanic or Latino":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Hispanic or Latino + Bachelors Degree",
+                    "Hispanic or Latino + Advanced Degree",
+                    "Hispanic or Latino + Some College",
+                    "Hispanic or Latino + High School",
+                ]
+            )
+        ]
+        data = all_race_degrees[
+            all_race_degrees["group"].isin(
+                [
+                    "Hispanic or Latino + Bachelors Degree",
+                    "Hispanic or Latino + Advanced Degree",
+                    "Hispanic or Latino + Some College",
+                    "Hispanic or Latino + High School",
+                ]
+            )
+        ]
+    elif race == "White":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "White + Bachelors Degree",
+                    "White + Advanced Degree",
+                    "White + Some College",
+                    "White + High School",
+                ]
+            )
+        ]
+        data = all_race_degrees[
+            all_race_degrees["group"].isin(
+                [
+                    "White + Bachelors Degree",
+                    "White + Advanced Degree",
+                    "White + Some College",
+                    "White + High School",
+                ]
+            )
+        ]
+    ##################################
     ########TAB 3: CHART 1 ###########
     ##################################
-    st.write("add radio button A + W + B + L")
     ## BY RACE and DEGREE WAGE CHART
     # Create a selection that chooses the nearest point & selects based on x-value
     nearest = alt.selection(type="single", nearest=True, on="mouseover", fields=["year"], empty="none")
@@ -460,7 +577,7 @@ with tab3:
         rules,
         text,
         text2,
-        data=all_race_degrees,
+        data=data,
         width=400,
         height=500,
         title=title,
@@ -471,28 +588,6 @@ with tab3:
     ##################################
     ## FILTER DIFFS DATA TO RACE and DEGREES ONLY
     total = earn_perc_chng_df_melted[earn_perc_chng_df_melted.group_legend == "total"]
-    race_degrees = earn_perc_chng_df_melted[
-        earn_perc_chng_df_melted["group_legend"].isin(
-            [
-                "Asian + Bachelors Degree",
-                "Asian + Advanced Degree",
-                "Asian + Some College",
-                "Asian + High School",
-                "Black + Bachelors Degree",
-                "Black + Advanced Degree",
-                "Black + Some College",
-                "Black + High School",
-                "White + Bachelors Degree",
-                "White + Advanced Degree",
-                "White + Some College",
-                "White + High School",
-                "Latinx + Bachelors Degree",
-                "Latinx + Advanced Degree",
-                "Latinx + Some College",
-                "Latinx + High School",
-            ]
-        )
-    ]
     title = alt.TitleParams(
         "Percent Change Median Weekly Earnings vs. Total Median",
         anchor="middle",
@@ -500,7 +595,7 @@ with tab3:
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
     )
     line1 = (
-        alt.Chart(race_degrees)
+        alt.Chart(chng_data)
         .mark_line()
         .encode(
             x="year:T",
@@ -528,6 +623,172 @@ with tab3:
         st.altair_chart(RaceDegreeChngChart, theme="streamlit", use_container_width=True)
 
 with tab4:
+    #########################################
+    ######### RADIO RACE GENDER #############
+    #########################################
+    race_gender = st.radio(
+        "Select a filter: ",
+        ("Asian", "Black", "Hispanic or Latino", "White", "All"),
+        key="race_gender",
+        horizontal=True,
+    )
+
+    if race == "All":
+        data = all_race_gender_degrees
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Asian + Male + Bachelors Degree",
+                    "Asian + Male + Advanced Degree",
+                    "Asian + Male + Some College",
+                    "Asian + Male + High School",
+                    "Black + Male + Bachelors Degree",
+                    "Black + Male + Advanced Degree",
+                    "Black + Male + Some College",
+                    "Black + Male + High School",
+                    "White + Male + Bachelors Degree",
+                    "White + Male + Advanced Degree",
+                    "White + Male + Some College",
+                    "White + Male + High School",
+                    "Hispanic or Latino + Male + Bachelors Degree",
+                    "Hispanic or Latino + Male + Advanced Degree",
+                    "Hispanic or Latino + Male + Some College",
+                    "Hispanic or Latino + Male + High School",
+                    "Asian + Female + Bachelors Degree",
+                    "Asian + Female + Advanced Degree",
+                    "Asian + Female + Some College",
+                    "Asian + Female + High School",
+                    "Black + Female + Bachelors Degree",
+                    "Black + Female + Advanced Degree",
+                    "Black + Female + Some College",
+                    "Black + Female + High School",
+                    "White + Female + Bachelors Degree",
+                    "White + Female + Advanced Degree",
+                    "White + Female + Some College",
+                    "White + Female + High School",
+                    "Hispanic or Latino + Female + Bachelors Degree",
+                    "Hispanic or Latino + Female + Advanced Degree",
+                    "Hispanic or Latino + Female + Some College",
+                    "Hispanic or Latino + Female + High School",
+                ]
+            )
+        ]
+    elif race == "Asian":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Asian + Male + Bachelors Degree",
+                    "Asian + Male + Advanced Degree",
+                    "Asian + Male + Some College",
+                    "Asian + Male + High School",
+                    "Asian + Female + Bachelors Degree",
+                    "Asian + Female + Advanced Degree",
+                    "Asian + Female + Some College",
+                    "Asian + Female + High School",
+                ]
+            )
+        ]
+        data = all_race_gender_degrees[
+            all_race_gender_degrees["group"].isin(
+                [
+                    "Asian + Male + Bachelors Degree",
+                    "Asian + Male + Advanced Degree",
+                    "Asian + Male + Some College",
+                    "Asian + Male + High School",
+                    "Asian + Female + Bachelors Degree",
+                    "Asian + Female + Advanced Degree",
+                    "Asian + Female + Some College",
+                    "Asian + Female + High School",
+                ]
+            )
+        ]
+    elif race == "Black":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Black + Male + Bachelors Degree",
+                    "Black + Male + Advanced Degree",
+                    "Black + Male + Some College",
+                    "Black + Male + High School",
+                    "Black + Female + Bachelors Degree",
+                    "Black + Female + Advanced Degree",
+                    "Black + Female + Some College",
+                    "Black + Female + High School",
+                ]
+            )
+        ]
+        data = all_race_gender_degrees[
+            all_race_gender_degrees["group"].isin(
+                [
+                    "Black + Male + Bachelors Degree",
+                    "Black + Male + Advanced Degree",
+                    "Black + Male + Some College",
+                    "Black + Male + High School",
+                    "Black + Female + Bachelors Degree",
+                    "Black + Female + Advanced Degree",
+                    "Black + Female + Some College",
+                    "Black + Female + High School",
+                ]
+            )
+        ]
+    elif race == "Hispanic or Latino":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "Hispanic or Latino + Male + Bachelors Degree",
+                    "Hispanic or Latino + Male + Advanced Degree",
+                    "Hispanic or Latino + Male + Some College",
+                    "Hispanic or Latino + Male + High School",
+                    "Hispanic or Latino + Female + Bachelors Degree",
+                    "Hispanic or Latino + Female + Advanced Degree",
+                    "Hispanic or Latino + Female + Some College",
+                    "Hispanic or Latino + Female + High School",
+                ]
+            )
+        ]
+        data = all_race_gender_degrees[
+            all_race_gender_degrees["group"].isin(
+                [
+                    "Hispanic or Latino + Male + Bachelors Degree",
+                    "Hispanic or Latino + Male + Advanced Degree",
+                    "Hispanic or Latino + Male + Some College",
+                    "Hispanic or Latino + Male + High School",
+                    "Hispanic or Latino + Female + Bachelors Degree",
+                    "Hispanic or Latino + Female + Advanced Degree",
+                    "Hispanic or Latino + Female + Some College",
+                    "Hispanic or Latino + Female + High School",
+                ]
+            )
+        ]
+    elif race == "White":
+        chng_data = earn_perc_chng_df_melted[
+            earn_perc_chng_df_melted["group_legend"].isin(
+                [
+                    "White + Male + Bachelors Degree",
+                    "White + Male + Advanced Degree",
+                    "White + Male + Some College",
+                    "White + Male + High School",
+                    "White + Female + Bachelors Degree",
+                    "White + Female + Advanced Degree",
+                    "White + Female + Some College",
+                    "White + Female + High School",
+                ]
+            )
+        ]
+        data = all_race_gender_degrees[
+            all_race_gender_degrees["group"].isin(
+                [
+                    "White + Male + Bachelors Degree",
+                    "White + Male + Advanced Degree",
+                    "White + Male + Some College",
+                    "White + Male + High School",
+                    "White + Female + Bachelors Degree",
+                    "White + Female + Advanced Degree",
+                    "White + Female + Some College",
+                    "White + Female + High School",
+                ]
+            )
+        ]
     ##################################
     ########TAB 4: CHART 1 ###########
     ##################################
@@ -606,7 +867,7 @@ with tab4:
         rules,
         text,
         text2,
-        data=all_race_gender_degrees,
+        data=data,
         width=400,
         height=500,
         title=title,
@@ -615,7 +876,6 @@ with tab4:
     ##################################
     ########TAB 4: CHART 2 ###########
     ##################################
-    st.write("add radio button A + W + B + L + M + F")
     ## FILTER DIFFS DATA TO RACE and DEGREES ONLY
     total = earn_perc_chng_df_melted[earn_perc_chng_df_melted.group_legend == "total"]
     race_gender_degrees = earn_perc_chng_df_melted[
@@ -633,10 +893,10 @@ with tab4:
                 "White + Male + Advanced Degree",
                 "White + Male + Some College",
                 "White + Male + High School",
-                "Latinx + Male + Bachelors Degree",
-                "Latinx + Male + Advanced Degree",
-                "Latinx + Male + Some College",
-                "Latinx + Male + High School",
+                "Hispanic or Latino + Male + Bachelors Degree",
+                "Hispanic or Latino + Male + Advanced Degree",
+                "Hispanic or Latino + Male + Some College",
+                "Hispanic or Latino + Male + High School",
                 "Asian + Female + Bachelors Degree",
                 "Asian + Female + Advanced Degree",
                 "Asian + Female + Some College",
@@ -649,10 +909,10 @@ with tab4:
                 "White + Female + Advanced Degree",
                 "White + Female + Some College",
                 "White + Female + High School",
-                "Latinx + Female + Bachelors Degree",
-                "Latinx+ Female + Advanced Degree",
-                "Latinx + Female + Some College",
-                "Latinx + Female + High School",
+                "Hispanic or Latino + Female + Bachelors Degree",
+                "Hispanic or Latino+ Female + Advanced Degree",
+                "Hispanic or Latino + Female + Some College",
+                "Hispanic or Latino + Female + High School",
             ]
         )
     ]
@@ -663,7 +923,7 @@ with tab4:
         subtitle="Total Median Percent Change Indicated by Black Dotted Line",
     )
     line1 = (
-        alt.Chart(race_gender_degrees)
+        alt.Chart(chng_data)
         .mark_line()
         .encode(
             x="year:T",
