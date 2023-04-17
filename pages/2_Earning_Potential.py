@@ -18,8 +18,11 @@ from preprocessing.earning_filters import *
 st.markdown("# How does higher education impact earning potential?")
 # st.sidebar.header("Earning Potential")
 st.write(
-    """What is a person's earning potential based on their most recent completed degree?
-    How do Gender and Race impact earning potential?"""
+    """Higher Education degrees can lead to a high earning potential
+    during the course of one's career. Studies have shown that individuals with higher education degrees, such as bachelor's, master's, or doctoral degrees, tend to earn more on average than those with only a high school diploma or some college education. In this series of visualizations,
+    we explore those potential impacts of educational attainment on a
+    person's earning potential. In order to dig deeper into additional factors impacting a person's 
+    earning potential, we have also analyzed earning potential by race and gender."""
 )
 
 ######################################################################
@@ -145,7 +148,7 @@ with tab1:
         "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
-        subtitle="Total Median Percent Change Indicated by Black Dotted Line",
+        subtitle="Total Median Percent Change Indicated by Black Solid Line",
     )
     line1 = (
         alt.Chart(degrees)
@@ -158,7 +161,7 @@ with tab1:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     DegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -339,7 +342,7 @@ with tab2:
         "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
-        subtitle="Total Median Percent Change Indicated by Black Dotted Line",
+        subtitle="Total Median Percent Change Indicated by Black Solid Line",
     )
     line1 = (
         alt.Chart(chng_data)
@@ -352,7 +355,7 @@ with tab2:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     GenderDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -367,9 +370,11 @@ with tab2:
 
     with col3:
         st.altair_chart(GenderDegreeChart, theme="streamlit", use_container_width=True)
+        st.write()
 
     with col4:
         st.altair_chart(GenderDegreeChngChart, theme="streamlit", use_container_width=True)
+        st.write()
 
 with tab3:
     ##################################
@@ -583,7 +588,7 @@ with tab3:
         "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
-        subtitle="Total Median Percent Change Indicated by Black Dotted Line",
+        subtitle="Total Median Percent Change Indicated by Black Solid Line",
     )
     line1 = (
         alt.Chart(chng_data)
@@ -596,7 +601,7 @@ with tab3:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     RaceDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -874,7 +879,7 @@ with tab4:
         "Percent Change of Median Weekly Earnings",
         anchor="middle",
         fontSize=25,
-        subtitle="Total Median Percent Change Indicated by Black Dotted Line",
+        subtitle="Total Median Percent Change Indicated by Black Solid Line",
     )
     line1 = (
         alt.Chart(chng_data)
@@ -887,7 +892,7 @@ with tab4:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     RaceGenderDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
