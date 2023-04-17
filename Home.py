@@ -15,4 +15,4 @@ st.markdown(
     of educational attainment."""
 )
 
-st.markdown("[View the Source Code Here](https://ed-dash.streamlit.app/)")
+st.markdown("[View the Source Code Here](https://github.com/mleighc/699_Mastery_Capstone)")
