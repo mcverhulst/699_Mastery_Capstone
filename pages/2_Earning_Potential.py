@@ -161,7 +161,7 @@ with tab1:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     DegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -355,7 +355,7 @@ with tab2:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     GenderDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -601,7 +601,7 @@ with tab3:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     RaceDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
@@ -892,7 +892,7 @@ with tab4:
             strokeDash="group_legend:N",
         )
     )
-    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule().encode(y="y")
+    line2 = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(strokeWidth=1.5).encode(y="y")
     RaceGenderDegreeChngChart = (
         (line1 + line2)
         .properties(width=400, height=500, title=title)
