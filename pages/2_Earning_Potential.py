@@ -17,12 +17,21 @@ from preprocessing.earning_filters import *
 
 st.markdown("# How does higher education impact earning potential?")
 # st.sidebar.header("Earning Potential")
-st.write(
+st.markdown(
     """Higher Education degrees can lead to a high earning potential
     during the course of one's career. Studies have shown that individuals with higher education degrees, such as bachelor's, master's, or doctoral degrees, tend to earn more on average than those with only a high school diploma or some college education. In this series of visualizations,
-    we explore those potential impacts of educational attainment on a
+    we explore those impacts of educational attainment on a
     person's earning potential. In order to dig deeper into additional factors impacting a person's 
     earning potential, we have also analyzed earning potential by race and gender."""
+)
+
+st.markdown(
+    """More information can be found at the following links:
+- [**Bureau of Labor Statistics:** _Measuring the value of education_](https://www.bls.gov/careeroutlook/2018/data-on-display/education-pays.htm)
+- [**Bureau of Labor Statistics:** _Employment Projections_](https://www.bls.gov/emp/chart-unemployment-earnings-education.htm)
+- [**National Center for Education Statistics:** _Annual Earnings by Educational Attainment_](https://nces.ed.gov/programs/coe/indicator/cba/annual-earnings)
+- [**Northeastern University:** _Average Salary by Education Level_](https://bachelors-completion.northeastern.edu/news/average-salary-by-education-level/)
+"""
 )
 
 ######################################################################
