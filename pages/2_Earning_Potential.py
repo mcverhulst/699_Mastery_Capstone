@@ -70,7 +70,7 @@ with tab1:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            alt.X("year:T", axis=alt.Axis(title="Year")),
+            alt.X("year:N", axis=alt.Axis(title="Year")),
             alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
             color="group:N",
         )
@@ -80,7 +80,7 @@ with tab1:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
@@ -91,7 +91,7 @@ with tab1:
         alt.Chart()
         .mark_point()
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -116,7 +116,7 @@ with tab1:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -163,10 +163,10 @@ with tab1:
         alt.Chart(degrees)
         .mark_line(point=True)
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
-            tooltip=["group_legend", "earn_perc_chng_from_total"],
+            tooltip=["group_legend", "earn_perc_chng_from_total", "year"],
             strokeDash="group_legend:N",
         )
     )
@@ -274,7 +274,7 @@ with tab2:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            alt.X("year:T", axis=alt.Axis(title="")),
+            alt.X("year:N", axis=alt.Axis(title="")),
             alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
             color="group:N",
         )
@@ -284,7 +284,7 @@ with tab2:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
@@ -295,7 +295,7 @@ with tab2:
         alt.Chart()
         .mark_point()
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -320,7 +320,7 @@ with tab2:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -357,10 +357,10 @@ with tab2:
         alt.Chart(chng_data)
         .mark_line(point=True)
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
-            tooltip=["group_legend", "earn_perc_chng_from_total"],
+            tooltip=["group_legend", "earn_perc_chng_from_total", "year"],
             strokeDash="group_legend:N",
         )
     )
@@ -521,7 +521,7 @@ with tab3:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
             color="group:N",
         )
@@ -531,7 +531,7 @@ with tab3:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
@@ -542,7 +542,7 @@ with tab3:
         alt.Chart()
         .mark_point()
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -567,7 +567,7 @@ with tab3:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -603,10 +603,10 @@ with tab3:
         alt.Chart(chng_data)
         .mark_line(point=True)
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
-            tooltip=["group_legend", "earn_perc_chng_from_total"],
+            tooltip=["group_legend", "earn_perc_chng_from_total", "year"],
             strokeDash="group_legend:N",
         )
     )
@@ -772,7 +772,7 @@ with tab4:
         alt.Chart()
         .mark_line(interpolate="basis")
         .encode(
-            alt.X("year:T", axis=alt.Axis(title="")),
+            alt.X("year:N", axis=alt.Axis(title="")),
             alt.Y("value:Q", axis=alt.Axis(title="", format="$f")),
             color="group:N",
         )
@@ -782,7 +782,7 @@ with tab4:
         alt.Chart(total_median)
         .mark_line(interpolate="basis", color="black", strokeDash=[5, 1])
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("value:Q", axis=alt.Axis(title="Median Weekly Wage", format="$f")),
         )
     )
@@ -793,7 +793,7 @@ with tab4:
         alt.Chart()
         .mark_point()
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             opacity=alt.value(0),
         )
         .add_selection(nearest)
@@ -818,7 +818,7 @@ with tab4:
         alt.Chart()
         .mark_rule(color="gray")
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
         )
         .transform_filter(nearest)
     )
@@ -894,10 +894,10 @@ with tab4:
         alt.Chart(chng_data)
         .mark_line(point=True)
         .encode(
-            x=alt.X("year:T", axis=alt.Axis(title="Year")),
+            x=alt.X("year:N", axis=alt.Axis(title="Year")),
             y=alt.Y("earn_perc_chng_from_total:Q", axis=alt.Axis(title="Percent Change", format="%")),
             color="group_legend:N",
-            tooltip=["group_legend", "earn_perc_chng_from_total"],
+            tooltip=["group_legend", "earn_perc_chng_from_total", "year"],
             strokeDash="group_legend:N",
         )
     )
