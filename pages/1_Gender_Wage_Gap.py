@@ -11,15 +11,21 @@ st.set_page_config(page_title="Gender Wage Gap",
 from preprocessing.gender_ratios import *
 
 st.markdown("# Education and the gender wage gap")
-st.sidebar.header("Gender Wage Gap")
-st.write(
-    """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum."""
+# st.sidebar.header("Gender Wage Gap")
+st.markdown(
+    """The gender wage gap is the difference in earnings between men and women. 
+    There are a number of factors that have an effect on this statistic including 
+    industry, traditional gender norms surrounding family care, and more. Below 
+    we chose to examine median pay for men and women at a high level as well as 
+    explore how wage outcomes differ for people of different races."""
 )
+
+st.markdown("""More information can be found at the following links:
+- [Pew Research Center Analysis](https://www.pewresearch.org/social-trends/2023/03/01/the-enduring-grip-of-the-gender-pay-gap/”)
+- [Department of Labor Blog](https://blog.dol.gov/2023/03/14/5-fast-facts-the-gender-wage-gap)
+- [Government Accountability Office](https://www.gao.gov/products/gao-23-106041)
+""")
+
 
 ### ESTABLISH TAB STRUCTURE
 tab1, tab2, tab3 = st.tabs(
@@ -37,13 +43,23 @@ with tab1:
     colors = alt.Scale(domain=("Male", "Female"), range=["#31b0a5", "#de8b33"])  # ['#31b0a5', '#de8b33']
 
     st.markdown("""### How does median pay for women and men compare?""")
-    st.write("""Lorem ipsum...""")
+
+    st.markdown("""Below is a bar chart representing the median weekly pay for 
+        men and women between 1995 and 2020. The line chart below denotes the 
+        **female to male pay ratio** and the green dotted line indicates the 
+        point where men and womens pay would be equal."""
+    )
+
+    st.markdown("""
+        The ratio between men and womens pay has remained fairly steady over the 
+        past 25 years while wages have risen slightly for both groups.
+    """)
 
     values = st.slider("Select a range of years to compare", 1995, 2020, (1995, 2020))
 
     bars = alt.Chart(data_filtered).mark_bar().encode(
         x = alt.X('group:N', title=None, axis=None),
-        y = alt.Y('value:Q', title="Median Weekly Pay", scale=alt.Scale(domain=(0, 1200))),
+        y = alt.Y('value:Q', title="Median Weekly Pay", scale=alt.Scale(domain=(0, 1400))),
         color=alt.Color("group:N", scale=alt.Scale(range=["#31b0a5", "#de8b33"])),
         column=alt.Column(
                 "year:O",
@@ -89,7 +105,11 @@ with tab1:
 ######################################
 with tab2:
     st.markdown("""### How much do women make by race?""")
-    st.write("""The median wage for all men is indicated by the black line...
+    st.markdown("""This line chart shows median weekly earnings for women of 
+        different races as compared to men. Asian women have the highest wages and 
+        are the only group to show a significant rise year over year but still fall 
+        short of the median pay for men. Hispanic or Latino women fare worse with 
+        the lowest wages and hovering around 60\% of men's wages.
     """)
 
     # https://stackoverflow.com/questions/54015895/altair-default-color-palette-colors-in-hex
@@ -160,10 +180,19 @@ with tab3:
 
     # PLOT CHART
     st.markdown("""### How many hours would women have to work to earn equal pay""")
-    st.write("""Lorem ipsum...""")
+    st.markdown("""The gender pay gap has significant implications when translated 
+        to the number of hours women would need to work to match the pay of men. 
+        The bar chart below shows the number of additional hours women would 
+        have to work **each week** to make the same amount of money as men."""
+    )
     st.altair_chart(hours, theme="streamlit", use_container_width=True)
 
     # PLOT CHART
     st.markdown("""### How many additional ***months*** into the next year would women have to work to earn equal pay?""")
-    st.write("""Lorem ipsum...""")
+    st.markdown("""When the additional hours are extrapolated through an entire 
+        year, the pay gap is damning. In 1995, women would have needed to work 
+        an additional **4.88 months** into the next year to match the annual pay 
+        of men. By 2020, that figure had been reduced but still exceeded 
+        **3 months**."""
+    )
     st.altair_chart(w_months, theme="streamlit", use_container_width=True)
