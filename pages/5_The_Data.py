@@ -19,6 +19,15 @@ edu_wages = load_data("edu_wages_2022.csv")
 ############# DOWNLOAD BUTTONS ################
 ###############################################
 # SOURCE: https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+st.markdown(
+    """### Data Access 
+The data for this project was sourced from the National Bureau of Economic
+Research (NBER). NBER compiled monthly data from the Bureau of Labor
+Statistic's Current Population Survey, which in turn gets its data by
+querying more than 50,000 households within the U.S. each month. More
+information and the data itself can be found on 
+[NBER's website](https://www.nber.org/research/data/current-population-survey-cps-merged-outgoing-rotation-group-earnings-data)."""
+)
 
 csv1 = convert_df(edu_wages)
 st.download_button(
