@@ -24,8 +24,9 @@ When looking for inspiration for our data science project, both of us remembered
 
 <img src="https://drive.google.com/uc?id=131m1xdJCfaBmS5qYauNfMN0ndH-EGZlj"
      alt="EPI Disclaimer"
-     style="display: block; margin-right: auto; margin-left: auto; width: 90%;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" />
+     style="display: block; margin-right: auto; margin-left: auto; width: 40%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     border:1px solid black;" />
 
 Answering these questions was an exciting challenge for us because neither of us studied economics in our undergraduate careers and we were curious to see if we could come to similar conclusions after our analysis.
 
@@ -46,8 +47,9 @@ In addition to challenges posed by choosing the best metrics, many of the analys
 
 <img src="https://drive.google.com/uc?id=1lk3rvGABmKElLRLintUR6tnfmIqKP7fE"
      alt="EPI Disclaimer"
-     style="display: block; margin-right: auto; margin-left: auto; width: 90%;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" />
+     style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     border:1px solid black;" />
 
 
 
