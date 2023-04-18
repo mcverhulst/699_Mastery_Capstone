@@ -7,15 +7,30 @@ You can find our dashboard by clicking the button below:
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ed-dash.streamlit.app/)
 
 ### Table of Contents
-- [Project Statement](#project-statement)
-- [Challenges of Being an Embedded Data Scientist](#challenges-of-being-an-embedded-data-scientist)
-- [Methodology](#methodology)
-- [Building the Dashboard](#building-the-dashboard)
-- [Findings](#findings)
-- [Broader Impacts](#broader-impacts)
-- [Future Work](#future-work)
-- [Statement of Work](#statement-of-work)
-- [Data Access Statement](#data-access-statement)
+- [Is Education the Key to Success?](#is-education-the-key-to-success)
+      - [Analysis by Miranda Cooper and Mike VerHulst](#analysis-by-miranda-cooper-and-mike-verhulst)
+    - [Table of Contents](#table-of-contents)
+    - [Project Statement](#project-statement)
+        - [Choosing a topic](#choosing-a-topic)
+        - [Our goal](#our-goal)
+    - [Challenges of Being an Embedded Data Scientist](#challenges-of-being-an-embedded-data-scientist)
+        - [Learning a new domain on your own](#learning-a-new-domain-on-your-own)
+        - [Unclear methodologies](#unclear-methodologies)
+        - [The pivot](#the-pivot)
+    - [Methodology](#methodology)
+        - [The data and preprocessing](#the-data-and-preprocessing)
+        - [Limitations of the data](#limitations-of-the-data)
+        - [The dashboard goals and audience](#the-dashboard-goals-and-audience)
+    - [Building the Dashboard](#building-the-dashboard)
+    - [Findings](#findings)
+        - [The gender age gap](#the-gender-age-gap)
+        - [Earning potential](#earning-potential)
+    - [Broader Impacts](#broader-impacts)
+    - [Future Work](#future-work)
+    - [Statement of Work](#statement-of-work)
+        - [Miranda’s Contributions](#mirandas-contributions)
+        - [Mike’s Contributions](#mikes-contributions)
+    - [Data Access Statement](#data-access-statement)
 
 ### Project Statement
 ##### Choosing a topic
@@ -148,11 +163,11 @@ style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
-In returning to two of our many research inquiries
+In returning to two of our many research inquiries:
 1. Does a higher education degree give you a better chance at wage growth?
 2. Does any particular degree create one advantage of earning potential over another?
 
-In response to these inquiries, we can state a resounding, “yes”! But we must also recognize the significant gaps and inequalities in earning potential as the data is further parsed and analyzed by both gender and race.
+We can state a resounding, “yes”! But we must also recognize the significant gaps and inequalities in earning potential as the data is further parsed and analyzed by both gender and race.
 
 
 ### Broader Impacts
