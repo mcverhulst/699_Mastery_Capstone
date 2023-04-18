@@ -22,6 +22,11 @@ When looking for inspiration for our data science project, both of us remembered
 1. Was this claim true?
 2. If so, what was causing the gap to grow?
 
+<img src="https://drive.google.com/uc?id=131m1xdJCfaBmS5qYauNfMN0ndH-EGZlj"
+     alt="EPI Disclaimer"
+     style="display: block; margin-right: auto; margin-left: auto; width: 90%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" />
+
 Answering these questions was an exciting challenge for us because neither of us studied economics in our undergraduate careers and we were curious to see if we could come to similar conclusions after our analysis.
 
 ##### Our goal
@@ -39,7 +44,7 @@ For example, at the start of our research we believed that there was likely one 
 ##### Unclear Methodologies
 In addition to challenges posed by choosing the best metrics, many of the analysis methodologies we encountered were not reproducible. In many cases, methodology sections were incomplete or vague which prevented us from reproducing the same analysis even if we had access to the same data. In other cases, analysis was done using proprietary or unpublished data. In fact, one of the initial [articles](https://www.epi.org/productivity-pay-gap/) that inspired us to examine productivity was written by the Economic Policy Institute but used unpublished data from the Bureau of Labor Statistics so we could not reproduce it.
 
-<img src="https://drive.google.com/file/d/1lk3rvGABmKElLRLintUR6tnfmIqKP7fE"
+<img src="https://drive.google.com/uc?id=1lk3rvGABmKElLRLintUR6tnfmIqKP7fE"
      alt="EPI Disclaimer"
      style="display: block; margin-right: auto; margin-left: auto; width: 90%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" />
