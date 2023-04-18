@@ -3,6 +3,7 @@
 
 **Our Project**
 You can find our dashboard by clicking the button below:
+
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ed-dash.streamlit.app/)
 
 ### Table of Contents
