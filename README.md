@@ -47,7 +47,7 @@ Choosing a dataset was not a straightforward task either. There are multiple fed
 ##### Unclear methodologies
 In addition to challenges posed by choosing the best metrics, many of the analysis methodologies we encountered were not reproducible. In many cases, methodology sections were incomplete or vague in terms of which industries, ages, or other criteria they were considering which prevented us from reproducing the same analysis even if we had access to the same data. In other cases, analysis was done using proprietary or unpublished data. In fact, one of the initial [articles](https://www.epi.org/productivity-pay-gap/) that inspired us to examine productivity was written by the Economic Policy Institute but used unpublished data from the BLS so we could not reproduce it.
 
-<img src="https://drive.google.com/uc?id=1lk3rvGABmKElLRLintUR6tnfmIqKP7fE"
+<img src="https://drive.google.com/uc?id=1P2uAcSL28vkyaDEYdamKna_Ly0NKQ1xt"
      alt="EPI Disclaimer"
      style="display: block; margin-right: auto; margin-left: auto; width: 60%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
