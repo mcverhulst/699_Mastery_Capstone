@@ -89,7 +89,7 @@ Our first step in examining the gender wage gap was comparing the median pay of 
 
 <img src="https://drive.google.com/uc?id=1wT9QuvEPw0oBS5r7wh984OUvo7HhgxEa"
      alt="EPI Disclaimer"
-     style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+     style="display: block; margin-right: auto; margin-left: auto; width: 90%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      border:1px solid black;" />
 
@@ -97,7 +97,7 @@ When looking at the outcomes for women of different races we see that no group m
 
 <img src="https://drive.google.com/uc?id=1t3bht11qMi7qGhkH5P6dfWn49_hkTm5O"
      alt="EPI Disclaimer"
-     style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+     style="display: block; margin-right: auto; margin-left: auto; width: 90%;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      border:1px solid black;" />
 
@@ -105,7 +105,7 @@ When calculating how many hours a woman would need to work to match the pay of a
 
 <img src="https://drive.google.com/uc?id=1aUyrYZ0C0lKNz8HJHUEJEIzepNAOoI0a"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
@@ -116,7 +116,7 @@ As [Elka Torpey (2018)](https://www.bls.gov/careeroutlook/2018/data-on-display/e
 
 <img src="https://drive.google.com/uc?id=1SBUvuP5DWrz5WHZxRShQp1y_wGMW-aHS"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
@@ -124,13 +124,13 @@ At this high level of analysis, though, we lose the insight that can be gained f
 
 <img src="https://drive.google.com/uc?id=1JaN1sJFAME2jSxZADmYdzkcVFTd8z2y7"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
 <img src="https://drive.google.com/uc?id=1Q6VIu9Id3RwR0GSG-7SIiNu2qBN670qH"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
@@ -138,13 +138,13 @@ As another example, we also saw that individuals who identified as Asian with an
 
 <img src="https://drive.google.com/uc?id=1LF4Lw1kg9wJYYU294LswIzd6zTijzjNe"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
 <img src="https://drive.google.com/uc?id=1qm4JcBaQDMg9kpweZjjdF5_mpNfjANaT"
 alt="EPI Disclaimer"
-style="display: block; margin-right: auto; margin-left: auto; width: 60%;
+style="display: block; margin-right: auto; margin-left: auto; width: 90%;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 border:1px solid black;" />
 
