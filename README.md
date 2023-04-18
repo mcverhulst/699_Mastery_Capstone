@@ -7,15 +7,16 @@ You can find our dashboard by clicking the button below:
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ed-dash.streamlit.app/)
 
 ### Table of Contents
-    - [Project Statement](#project-statement)
-    - [Challenges of Being an Embedded Data Scientist](#challenges-of-being-an-embedded-data-scientist)
-    - [Methodology](#methodology)
-    - [Building the Dashboard](#building-the-dashboard)
-    - [Findings](#findings)
-    - [Broader Impacts](#broader-impacts)
-    - [Future Work](#future-work)
-    - [Statement of Work](#statement-of-work)
-    - [Data Access Statement](#data-access-statement)
+
+- [Project Statement](#project-statement)
+- [Challenges of Being an Embedded Data Scientist](#challenges-of-being-an-embedded-data-scientist)
+- [Methodology](#methodology)
+- [Building the Dashboard](#building-the-dashboard)
+- [Findings](#findings)
+- [Broader Impacts](#broader-impacts)
+- [Future Work](#future-work)
+- [Statement of Work](#statement-of-work)
+- [Data Access Statement](#data-access-statement)
 
 ### Project Statement
 ##### Choosing a topic
